@@ -1,0 +1,39 @@
+/* Hovering over the dog-container will show a picture of Nera and Joey ( my pets )  */
+
+.dogs-container:hover {
+    position: relative;
+}
+
+.dogs-container:hover:after {
+    content: url(./images/Nera\ &\ Joey.jpg);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    height: 20px;
+    width: 50px;
+    display: block;
+    z-index: 100;
+}
+
+.linkedin-container:hover,
+.github-container:hover,
+.facebook-container:hover{
+    color: rgb(185, 19, 19);
+}
+.linkedin-container:hover::after,
+.github-container:hover::after,
+.facebook-container:hover::after{
+    color: rgb(70, 66, 66);
+}
+
+.links-container1 h4 a:hover{
+    color: rgb(140, 204, 56);
+}
+
+.linkedin-container img:hover,
+.github-container img:hover,
+.facebook-container img:hover{
+    opacity: 0.5;
+}
+
+
+
