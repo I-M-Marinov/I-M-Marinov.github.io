@@ -129,6 +129,9 @@
         margin-left: 9em;
     }
 
+    .print{
+        visibility: hidden;
+    }
 
 }
 
