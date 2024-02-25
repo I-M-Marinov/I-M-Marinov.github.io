@@ -4,11 +4,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
 body {
     font-family: "Montserrat", sans-serif;
-    height: 1900px;
+    height: 1775px;
     background-color: #313030;
 }
 
@@ -16,8 +17,6 @@ body {
     display: flex;
     width: 960px;
     margin: 0.2em;
-    -webkit-print-color-adjust: exact;
-    /* When you try to print the ready webpage it will show all colors  */
 }
 
 
@@ -27,12 +26,14 @@ body {
 }
 
 .bigger-container {
-
+    height: 1775px;
     padding: 2em;
     margin-left: 0.5em;
     border-top: 25px solid #22405C;
+    border-bottom: 25px solid #22405C;
     background-color: #182D41;
     color: #FFFFEE;
+
 }
 
 
@@ -44,43 +45,40 @@ image {
 
 header {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
     gap: 0.8em;
-    padding: 3em 1em 2em 1em;
-    font-weight: 600;
+    padding: 3em 1em 1.5em 1em;
+    font-weight: 700;
 }
 
 .contact-info {
     display: flex;
-    gap: 3.5em;
-    padding: 0;
-    margin: 0;
     justify-content: space-between;
-    align-items: flex-start;
-    font-size: 15px;
+    font-size: 12px;
 }
+
 
 .left-container {
     width: 595px;
-    height: 1900px;
     padding: 2em 2em 2em 3em;
     background-image: url(./images/background1.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     border-top: 25px solid #22405C;
+    border-bottom: 25px solid #22405C;
 }
 
 .right-container {
     background-color: #22405C;
     width: 313px;
-    height: 1900px;
     display: flex;
     flex-direction: column;
     align-items: center;
     align-content: center;
     gap: 2em;
     border-top: 25px solid #182D41;
+    border-bottom: 25px solid #182D41;
     color: #FFFFEE;
 }
 
@@ -92,14 +90,26 @@ img {
 }
 
 .phone-svg,
-.email-svg,
 .location-svg {
     width: 25px;
     height: auto;
     overflow: hidden;
-    margin-left: 4em;
+    margin-left: 3em;
     font-size: 12px;
 }
+
+.email-svg{
+    width: 25px;
+    height: auto;
+    overflow: hidden;
+    margin-left: 8em;
+}
+
+.email a{
+    text-decoration: none;
+    color: black;
+}
+
 
 
 .inner-columns {
@@ -112,11 +122,12 @@ img {
     border-bottom: 2px solid #5c5757;
 }
 
-.upper-column-employer {
+.upper-column-employer{
     display: flex;
     line-height: 1.5em;
     margin-top: 0.8em;
     margin-bottom: 0.6em;
+    font-size: 0.95em;
 }
 
 .company {
@@ -126,15 +137,18 @@ img {
 
 .lower-column {
     margin-top: 0.2em;
-    padding-left: 1em;
+    padding-left: 0.8em;
     
 }
 
 .lower-column ul li {
     font-size: 14px;
-    border-bottom: 1px solid #307de2;
     padding-bottom: 0.6em;
     font-weight: 500;
+}
+.lower-column ul li:last-child{
+    border-bottom: 1px solid #307de2;
+    padding-bottom: 0.6em;
 }
 
 .upper-column-2 {
@@ -188,39 +202,43 @@ img {
 
 .school {
     color: #307de2;
-    margin-left: -1em;
+    /* margin-left: -1em; */
 }
 
 
-.right-container h2,
-.certification {
+.right-container h2 {
     border-bottom: 2px solid #FFFFEE;
     width: 75%;
     text-align: center;
 }
 
-.certification-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.certification{
+    padding-top: 1.5em;
 }
 
-.certificate-container {
+.certificate-container{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items:flex-start;
+    padding-bottom: 1.5em;
 }
-.certificate-container:last-child {
-    padding-top: 1em;
+
+.certificate-container:first-child{
+ padding-top: 1.5em;
+}
+
+.school-name{
+    align-self: flex-start;
+    padding-bottom: 1em;
 }
 
 .certificate-name {
-    color: rgb(140, 204, 56);
+    color: #307de2;
 }
 
 .languages-container {
     display: flex;
-    gap: 1em;
+    gap: 0.7em;
 }
 
 .dot {
@@ -252,12 +270,9 @@ img {
     align-items: center;
     padding-left: 1em;
     padding-right: 1em;
-    line-height: 1em;
+    line-height: 1.5em;
 }
 
-.skills-list {
-    line-height: 1.2em;
-}
 
 .strenghts-container {
     display: flex;
@@ -326,6 +341,13 @@ img {
     margin: 0;
 }
 
+.driving-svg{
+    width: 55px;
+    height: 55px;
+    overflow: hidden; 
+    margin: 0;
+}
+
 .links-container1 {
     padding-top: 1em;
     display: flex;
@@ -343,7 +365,7 @@ img {
     text-align: center;
 }
 
-.links-container1 h4 a {
+.links-container1  h4 a {
     text-align: center;
     text-decoration: none;
     color: #FFFFEE;
@@ -383,6 +405,19 @@ img {
     margin: 0;
 }
 
+.linkedin-container img{
+    margin-left: 1.7em;
+
+}
+
+.facebook-container img{
+    margin-left: 2em;
+}
+
+.github-container img{
+    margin-left: 1em;
+}
+
 .links-container1 a{
     text-align: center;
     text-decoration: none;
@@ -390,20 +425,20 @@ img {
     padding-bottom: 1em;
 }
 
-.softuni-svg{
-    padding-top: 1em;
-    width: 100px;
-    height: 100px;
-    overflow: hidden; 
-    margin: 0;
+.links-left-column{
+    text-align: center;
 }
 
-.driving-svg{
-    width: 80px;
-    height: 80px;
+.softuni-svg{
+    padding-top: 1em;
+    width: 90px;
+    height: 90px;
     overflow: hidden; 
     margin: 0;
+
 }
+
+
 
 
 
