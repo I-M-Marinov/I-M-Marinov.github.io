@@ -11,14 +11,10 @@ body {
     font-family: "Montserrat", sans-serif;
     height: 1775px;
     background-color: #313030;
-}
-
-body {
     display: flex;
     width: 960px;
     margin: 0.2em;
 }
-
 
 .big-container {
     display: flex;
@@ -43,13 +39,7 @@ image {
     height: auto;
 }
 
-header {
-    display: flex;
-    flex-direction: column; 
-    gap: 0.8em;
-    padding: 3em 1em 1.5em 1em;
-    font-weight: 700;
-}
+
 
 .contact-info {
     display: flex;
@@ -202,7 +192,6 @@ img {
 
 .school {
     color: #307de2;
-    /* margin-left: -1em; */
 }
 
 
