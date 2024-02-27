@@ -13,25 +13,36 @@
         border-width:1px 0 0 1px;
     }
 
+    .bigger-container {
+        height: 400px;
+        padding: 2em;
+        background-color: #182D41;
+        color: #FFFFEE;
+        font-size: 1em;
+    }
+/* 
     .bigger-container,
     .right-container {
         padding: 2em;
         margin-left: 0.5em;
-        color: #000000;
-    } 
-    .bigger-container,
+    }  */
+
+    .right-container {
+        width:348px;
+    }
+
+/*     .bigger-container,
     .left-container,
     .right-container{
         border:solid white; 
         border-width:1px 0 0 1px;
         border-bottom-style: none;
-    } 
+    }  */
 
     .links-left-column,
     .links-left-column a
     .links-right-column
     .links-right-column a{
-        color: #000000;
         text-decoration: none;
     }
 
@@ -45,7 +56,7 @@
         display: flex;
         flex-direction: row;
         width: 908px;
-        height: auto;
+        height: 500px;
     }
 
     .links-left-column,
@@ -54,11 +65,11 @@
     }
 
     .education-heading{
-        padding-top: 10em;
+        padding-top: 5em;
     }
 
-    .skills.passions{
-        padding-top: 7.5em; 
+    .skills.additional{
+        padding-top: 4em; 
     }
 
     .links-right-column{

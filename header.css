@@ -1,7 +1,0 @@
-header {
-    display: flex;
-    flex-direction: column; 
-    gap: 0.8em;
-    padding: 3em 1em 1.5em 1em;
-    font-weight: 700;
-}

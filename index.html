@@ -4,17 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ivan Marinov Marinov CV</title>
-    <link rel="stylesheet" href="mystyle.css">
-    <link rel="stylesheet" href="effects.css">
-    <link rel="stylesheet" href="header.css">
-    <link rel="stylesheet" href="print.css">
+    <link rel="stylesheet" href="./styles/mystyle.css">
+    <link rel="stylesheet" href="./styles/effects.css">
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="/styles/print.css">
 </head>
 <body>
     <div class="big-container">
 
         <div class="left-container">
             <header>
-                <h1>IVAN MARINOV</h1>
+                <h1 class="name">Ivan Marinov</h1>
+                <p class="profession">Junior C# Developer</p>
+
+                <div class="summary">
+                        <p>
+                        Highly-motivated C# Web Development student with practical experience and
+                        confidently working with .NET, HTML & CSS and keenly working towards more skills. 
+                        Looking to apply and hone my acquired skills at your company ! 
+                        </p>
+                </div>
                     <div class="contact-info">
                         <div class="phone-container">
                             <img class="phone-svg" src="./images/SVG/phone.svg" alt=""> 
@@ -53,10 +62,12 @@
                     </div>
                     <div class="lower-column">
                         <ul>
-                            <li>Manage the fleet of trucks</li>
-                            <li>Overlook performance</li>
-                            <li>Maintain a high customer satisfaction</li>
+                            <li>Managing the fleet of 200+ trucks</li>
+                            <li>Overlooking performance</li>
+                            <li>Maintaining a high customer satisfaction</li>
                             <li>Reliably resolve any issues that arise</li>
+                            <li>Successfully updated procedures and incrased efficiency</li>
+
 
                         </ul>
                     </div>
@@ -104,7 +115,7 @@
                         <ul>
 
                             <li>Resolve technical issues</li>
-                            <li>Issue and track payments made</li>
+                            <li>Issue and track payments made on a daily basis</li>
                             <li>Update customers on any ongoing issues with the fleet of semi-trucks</li>
                             <li>Book loads for all the semi-trucks in the assigned fleet daily</li>
                             <li>Record exchanges with clients in the TMS System</li>
@@ -112,71 +123,19 @@
                         </ul>
                     </div>
 
-                        <!-- Employer 4 -->
-
-    <!--                     <div class="upper-column-employer">
-                            <div class="upper-column-1">
-                                <h3 class="title">Bellman</h3>
-                                <h3 class="company">Magton Inc.</h3>
-                                <p class="description">Hotel, located in Ocean City, NJ USA</p>
-                            </div>
-                            <div class="upper-column-2">
-                                <p class="period-employer4">05/2012 - 10/2012</p>
-                                <p class="location-employer4">Ocean City, NJ, USA</p>
-                            </div>
-                        </div>
-                        <div class="lower-column">
-                            <ul>
-                                <li>Assist customers with the luggage. Inspect rooms before a new check-in. Ensure
-                                    good customer service. Train new employees and assist Hotel Manager with the
-                                    weekly schedule.</li>
-                            </ul>
-                        </div> -->
-
-                        <!-- Employer 5 -->
-
-    <!--                     <div class="upper-column-employer">
-                            <div class="upper-column-1">
-                                <h3 class="title">Bellman</h3>
-                                <h3 class="company">Magton Inc.</h3>
-                                <p class="description">Hotel, located in Ocean City, NJ USA</p>
-                            </div>
-                            <div class="upper-column-2">
-                                <p class="period-employer4">05/2011 - 09/2011</p>
-                                <p class="location-employer4">Ocean City, NJ, USA</p>
-                            </div>
-                        </div>
-                        <div class="lower-column">
-                            <ul>
-                                <li>Assist customers with the luggage. Inspect rooms before a new check-in. Ensure
-                                    good customer service.</li>
-                            </ul>
-                        </div> -->
-
-                        <!-- Employer 6  -->
-
-    <!--                     <div class="upper-column-employer">
-                            <div class="upper-column-1">
-                                <h3 class="title">Sales Representative</h3>
-                                <h3 class="company">Ceramic Group - "ALATI" Plovdiv</h3>
-                                <p class="description">Hardware store</p>
-                            </div>
-                            <div class="upper-column-2">
-                                <p class="period-employer4">05/2009 - 09/2009</p>
-                                <p class="location-employer4">Plovdiv, Bulgaria</p>
-                            </div>
-                        </div>
-                        <div class="lower-column">
-                            <ul>
-                                <li>Assist customers with technical specifications and/or additional information to
-                                    point them to the right product they are looking for.</li>
-                            </ul>
-                        </div>
-    -->
-
                     <!-- EDUCATION -->
 
                     <h2 class="education-heading">EDUCATION</h2> 
+
+                    <div class="education1">
+                        <div class="edu-column-1">
+                            <h4 class="school">Software University"</h4>
+                            <h4 class="major">C# Web Developer Path</h4>
+                        </div>
+                        <div class="edu-column-2">
+                            <p class="period">2023 - Present</p>
+                        </div>
+                    </div>
                     
                     <div class="education1">
                         <div class="edu-column-1">
@@ -203,21 +162,29 @@
 
                     <div class="certificate-container">
 
-                        <h4 class="school-name">Ruse Technical University "Angel Kanchev"</h4>
+                        <h4 class="school-name">Software University</h4>
 
-                        <h4 class="certificate-name">Certificate of computer literacy</h4>
+                        <h4 class="certificate-name">C# Basics</h4>
+                        <p class="certificate-details">Conditonal Statements, Advanced Conditional Statements, For-Loop, While-Loop,Nested Loops, Good Practices</p>
+                        <h4 class="certificate-name">C# Fundamentals</h4>
+                        <p class="certificate-details">Data Types and Variables, HTTP Basics, Arrays, Associative Arrays, Methods, Lists, Objects and Classes, 
+                            Software Development Concepts, Regular Expressions, Database Basics, QA Introduction</p>
+                        <h4 class="certificate-name">C# Advanced</h4>
+                        <p class="certificate-details">Stacks and Queues, Multidimensional Arrays, Advanced Sets and Dictionaries, Streams, 
+                            Files and Directories, Implementing Linked List, Stack & Queues, Iterators and Comparators, Generics </p>
+                        <h4 class="certificate-name">C# OOP</h4>
+                        <p class="certificate-details">Inheritance and Encapsulation, Interfaces and Abstraction, 
+                            Polymorphism, Exception Handling, SOLID Principles, Reflection and Attributes, Unit Testing, Mocking, Mocking and Test Driven Development, Design Patterns </p>
+                        <h4 class="certificate-name">HTML & CSS</h4>
+                        <p class="certificate-details">Typography in CSS, Box Model and Position, Flexbox, Responsive Web Design, Forms & Working with Forms</p>
 
                     </div>
 
                     <div class="certificate-container">
 
-                        <h4 class="school-name">Software University</h4>
+                        <h4 class="school-name">Ruse Technical University "Angel Kanchev"</h4>
 
-                        <h4 class="certificate-name">C# Basics</h4>
-                        <h4 class="certificate-name">C# Fundamentals</h4>
-                        <h4 class="certificate-name">C# Advanced</h4>
-                        <h4 class="certificate-name">C# OOP</h4>
-                        <h4 class="certificate-name">HTML & CSS</h4>
+                        <h4 class="certificate-name">Certificate of computer literacy</h4>
 
                     </div>
                 </div>
@@ -258,18 +225,18 @@
                     <p class="skills-list"> 
 
                         <ul>
+                            <li>C#, JavaScript, HTML, CSS</li>
+                            <li>Visual Studio 2022</li>
+                            <li>Visual Studio Code</li>
                             <li>CRM / ERP</li>
                             <li>Google G Suite</li>
                             <li>Spreadsheets</li>
                             <li>Google Apps Script</li>
                             <li>Data management skills</li>
                             <li>Hardware knowledge</li>
-                            <li>DAT LoadBoard</li>
-                            <li>EFS and Comdata e-funds</li>
                             <li>MS Office</li>
                             <li>WordPress</li>
-                            <li>Visual Studio 2023</li>
-                            <li>Visual Studio Code</li>
+                            <li>EFS and Comdata e-funds</li>
                             <li>Photoshop Enthusiast</li>
                         </ul>
                         
@@ -327,7 +294,7 @@
 
                 </div>
 
-                <h2 class="skills">ADDITIONAL SKILLS</h2> 
+                <h2 class="skills additional">ADDITIONAL SKILLS</h2> 
 
                 <div class="driving-container">
                     <img class="driving-svg" src="./images/SVG/car2.svg" alt="">

@@ -5,7 +5,7 @@
 }
 
 .dogs-container:hover:after {
-    content: url(./images/Nera\ &\ Joey.jpg);
+    content: url(/images/Nera\ &\ Joey.jpg);
     background-repeat: no-repeat;
     background-position: left bottom;
     height: 20px;
