@@ -12,18 +12,19 @@ body {
     height: 2055px;
     background-color: #313030;
     display: flex;
-    width: 960px;
+    width: 900px;
     margin: 0.2em;
 }
 
 .big-container {
     display: flex;
     flex-direction: row;
+
 }
 
 .bigger-container {
     height: 2055px;
-    padding: 2em;
+    padding: 1.5em;
     margin-left: 0.5em;
     border-top: 25px solid #22405C;
     border-bottom: 25px solid #22405C;
@@ -45,6 +46,10 @@ image {
     display: flex;
     justify-content: space-between;
     font-size: 12px;
+}
+
+.tasks-achievements{
+ font-size: 0.8em;   
 }
 
 
@@ -70,6 +75,7 @@ image {
     border-top: 25px solid #182D41;
     border-bottom: 25px solid #182D41;
     color: #FFFFEE;
+    margin-left: 0.5em;
 }
 
 .right-container h2 {
@@ -79,9 +85,9 @@ image {
 }
 
 img {
-    width: 140px;
-    height: 140px;
-    border-radius: 0.6em;
+    width: 160px;
+    height: 160px;
+    border-radius: 15%;
     margin-top: 2em;
 }
 
@@ -120,9 +126,9 @@ img {
 
 .upper-column-employer{
     display: flex;
-    line-height: 1.5em;
-    margin-top: 0.8em;
-    margin-bottom: 0.6em;
+    line-height: 1.3em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
     font-size: 0.95em;
 }
 
@@ -138,18 +144,40 @@ img {
 }
 
 .lower-column ul li {
-    font-size: 14px;
+    text-align:justify;
+    font-size: 12px;
     padding-bottom: 0.6em;
     font-weight: 500;
+    list-style: none; /* remove the bullets */
+    list-style: "✦"; /* assign new bullet icons instead of the original ones */
 }
+
+/* Different bullet icon on the last child of the ul li construction to point out that is an ACHIEVEMENT, not a TASK */
+
+.lower-column ul li:last-child{
+    list-style-type:"⦿";
+}
+
+/* Control the space between the bullet points and the text in the ul li span construction */
+li span { 
+    position: relative;
+    left: 0.3em;
+  }
+
+
+  /* Adds a blue border line on the bottom the last child in the ul li construction */
 .lower-column ul li:last-child{
     border-bottom: 1px solid #307de2;
     padding-bottom: 0.6em;
 }
 
 .upper-column-2 {
-    margin-left: 4em;
+    margin-left: 7em;
     padding-bottom: 0.5em;
+}
+.upper-column-2 p{
+    font-size: 12px;
+    font-weight: 600;
 }
 
 .upper-column-1 {
@@ -166,19 +194,11 @@ img {
     width: 150px;
 }
 
-.period-employer4,
-.location-employer4 {
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1.5em;
-    margin-left: 4em;
-    width: 150px;
-
-}
 
 .description {
-    font-size: 14px;
+    font-size: 11px;
     font-weight: 500;
+    font-style: italic;
 }
 
 .lower-column ul li:last-child {
@@ -196,12 +216,14 @@ img {
     margin-right: -2em;
 }
 
-.school {
-    color: #307de2;
+.edu-column-2 p{
+    font-weight: 600;
 }
 
 
-
+.school {
+    color: #307de2;
+}
 
 .certification{
     padding-top: 1.5em;
@@ -223,17 +245,25 @@ img {
     padding-bottom: 1em;
 }
 
-.certificate-name {
+
+.certificate-name a{
+    text-decoration: none;
     color: #307de2;
 }
 .certificate-details{
     font-size: 12px;
 }
 
+.languages{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
 .languages-container {
     display: flex;
-    gap: 0.75em;
+    gap: 1em;
     font-size: 0.8em;
+    padding-bottom: 0.5em;
 }
 
 .dot {
@@ -265,8 +295,8 @@ img {
     align-items: center;
     padding-left: 0.5em;
     padding-right: 0.5em;
-    line-height: 1.3em;
-    font-size: 0.8em;
+    line-height: 1.4em;
+    font-size: 0.9em;
 }
 
 
@@ -364,7 +394,6 @@ img {
     position: sticky;
     top: 5px;
     width: 313px;
-    height: auto;
 }
 
 .links-container1 h2 {
@@ -374,10 +403,11 @@ img {
 }
 
 .links-container1  h4 a {
+    font-size: 13px;
     text-align: center;
     text-decoration: none;
     color: #FFFFEE;
-    padding-bottom: 1em;
+    padding-bottom: 0.2em;
 }
 
 .links-container1 h4 {
@@ -388,7 +418,7 @@ img {
 .find-me-online {
     padding-top: 2em;
     width: 100%;
-    max-height: auto;
+    /* max-height: auto; */
     text-align: center;
 }
 
@@ -397,11 +427,11 @@ img {
 .facebook-container{
     display: flex;
     width: 300px;
-    max-height: auto;
     align-items: flex-end;
     justify-content: center;
     text-align: center;
-    gap: 1.3em;
+    gap: 1.2em;
+    font-size: 14px;
 }
 
 .linkedin-container img,
@@ -435,6 +465,12 @@ img {
 
 .links-left-column{
     text-align: center;
+}
+
+.links-left-column h4{
+    text-align: center;
+    padding-bottom: 1px;
+    line-height: 0.2em;
 }
 
 .softuni-svg{

@@ -5,20 +5,21 @@
         opacity: 100%;
         -webkit-print-color-adjust: economy;
         print-color-adjust:economy;
+        width: 960px;
     }
 
     .big-container{
         
-        border:solid rgb(0, 0, 0); 
         border-width:1px 0 0 1px;
     }
 
     .bigger-container {
-        height: 400px;
+        height: 410px;
         padding: 2em;
         background-color: #182D41;
         color: #FFFFEE;
         font-size: 1em;
+        margin-left: 0;
     }
 /* 
     .bigger-container,
@@ -56,7 +57,8 @@
         display: flex;
         flex-direction: row;
         width: 908px;
-        height: 500px;
+        height: auto;
+        margin-top: -2em; 
     }
 
     .links-left-column,
@@ -64,19 +66,13 @@
         width: 454px;
     }
 
-    .education-heading{
-        padding-top: 5em;
-    }
-
-    .skills.additional{
-        padding-top: 4em; 
+    .upper-column-employer:first-child {
+        margin-bottom: 20em;
     }
 
     .links-right-column{
-        justify-content: center;
-        align-content: center;
-        text-align: center;
-        align-items: center;
+
+        align-items: flex-start;
         padding-top: 0;
     }
     
