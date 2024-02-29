@@ -323,6 +323,10 @@ li span {
     gap: 1.5em;
 }
 
+.organized-container h4{
+    padding-right: 0.5em;
+}
+
 .team-leader-svg,
 .organized-svg {
     width: 45px;

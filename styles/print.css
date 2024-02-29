@@ -21,24 +21,10 @@
         font-size: 1em;
         margin-left: 0;
     }
-/* 
-    .bigger-container,
-    .right-container {
-        padding: 2em;
-        margin-left: 0.5em;
-    }  */
 
     .right-container {
         width:348px;
     }
-
-/*     .bigger-container,
-    .left-container,
-    .right-container{
-        border:solid white; 
-        border-width:1px 0 0 1px;
-        border-bottom-style: none;
-    }  */
 
     .links-left-column,
     .links-left-column a
@@ -92,7 +78,7 @@
         margin-left: 9em;
     }
 
-    /* hide the button when printing */
+    /* hide the print button when printing */
     .print{
         visibility: hidden;
     }
