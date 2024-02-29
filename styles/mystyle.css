@@ -245,7 +245,7 @@ li span {
     padding-bottom: 1em;
 }
 
-
+.certificate-name,
 .certificate-name a{
     text-decoration: none;
     color: #307de2;
