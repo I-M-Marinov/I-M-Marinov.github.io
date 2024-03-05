@@ -1,5 +1,5 @@
 # CV/Resume Template By Ivan Marinov
-### Deployed via GItHub Pages --> https://i-m-marinov.github.io/
+### Deployed via GitHub Pages --> https://i-m-marinov.github.io/
 
 ## Description:
 
@@ -35,6 +35,11 @@
 <img src="./Resume-CV-Screenshot.png">
 </p>
 
+
+## Planned updates:
+
+- Responsive.css
+  
 
 
 
