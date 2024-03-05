@@ -118,7 +118,9 @@ img {
     border-bottom: 2px solid #5c5757;
 }
 
-.upper-column-employer{
+.upper-column-employer1,
+.upper-column-employer2,
+.upper-column-employer3{
     display: flex;
     line-height: 1.3em;
     margin-top: 0.5em;
@@ -184,7 +186,7 @@ li span {
     font-size: 14px;
     font-weight: 500;
     line-height: 1.5em;
-    margin-left: -2em;
+    margin-left: -1.5em;
     width: 150px;
 }
 
@@ -294,20 +296,23 @@ li span {
 }
 
 
-.strenghts-container {
+.strenghts-container,
+.projects-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-left: 1em;
     padding-right: 1em;
     font-size: 0.8em;
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 .team-leader-container,
 .organized-container,
 .time-management,
 .problem-solver,
-.knowledgable {
+.knowledgable{
     display: flex;
     width: 300px;
     padding-left: 2em;
@@ -350,8 +355,15 @@ li span {
 }
 
 .passions-container,
-.driving-container{
+.driving-container,
+.projects-container{
     font-size: 0.8em;
+}
+
+.projects-container h4 a{
+    text-decoration: none;
+    color: #FFFFEE;
+    line-height: 2em;
 }
 
 .computer-science-container,
@@ -416,7 +428,6 @@ li span {
 .find-me-online {
     padding-top: 2em;
     width: 100%;
-    /* max-height: auto; */
     text-align: center;
 }
 
@@ -466,7 +477,6 @@ li span {
 }
 
 .links-left-column h4{
-    text-align: center;
     padding-bottom: 1px;
     line-height: 0.2em;
 }

@@ -78,7 +78,19 @@
         margin-left: 9em;
     }
 
-    /* hide the print button when printing */
+    .languages{
+        margin-top: 2em;
+    }
+
+    .skills.passions{
+        margin-top: 1.5em;
+    }
+
+    .upper-column-employer2{
+        margin-top: 4em;
+    }
+
+    /* hide the print/save as PDF button when printing */
     .print{
         visibility: hidden;
     }
