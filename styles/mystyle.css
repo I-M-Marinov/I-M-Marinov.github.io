@@ -32,16 +32,11 @@ body {
     color: #FFFFEE;
 
 }
-
-
 image {
     display: block;
     width: 100%;
     height: auto;
 }
-
-
-
 .contact-info {
     display: flex;
     justify-content: space-between;
@@ -51,7 +46,6 @@ image {
 .tasks-achievements{
  font-size: 0.8em;   
 }
-
 
 .left-container {
     width: 595px;
