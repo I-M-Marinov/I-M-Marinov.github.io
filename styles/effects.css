@@ -18,7 +18,7 @@
 .github-container:hover,
 .facebook-container:hover{
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: rgb(18, 20, 17);
     text-shadow: 2px 2px 0px rgba(64, 116, 181, 1), 
                2px -2px 0px rgba(64, 116, 181, 1), 
 			   -2px 2px 0px rgba(64, 116, 181, 1), 
@@ -31,9 +31,19 @@
 }
 
 .links-container1 h4 a:hover{
+    text-decoration: none;
     text-shadow: 0px 2px 25px rgba(0, 0, 0, 1); 
-    color: rgb(140, 204, 56, 1);
+    color: rgb(3, 0, 0);
+    text-shadow: 2px 2px 0px rgb(140, 204, 56, 1),
+               2px -2px 0px rgb(140, 204, 56, 1),
+			   -2px 2px 0px rgb(140, 204, 56, 1),
+			   -2px -2px 0px rgb(140, 204, 56, 1), 
+			   2px 0px 0px rgb(140, 204, 56, 1), 
+			   0px 2px 0px rgb(140, 204, 56, 1), 
+			   -2px 0px 0px rgb(140, 204, 56, 1), 
+			   0px -2px 0px rgb(140, 204, 56, 1);
 }
+
 
 .linkedin-container img:hover,
 .github-container img:hover,
@@ -88,5 +98,13 @@
 .projects-container h4 a:hover{
     text-decoration: none;
     text-shadow: 0px 2px 25px rgba(0, 0, 0, 1); 
-    color: rgb(140, 204, 56, 1);
+    color: rgb(18, 20, 17);
+    text-shadow: 2px 2px 0px rgb(140, 204, 56, 1),
+               2px -2px 0px rgb(140, 204, 56, 1),
+			   -2px 2px 0px rgb(140, 204, 56, 1),
+			   -2px -2px 0px rgb(140, 204, 56, 1), 
+			   2px 0px 0px rgb(140, 204, 56, 1), 
+			   0px 2px 0px rgb(140, 204, 56, 1), 
+			   -2px 0px 0px rgb(140, 204, 56, 1), 
+			   0px -2px 0px rgb(140, 204, 56, 1);
 }
