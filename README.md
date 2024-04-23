@@ -3,7 +3,7 @@
 
 ## Description:
 
-- A CV / Resume template developed HTML/CSS
+- A CV / Resume template developed with HTML/CSS
 
 ## Technology stack:
 - HTML
