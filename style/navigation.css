@@ -1,0 +1,40 @@
+.navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.navigation ul {
+    display: flex;
+    gap: 0.2em;
+}
+
+.navigation li {
+    list-style: none;
+    padding: 0 0.5em;
+    text-align: right;
+}
+
+.row-number{
+    color: #5c5a5a;
+    
+}
+.navigation a{
+   text-decoration: none;
+   color: #B2B2B2;
+
+}
+
+.tab {
+    display: flex;
+    font-size: 13px;
+    background-color: #2E2E2E;
+    padding: 0.1em 4em  0.1em 0;
+}
+
+.tab.special{
+    border-top: 3px #7160E8 solid;
+    color: #ffffff;
+    font-weight: bold;
+}

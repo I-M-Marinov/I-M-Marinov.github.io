@@ -1,29 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
-}
-
-body {
-    font-family: "Montserrat", sans-serif;
-    background-color: #313030;
+.resume-body {
+    font: 16px/1.5 "Montserrat", sans-serif;
     display: flex;
-    width: 75%;
+    width: 80%;
     height: auto;
     margin: 0 auto;
+    background-color: #1F1F1F;
+    margin-top: 0.4em;
 }
 
 .big-container {
     display: flex;
     flex-direction: row;
-
 }
 
 .bigger-container {
-    height: 2055px;
+    height: auto;
     padding: 1.5em;
     margin-left: 0.5em;
     border-top: 25px solid #22405C;
@@ -37,10 +30,12 @@ image {
     width: 100%;
     height: auto;
 }
+
 .contact-info {
     display: flex;
     justify-content: space-between;
     font-size: 12px;
+    padding-top: 1.5em;
 }
 
 .tasks-achievements{
@@ -49,7 +44,7 @@ image {
 
 .left-container {
     width: 595px;
-    padding: 2em 2em 2em 3em;
+    padding: 1.5em 1.5em 1.5em 3em;
     background-image: url(../images/background1.jpg);
     background-size: cover;
     background-position: center;
@@ -61,6 +56,7 @@ image {
 .right-container {
     background-color: #22405C;
     width: 313px;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -78,11 +74,12 @@ image {
     text-align: center;
 }
 
-img {
+.profile-picture {
     width: 160px;
     height: 160px;
     border-radius: 15%;
     margin-top: 2em;
+    pointer-events: none;
 }
 
 .phone-svg,
@@ -105,8 +102,6 @@ img {
     text-decoration: none;
     color: black;
 }
-
-
 
 .inner-columns {
     display: flex;
@@ -155,7 +150,7 @@ img {
 }
 
 /* Control the space between the bullet points and the text in the ul li span construction */
-li span { 
+.task { 
     position: relative;
     left: 0.3em;
   }
@@ -262,7 +257,7 @@ li span {
     padding-bottom: 0.5em;
 }
 
-.dot {
+.coma {
     height: 8px;
     width: 8px;
     background-color: #307de2;
@@ -273,7 +268,7 @@ li span {
     padding-left: 0.4em;
 }
 
-.dot-white {
+.coma-white {
     height: 8px;
     width: 8px;
     border-radius: 50%;
@@ -390,8 +385,8 @@ li span {
 
 
 .driving-svg{
-    width: 55px;
-    height: 55px;
+    width: 35px;
+    height: auto;
     overflow: hidden; 
     margin: 0;
 }
@@ -488,10 +483,3 @@ li span {
     overflow: hidden; 
     margin: 0;
 }
-
-
-
-
-
-
-

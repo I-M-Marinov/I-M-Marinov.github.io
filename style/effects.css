@@ -1,0 +1,26 @@
+.tab:hover {
+    color: #ffffff;
+    background-color: #3D3D3D;
+}
+
+.solution-explorer:hover {
+    border-top: 3px #7160E8 solid;
+}
+
+.row:hover {
+    background-color: #2E2E2E;
+}
+
+.code-row:hover {
+    background-color: #2E2E2E;
+}
+
+.url-container img:hover{
+    background-color: #424040;
+}
+
+.go-to-start-button:hover {
+    opacity: 0.8;
+    color: rgb(255, 255, 255);
+  }
+

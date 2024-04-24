@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I-M-Marinov-Projects</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+    <div class="main-container">
+
+        <nav class="navigation">
+            <div>
+                <ul>
+                    <a href="./index.html">
+                        <div class="tab">
+                            <li>Home.cs</li>
+                        </div>
+                    </a>
+                    <a href="./about-me.html">
+                        <div class="tab">
+                            <li>About-Me.cs</li>
+                        </div>
+                    </a>
+                    <a href="./projects.html">
+                        <div class="tab special">
+                            <li>Projects.cs</li>
+                        </div>
+                    </a>
+                    <a href="./my-resume.html">
+                        <div class="tab">
+                            <li>My-Resume.cs</li>
+                        </div>
+                    </a>
+                    
+                </ul>
+            </div>
+        </nav>
+
+        <div class="bottom-container">
+
+            <div class="app-container" >
+
+                <ol class="code-row">
+                    <li><span class="row-number" style="margin-left: 10px;">1</span><p>using <span class="usings">System<span class="semicolon">;</span></span></p><br></li>
+                </ol>
+
+                <ol class="code-row">
+                    <li><span class="row-number" style="margin-left: 10px;">2</span><p>using <span class="usings">System.Text<span class="semicolon">;</span></span></p><br></li>
+                </ol>
+
+                <ol class="code-row">
+                    <li><span class="row-number" style="margin-left: 10px;">3</span><p>using <span class="usings">Ivan-Marinov-Portfolio.Projects<span class="semicolon">;</span></span></p><br></li>
+                </ol>
+
+                <ol class="code-row">
+                    <li><span class="row-number" style="margin-left: 10px;">4</span><br></li>
+                </ol>
+
+                <ol class="code-row">
+                    <li><span class="row-number"style="margin-left: 10px;">5</span><p>namespace <span class="usings">Ivan-Marinov-Portfolio</span></p><br></li>
+                </ol>
+                <ol class="code-row">
+                    <li><span class="row-number" style="margin-left: 10px;">6</span><p>{</p><br></li>
+                </ol>
+                    
+                <ol class="code-row">
+                    <li><span class="row-number" style="margin-left: 10px;">7</span><p style="margin-left: 25px;">static string <span class="method"><strong>PrintProjects<span class="parentheses">()</span></strong></span></p></li>
+                </ol>
+
+                <ol class="code-row">
+                    <li><span class="row-number" style="margin-left: 10px;">8</span><p style="margin-left: 30px;">{</p><br></li>
+                </ol>
+
+                <ol class="code-row">
+                    <li><span class="row-number" style="margin-left: 10px;">9</span><p style="margin-left: 50px;"><span class="console">StringBuilder</span><span class="variable"> sb </span><span class="equals">=</span><span class="new-keyword"> new </span><span class="console">StringBuilder</span><span class="execute-method">()</span><span class="semicolon">;</span></p><br></li>
+                </ol>
+
+                <ol class="code-row">
+                    <li><span class="row-number">10</span><br></li>
+                </ol>
+
+                <ol class="code-row">
+                    <li><span class="row-number">11</span><p style="margin-left: 50px;"><span class="foreach-cycle">foreach </span><span class="execute-method">(</span>var<span class="variable"> project </span> <span class="in-keyword">in</span> <span class="collection">projects</span><span class="execute-method">)</span></p><br></li>
+                </ol>
+
+                <ol class="code-row">
+                    <li><span class="row-number">12</span><p style="margin-left: 50px;">{</p><br></li>
+                </ol>
+
+                <ol class="code-row">
+                    <li><span class="row-number">13</span><p style="margin-left: 70px;"><span class="variable">sb</span><span class="dot">.</span><span class="writeline">AppendLine</span><span class="execute-method">(</span><span class="text">$"<span class="execute-method">{</span><span class="variable">project.Name</span><span class="execute-method">}</span>"<span class="execute-method">)</span><span class="semicolon">;</span></p><br></li>
+                </ol>
+
+                <ol class="code-row">
+                    <li><span class="row-number">14</span><p style="margin-left: 70px;"><span class="variable">sb</span><span class="dot">.</span><span class="writeline">AppendLine</span><span class="execute-method">(</span><span class="text">$"Description:<span class="execute-method">{</span><span class="variable">project.Description</span><span class="execute-method">}</span>"<span class="execute-method">)</span><span class="semicolon">;</span></p><br></li>
+                </ol>
+
+                <ol class="code-row">
+                    <li><span class="row-number">15</span><p style="margin-left: 70px;"><span class="variable">sb</span><span class="dot">.</span><span class="writeline">AppendLine</span><span class="execute-method">(</span><span class="text">$"URL:<span class="execute-method">{</span><span class="variable">project.Url</span><span class="execute-method">}</span>"<span class="execute-method">)</span><span class="semicolon">;</span></p><br></li>
+                </ol>
+
+                <ol class="code-row">
+                    <li><span class="row-number">16</span><p style="margin-left: 50px;">}</p><br></li>
+                </ol>
+
+                <ol class="code-row">
+                    <li><span class="row-number">17</span><p style="margin-left: 45px;"><span class="return-keyword">return </span><span class="variable">sb</span><span class="dot">.</span><span class="writeline">ToString</span><span class="execute-method">()</span><span class="dot">.</span><span class="writeline">Trim</span><span class="execute-method">()</span><span class="semicolon">;</span></p><br></li>
+                </ol>
+
+                <ol class="code-row">
+                    <li><span class="row-number">18</span><p style="margin-left: 30px;">}</p><br></li>
+                </ol>
+
+                <ol class="code-row">
+                    <li><span class="row-number">19</span><p style="margin-left: 20px;"><span class="method"><strong>PrintProjects</strong><span class="execute-method">()</span><span class="semicolon">;</span></strong></span></p><br></li>
+                </ol>
+                
+                <ol class="code-row">
+                    <li><span class="row-number">20</span><p>}</p><br></li>
+                </ol>      
+
+            </div>
+
+            <div class="solution-explorer">
+
+                <div class="row"><p><img class="solution-icon" src="./icons/devblog-brand-visualstudio2022.png" alt="solution-icon">Solution 'Ivan-Marinov-Portfolio'</p></div>
+                <div class="row"><ul style="margin-left: 25px;"><img class="solution-csharp-icon" src="./icons/file_type_csharp_icon.png" alt="chsarp-icon">Ivan-Marinov-Portfolio</ul></div>
+                <a href="./index.html"><div class="row"><li><img class="solution-csharp-icon" src="./icons/file_type_csharp_icon.png" alt="chsarp-icon">Home.cs</li></div></a>
+                <a href="./about-me.html"><div class="row"><li><img class="solution-csharp-icon" src="./icons/file_type_csharp_icon.png" alt="chsarp-icon">About-Me.cs</li></div></a>
+                <a href="./projects.html"><div class="row special"><li><img class="solution-csharp-icon" src="./icons/file_type_csharp_icon.png" alt="chsarp-icon">Projects.cs</li></div></a>
+                <a href="./my-resume.html"><div class="row"><li><img class="solution-csharp-icon" src="./icons/file_type_csharp_icon.png" alt="chsarp-icon">My-Resume.cs</li></div></a>
+
+            </div>
+
+        </div>
+
+        <div class="project-container">
+
+            <div class="project-picture">
+                <img src="./images/projects-screenshots/Screenshot 1.png" alt="">
+            </div>
+
+            <div class="project-description">
+                <h2>Rock-Paper-Scissors-Lizard-Spock Console Game</h2>
+
+                <h3>Description:</h3>
+                <p>A version of the popular game ROCK - PAPER - SCISSORS with the addition of the LIZARD and SPOCK as thought of by Sam Kass and Karen Bryla developed for Console in C#.</p>
+
+              <div class="url-container">
+                <h3>URL:</h3>
+                <span><a href="https://github.com/I-M-Marinov/Rock-Paper-Scissors-Lizard-Spock-by-I-M-Marinov" target=”_blank”><img src="./icons/github-octocat-svgrepo-com.svg" alt="github-repository-link"></a></span>
+              </div>
+
+            </div>
+
+        </div>
+
+        <div class="project-container">
+
+            <div class="project-picture">
+                <img src="./images/projects-screenshots/Phone-book-screenshot.png" alt="">
+            </div>
+
+            <div class="project-description">
+                
+                    <h2>Phone-Book-by-I-M-Marinov</h2>
+
+                    <h3>Description:</h3>
+                    <p>Simple UI Windows application for saving your contacts developed in C#.</p>
+
+                    <div class="url-container">
+                        <h3>URL:</h3>
+                        <span><a href="https://github.com/I-M-Marinov/Phone-Book-by-I-M-Marinov" target=”_blank”><img src="./icons/github-octocat-svgrepo-com.svg" alt="github-repository-link"></a></span>
+                    </div>
+            </div>
+
+        </div>
+
+        <div class="project-container">
+
+            <div class="project-picture special">
+                <img src="./images/projects-screenshots/Resume-CV-Screenshot.png" alt="">
+            </div>
+
+            <div class="project-description">
+                <h2>CV/Resume Template By I-M-Marinov</h2>
+
+                <h3>Description:</h3>
+                <p>A CV / Resume template developed with HTML/CSS.</p>
+
+              <div class="url-container">
+                <h3>URL:</h3>
+                <span><a href="https://github.com/I-M-Marinov/I-M-Marinov.github.io" target=”_blank”><img src="./icons/github-octocat-svgrepo-com.svg" alt="github-repository-link"></a></span>
+              </div>
+
+            </div>
+
+        </div>
+
+        <footer>
+            <p>2024 Copyright® I-M-Marinov</p>
+        </footer>
+
+    </div>
+    
+</body>
+</html>

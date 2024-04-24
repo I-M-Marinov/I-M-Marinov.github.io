@@ -1,6 +1,7 @@
 @media print {
     
     body{
+        
         flex-direction: column;
         opacity: 100%;
         -webkit-print-color-adjust: economy;

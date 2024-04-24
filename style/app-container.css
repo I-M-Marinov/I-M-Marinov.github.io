@@ -1,0 +1,89 @@
+.app-container{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    padding: 0.5em 0em 0.5em 1em;
+    flex-grow: 1;
+    color: #357FD6;
+    border-top: 3px #7160E8 solid;
+}
+
+.app-container ol {
+    list-style: none;
+}
+
+.code-row{
+    display: inline-block;
+}
+
+.code-row li {
+    display: flex;
+    align-items: center; 
+}
+
+.code-row a{
+    text-decoration: none;
+    color: #5FBDF9;
+}
+
+.row-number {
+    margin-right: 15px;
+    text-align: right;
+}
+
+
+.method{
+    color: #D0DCA1;
+}
+
+.usings,
+.semicolon,
+.dot {
+    color: #ffffff;
+}
+
+.execute-method{
+    color: #DE8323;
+}
+
+.parentheses{
+    color: #DE66A2;
+}
+
+.console{
+    color: #4EC9B0;
+}
+.writeline{
+    color: #DCDCAA;
+}
+
+.text{
+    color: #D19D6F;
+}
+
+.variable{
+    color: #5FBDF9;
+}
+.equals {
+    color: #B4B4B4;
+}
+.new-keyword{
+    color: #2A6AC2;
+}
+
+.return-keyword{
+    color: #c25490;
+}
+
+.foreach-cycle,
+.in-keyword {
+    color: #D89BC5;
+}
+
+.collection {
+    color: white;
+}
+
+.comment{
+    color: #579D38;
+}
