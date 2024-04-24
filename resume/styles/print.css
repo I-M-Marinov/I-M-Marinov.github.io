@@ -1,6 +1,21 @@
 @media print {
     
-    body{
+
+    body {
+        width: 100%;
+        background-color: #fafafa;
+        border: 1px #4e4d4d solid;
+        padding: 0;
+        margin: 0;
+    }
+
+    .main-container{
+        padding: 0;
+        margin: 0;
+        background-color: #fafafa;
+    }
+
+    .resume-body{
         
         flex-direction: column;
         opacity: 100%;
@@ -62,10 +77,6 @@
         width: 454px;
     }
 
-    .upper-column-employer:first-child {
-        margin-bottom: 20em;
-    }
-
     .links-left-column{
         margin-left: 5em;
         margin-right: 4em;
@@ -83,21 +94,50 @@
     text-align: center;
     }
 
-    .languages{
-        margin-top: 1.5em;
-    }
-
     .skills.passions{
         margin-top: 1.5em;
     }
 
-    .upper-column-employer2{
+    #id-experience{
         margin-top: 4em;
     }
 
+    #id-tech-skills{
+        margin-top: 2.5em;
+    }
+
+    #id-soft-skills{
+        margin-top: 1.5em;
+    }
+
+    #id-projects{
+        margin-top: 1.5em;
+    }
+
+    #id-additional-info{
+        margin-top: 2.5em;
+    }
+
+    .certificate-container h4:first-of-type{
+        align-self: center;
+    }
+
+    #ruse{
+        margin-top: 1.5em;
+    }
+
+    .driving-container{
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
     /* hide the print/save as PDF button when printing */
-    .print{
-        visibility: hidden;
+    .print,
+    .navigation,
+    .bottom-container,
+    .go-to-start-button,
+    footer{
+        display: none;
     }
 
 }
