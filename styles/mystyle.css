@@ -9,11 +9,11 @@
 
 body {
     font-family: "Montserrat", sans-serif;
-    height: 2055px;
     background-color: #313030;
     display: flex;
-    width: 900px;
-    margin: 0.2em;
+    width: 75%;
+    height: auto;
+    margin: 0 auto;
 }
 
 .big-container {
