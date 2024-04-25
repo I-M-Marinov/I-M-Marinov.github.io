@@ -3,6 +3,7 @@
 @import url('./style/app-container.css');
 @import url('./style/navigation.css');
 @import url('./style/solution-explorer.css');
+@import url('./resume/styles/main.css');
 
 
 * {
@@ -38,7 +39,6 @@ footer{
     align-self: center;
 }
 
-
 .bottom-container{
     font-size: 14px;
     font-weight: 600;
@@ -47,8 +47,6 @@ footer{
     border-top: 1px #4e4d4d solid;
     border-bottom: 1px #4e4d4d solid;
 }
-
-
 
 .console-container {
     padding: 2em 0 2em 0;
