@@ -32,7 +32,8 @@
 }
 
 
-.method{
+.method,
+.method a{
     color: #D0DCA1;
 }
 
