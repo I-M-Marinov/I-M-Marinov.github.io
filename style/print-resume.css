@@ -1,5 +1,18 @@
 @media print {
-    
+
+    /* hide before printing */
+    .print,
+    .navigation,
+    .bottom-container,
+    .go-to-start-button,
+    .print-resume-method,
+    .buttons-container {
+        display: none;
+    }
+
+    footer {
+        display: none;
+    }
 
     body {
         width: 100%;
@@ -9,25 +22,29 @@
         margin: 0;
     }
 
-    .main-container{
+    .main-container {
         padding: 0;
         margin: 0;
         background-color: #fafafa;
     }
 
-    .resume-body{
-        
+    .resume-body,
+    .resume-body-hidden{
+        display: flex;
+        margin: 0;
+        padding: 0;
         flex-direction: column;
         opacity: 100%;
         -webkit-print-color-adjust: economy;
-        print-color-adjust:economy;
+        print-color-adjust: economy;
         width: 960px;
         background-color: #ffffff;
+
     }
 
-    .big-container{
-        
-        border-width:1px 0 0 1px;
+    .big-container {
+        border-width: 1px 0 0 1px;
+        padding: 0;
     }
 
     .bigger-container {
@@ -45,99 +62,84 @@
     }
 
     .right-container {
-        width:348px;
+        width: 348px;
     }
 
     .links-left-column,
-    .links-left-column a
-    .links-right-column
-    .links-right-column a{
+    .links-left-column a .links-right-column .links-right-column a {
         text-decoration: none;
     }
 
-
-    .right-column{
+    .right-column {
         font-weight: bold;
         border: 1px solid black;
     }
 
-
-
-    .links-container1{
+    .links-container1 {
         display: flex;
         flex-direction: row;
         align-items: flex-start;
         align-content: space-evenly;
         width: 908px;
-        margin-top: -2em; 
+        margin-top: -2em;
     }
 
     .links-left-column,
-    .links-right-column{
+    .links-right-column {
         width: 454px;
     }
 
-    .links-left-column{
+    .links-left-column {
         margin-left: 5em;
         margin-right: 4em;
     }
 
-    
     .find-me-online {
-       padding-top: 0px;
-       margin-bottom: 20px;
+        padding-top: 0px;
+        margin-bottom: 20px;
     }
 
     .linkedin-container,
     .github-container,
-    .facebook-container{
-    text-align: center;
+    .facebook-container {
+        text-align: center;
     }
 
-    .skills.passions{
+    .skills.passions {
         margin-top: 1.5em;
     }
 
-    #id-experience{
+    #id-experience {
         margin-top: 4em;
     }
 
-    #id-tech-skills{
+    #id-tech-skills {
         margin-top: 2.5em;
     }
 
-    #id-soft-skills{
+    #id-soft-skills {
         margin-top: 1.5em;
     }
 
-    #id-projects{
+    #id-projects {
         margin-top: 1.5em;
     }
 
-    #id-additional-info{
+    #id-additional-info {
         margin-top: 2.5em;
     }
 
-    .certificate-container h4:first-of-type{
+    .certificate-container h4:first-of-type {
         align-self: center;
     }
 
-    #ruse{
+    #ruse {
         margin-top: 1.5em;
     }
 
-    .driving-container{
+    .driving-container {
         padding-bottom: 0;
         margin-bottom: 0;
-    }
-
-    /* hide the print/save as PDF button when printing */
-    .print,
-    .navigation,
-    .bottom-container,
-    .go-to-start-button,
-    footer{
-        display: none;
     }
 
 }

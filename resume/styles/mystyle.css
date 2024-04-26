@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
-.resume-body {
+.print-resume-method{
+    display: none;
+}
+
+.resume-body,
+.resume-body-hidden {
     font: 16px/1.5 "Montserrat", sans-serif;
     display: flex;
-    width: 80%;
+    width: 100%;
     height: auto;
     margin: 0 auto;
     background-color: #1F1F1F;
     margin-top: 0.4em;
 }
-
-.print-resume-method{
-    display: none;
-}
-
 .big-container {
     display: flex;
     flex-direction: row;
@@ -27,7 +27,6 @@
     border-bottom: 25px solid #22405C;
     background-color: #182D41;
     color: #FFFFEE;
-
 }
 image {
     display: block;
@@ -156,14 +155,14 @@ image {
 /* Control the space between the bullet points and the text in the ul li span construction */
 .task { 
     position: relative;
-    left: 0.3em;
+    left: 0.2em;
   }
-
 
   /* Adds a blue border line on the bottom the last child in the ul li construction */
 .lower-column ul li:last-child{
     border-bottom: 1px solid #307de2;
-    padding-bottom: 0.6em;
+    padding-bottom: 0.4em;
+    padding-left: 0.2em;
 }
 
 .upper-column-2 {
@@ -486,4 +485,60 @@ image {
     height: 90px;
     overflow: hidden; 
     margin: 0;
+}
+
+.buttons-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    padding-right: 0.65em;
+    padding-left: 0;
+ 
+}
+
+.sticky-container{
+    position: sticky;
+    padding-right: 0.65em;
+    padding-left: 0; 
+    top: 10px; 
+    z-index: 1000; 
+}
+
+.go-to-top-button-container{
+    padding-right: 1em;
+    display: flex;
+    align-items: flex-end;
+}
+
+
+.go-to-start-button-hidden{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    margin-top: 2em;
+    margin-left: 2em;
+    width: 6em;
+    height: 3em;
+    border-radius: 1em;
+    background-color: #307de2;
+    box-shadow: 0px -23px 25px 0px rgba(0, 0, 0, 0.17) 
+    inset, 0px -36px 30px 0px rgba(0, 0, 0, 0.15) 
+    inset, 0px -79px 40px 0px rgba(0, 0, 0, 0.1) 
+    inset, 0px 2px 1px rgba(0, 0, 0, 0.06), 0px 4px 2px rgba(0, 0, 0, 0.09), 0px 8px 4px rgba(0, 0, 0, 0.09), 0px 16px 8px rgba(0, 0, 0, 0.09);
+}
+
+.back-to-home-button{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    margin-top: 2em;
+    margin-left: 2em;
+    width: 6em;
+    height: 3em;
+    border-radius: 1em;
+    background-color: #50af11;
+    box-shadow: 0px -23px 25px 0px rgba(0, 0, 0, 0.17) 
+    inset, 0px -36px 30px 0px rgba(0, 0, 0, 0.15) 
+    inset, 0px -79px 40px 0px rgba(0, 0, 0, 0.1) 
+    inset, 0px 2px 1px rgba(0, 0, 0, 0.06), 0px 4px 2px rgba(0, 0, 0, 0.09), 0px 8px 4px rgba(0, 0, 0, 0.09), 0px 16px 8px rgba(0, 0, 0, 0.09);
 }

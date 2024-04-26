@@ -35,7 +35,6 @@
         height: auto;
         margin-bottom: -0.35em;
         margin-right: 0.3em;
-
     }
 
     .solution-csharp-icon{
@@ -96,6 +95,14 @@
         margin-left: -0.25em;
         padding-bottom: 0.25em;
     }
+
+    .minimize,
+    .maximize,
+    .close{
+    padding-top: 0.05em;
+    width: 1em;
+    height: 1em;
+}
 
     .console-window h1{
         padding-top: 1.5em;
@@ -190,7 +197,6 @@
         flex-grow: 2;
     }
     
-    
     .url-container img{
         width: 12%;
         border-radius: 0.2em;
@@ -215,57 +221,6 @@
     .print-resume-method a{
         text-decoration: none;
     }
-
-    /* hidden resume html file CSS */
-
-    .resume-body-hidden{
-        font: 16px/1.5 "Montserrat", sans-serif;
-        display: flex;
-        width: 100%;
-        height: auto;
-        margin: 0 auto;
-        background-color: #1F1F1F;
-        margin-top: 0.4em;
-    }
-
-    .buttons-container{
-        display: flex;
-    }
-
-    .go-to-start-button-hidden{
-        display: inline-block;
-        font-family: "Montserrat", sans-serif;
-        font-weight: 700;
-        margin-top: 2em;
-        margin-left: 2em;
-        width: 6em;
-        height: 3em;
-        border-radius: 1em;
-        background-color: #307de2;
-        box-shadow: 0px -23px 25px 0px rgba(0, 0, 0, 0.17) 
-        inset, 0px -36px 30px 0px rgba(0, 0, 0, 0.15) 
-        inset, 0px -79px 40px 0px rgba(0, 0, 0, 0.1) 
-        inset, 0px 2px 1px rgba(0, 0, 0, 0.06), 0px 4px 2px rgba(0, 0, 0, 0.09), 0px 8px 4px rgba(0, 0, 0, 0.09), 0px 16px 8px rgba(0, 0, 0, 0.09);
-    }
-
-    .back-to-home-button{
-        display: inline-block;
-        font-family: "Montserrat", sans-serif;
-        font-weight: 700;
-        margin-top: 2em;
-        margin-left: 2em;
-        width: 6em;
-        height: 3em;
-        border-radius: 1em;
-        background-color: #50af11;
-        box-shadow: 0px -23px 25px 0px rgba(0, 0, 0, 0.17) 
-        inset, 0px -36px 30px 0px rgba(0, 0, 0, 0.15) 
-        inset, 0px -79px 40px 0px rgba(0, 0, 0, 0.1) 
-        inset, 0px 2px 1px rgba(0, 0, 0, 0.06), 0px 4px 2px rgba(0, 0, 0, 0.09), 0px 8px 4px rgba(0, 0, 0, 0.09), 0px 16px 8px rgba(0, 0, 0, 0.09);
-    }
-
-    
-
 
 }
 

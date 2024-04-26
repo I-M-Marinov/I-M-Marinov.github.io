@@ -3,6 +3,7 @@
 @import url('./style/app-container.css');
 @import url('./style/navigation.css');
 @import url('./style/solution-explorer.css');
+@import url('./style/footer.css');
 @import url('./resume/styles/main.css');
 
 
@@ -13,7 +14,7 @@
 }
 
 body {
-    width: 85%;
+    width: 90%;
     height: auto;
     margin: 0 auto;
     background-color: #1F1F1F;
@@ -33,11 +34,7 @@ html {
     padding-left: 0.3em;
 }
 
-footer{
-    font-size: 0.6em;
-    color: #ffffff;
-    align-self: center;
-}
+
 
 .bottom-container{
     font-size: 14px;
@@ -53,11 +50,14 @@ footer{
 }
 
 .console-window-header{
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
     border: 3px black solid;
     width: 65%; 
     height: 35px;
     margin: 0 auto;
-    padding: 0 0 1em 0;
+    /* padding: 0 0 1em 0; */
     background-color: #2E2E2E;
 }
 
@@ -71,12 +71,18 @@ footer{
 
 }
 
-.console-window-header span img {
-    display: inline-block;
-    position: relative;
-    margin-left: auto;
-    left: 88.9%;
-    width: 2.8%;
+.console-window-header img {
+    display: flex;
+    margin-left: 0.2em;
+
+}
+
+.minimize,
+.maximize,
+.close{
+    padding-top: 0.2em;
+    width: 1.3em;
+    height: 1.3em;
 }
 
 .console-window h1,
