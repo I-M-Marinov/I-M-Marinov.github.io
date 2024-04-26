@@ -1,31 +1,48 @@
 @media (max-width: 768px) {
-    /* Tablet-specific CSS here */
+    /* Tablet CSS here */
 
     body {
-        width: 90%;
-        height: auto;
-        margin: 0 auto;
-        background-color: #1F1F1F;
-        border: 1px #4e4d4d solid;
+        width: 100%;
     }
 
     .bottom-container{
-        font-size: 10px;
+        font-size: 0.6em;
     }
 
     .app-container{
         display: flex;
-        font-size: 9px;
+        font-size: 0.75em;
         flex-direction: column;
-        width: 65%;
+        width: 70%;
         padding: 0.5em 0em 0.5em 1em;
-        flex-grow: 100;
-        color: #357FD6;
-        border-top: 3px #7160E8 solid;
+        flex-grow: 2;
+
+    }
+
+    .row-number {
+        margin-right: 1em;
+        margin-left: 0.5em;
+        text-align: right;
     }
 
     .solution-explorer{
-        display: none;
+        font-size: 0.7em;
+    }
+
+    .solution-icon
+    {
+        width: 7%;
+        height: auto;
+        margin-bottom: -0.35em;
+        margin-right: 0.3em;
+
+    }
+
+    .solution-csharp-icon{
+        width: 4%;
+        height: auto;
+        margin-bottom: -0.35em;
+        margin-right: 0.3em;
     }
 
     .navigation {
@@ -36,7 +53,7 @@
     }
     
     .navigation ul {
-        gap: 0.35em;
+        gap: 0.20em;
     }
     
     .tab {
@@ -45,6 +62,8 @@
     }
     
     .console-container {
+        display: flex;
+        flex-direction: column;
         padding: 0;
         margin: 0;
     }
@@ -72,26 +91,21 @@
     }
     
     .console-window-header span img {
-        display: inline-block;
+        display: inline-flex;
         position: relative;
+        margin-left: -0.25em;
         padding-bottom: 0.25em;
-        width: 3.0%; 
-    }
-    
-    .console-window h1,
-    .console-window h2{
-        padding: 0;
     }
 
     .console-window h1{
-        padding-top: 2em;
-        padding-left: 1em;
-        font-size: 1em;
+        padding-top: 1.5em;
+        padding-left: 1.5em;
+        font-size: 1.1em;
     }
 
     .console-window h2{
         padding-top: 1.5em;
-        padding-left: 1em;
+        padding-left: 1.5em;
         font-size: 0.6em;
     }
     
@@ -102,17 +116,157 @@
     
     .picture img{
         pointer-events: none;
-        width: 15%;
         height: auto;
         border-radius: 50%;
-        margin-left: -200px;
-        margin-bottom: -250px;
-        background-color: rgba(255, 255, 255, 1);
-        color: #000;
-        box-shadow: 0px 19px 38px 0px rgba(0,0,0,0.3),
-                    0px 15px 12px 0px rgba(0,0,0,0.22);
-    
+        margin-left: -5.5em;
+        margin-bottom: -6.5em;
+
     }
+
+    footer{
+        font-size: 0.35em;
+    }
+
+    .project-container{
+        display: flex;
+        padding-top: 0.5em;
+        padding-left: 0.6em;
+
+        max-width: 100%;
+        height: auto;
+        width: auto;
+    }
+    
+    .project-picture{
+        width: 20em;
+        height: 12em;
+        margin-right: 0.25em;
+        flex-shrink: 1;
+    }
+    
+    .project-picture img {
+        max-width: 100%;
+        height: auto;
+        width: auto;
+        pointer-events: none;
+        width: 20em;
+    }
+    
+    .project-picture.special img {
+        width: 14em;
+        height: 22em;
+    }
+    
+    .project-description {
+        width: 20em;
+        height: 12em;
+        margin-right: 0.25em;
+    }
+
+    .project-description.special {
+        width: 20em;
+        height: 22em;
+    }
+    
+    .project-description h2{
+        font-size: 0.85em;
+        padding-bottom: 0.15em;
+
+    }
+    .project-description h3{
+        font-size: 0.5em;
+        padding: 0.25em;
+    }
+    
+    .project-description p {
+        font-size: 0.45em;
+        line-height: 1.2em;
+    }
+    
+    .url-container{
+        display: flex;
+        flex-direction: column;
+        padding-top: 1em;
+        flex-grow: 2;
+    }
+    
+    
+    .url-container img{
+        width: 12%;
+        border-radius: 0.2em;
+    }
+
+    .go-to-start-button{
+        display: none;
+    }
+
+    .resume-body{
+        display: none;
+    }
+
+    .print-resume-method{
+        display: flex;
+        justify-content: center;
+        color: #D0DCA1;
+        font-size: 0.90em;
+        font-weight: 700;
+        text-decoration: none;
+    }
+    .print-resume-method a{
+        text-decoration: none;
+    }
+
+    /* hidden resume html file CSS */
+
+    .resume-body-hidden{
+        font: 16px/1.5 "Montserrat", sans-serif;
+        display: flex;
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        background-color: #1F1F1F;
+        margin-top: 0.4em;
+    }
+
+    .buttons-container{
+        display: flex;
+    }
+
+    .go-to-start-button-hidden{
+        display: inline-block;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        margin-top: 2em;
+        margin-left: 2em;
+        width: 6em;
+        height: 3em;
+        border-radius: 1em;
+        background-color: #307de2;
+        box-shadow: 0px -23px 25px 0px rgba(0, 0, 0, 0.17) 
+        inset, 0px -36px 30px 0px rgba(0, 0, 0, 0.15) 
+        inset, 0px -79px 40px 0px rgba(0, 0, 0, 0.1) 
+        inset, 0px 2px 1px rgba(0, 0, 0, 0.06), 0px 4px 2px rgba(0, 0, 0, 0.09), 0px 8px 4px rgba(0, 0, 0, 0.09), 0px 16px 8px rgba(0, 0, 0, 0.09);
+    }
+
+    .back-to-home-button{
+        display: inline-block;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        margin-top: 2em;
+        margin-left: 2em;
+        width: 6em;
+        height: 3em;
+        border-radius: 1em;
+        background-color: #50af11;
+        box-shadow: 0px -23px 25px 0px rgba(0, 0, 0, 0.17) 
+        inset, 0px -36px 30px 0px rgba(0, 0, 0, 0.15) 
+        inset, 0px -79px 40px 0px rgba(0, 0, 0, 0.1) 
+        inset, 0px 2px 1px rgba(0, 0, 0, 0.06), 0px 4px 2px rgba(0, 0, 0, 0.09), 0px 8px 4px rgba(0, 0, 0, 0.09), 0px 16px 8px rgba(0, 0, 0, 0.09);
+    }
+
+    
+
+
 }
 
 @media (min-width: 1024px) {

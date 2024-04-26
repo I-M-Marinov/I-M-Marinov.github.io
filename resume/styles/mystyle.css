@@ -10,6 +10,10 @@
     margin-top: 0.4em;
 }
 
+.print-resume-method{
+    display: none;
+}
+
 .big-container {
     display: flex;
     flex-direction: row;

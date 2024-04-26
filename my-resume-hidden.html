@@ -5,169 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I-M-Marinov-CV</title>
     <link rel="icon" type="image/x-icon" href="/resume/images/ICO/favicon.ico">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="responsive.css">
     
 </head>
 <body>
 
-        <div id="start" class="main-container">
-
-            <nav class="navigation">
-                <div>
-                    <ul>
-                        <a href="./index.html">
-                            <div class="tab">
-                                <li>Home.cs</li>
-                            </div>
-                        </a>
-                        <a href="./about-me.html">
-                            <div class="tab">
-                                <li>About-Me.cs</li>
-                            </div>
-                        </a>
-                        <a href="./projects.html">
-                            <div class="tab">
-                                <li>Projects.cs</li>
-                            </div>
-                        </a>
-                        <a href="./my-resume.html">
-                            <div class="tab special">
-                                <li>My-Resume.cs</li>
-                            </div>
-                        </a>
-                        
-                    </ul>
-                </div>
-            </nav>
-    
-            <div class="bottom-container">
-    
-                <div class="app-container" >
-    
-                    <ol class="code-row">
-                        <li><span class="row-number" style="margin-left: 10px;">1</span><p>using <span class="usings">System<span class="semicolon">;</span></span></p><br></li>
-                    </ol>
-
-                    <ol class="code-row">
-                        <li><span class="row-number" style="margin-left: 10px;">2</span><p>using <span class="usings">System.Text<span class="semicolon">;</span></span></p><br></li>
-                    </ol>
-    
-                    <ol class="code-row">
-                        <li><span class="row-number" style="margin-left: 10px;">3</span><p>using <span class="usings">Ivan-Marinov-Portfolio.My-Resume<span class="semicolon">;</span></span></p><br></li>
-                    </ol>
-    
-                    <ol class="code-row">
-                        <li><span class="row-number" style="margin-left: 10px;">4</span><br></li>
-                    </ol>
-    
-                    <ol class="code-row">
-                        <li><span class="row-number"style="margin-left: 10px;">5</span><p>namespace <span class="usings">Ivan-Marinov-Portfolio</span></p><br></li>
-                    </ol>
-                    <ol class="code-row">
-                        <li><span class="row-number" style="margin-left: 10px;">6</span><p>{</p><br></li>
-                    </ol>
-                        
-                    <ol class="code-row">
-                        <li><span class="row-number" style="margin-left: 10px;">7</span><p style="margin-left: 25px;">static string <span class="method"><strong>PrintResume<span class="parentheses">()</span></strong></span></p></li>
-                    </ol>
-    
-                    <ol class="code-row">
-                        <li><span class="row-number" style="margin-left: 10px;">8</span><p style="margin-left: 30px;">{</p><br></li>
-                    </ol>
-    
-                    <ol class="code-row">
-                        <li><span class="row-number" style="margin-left: 10px;">9</span><p style="margin-left: 50px;"><span class="console">StringBuilder</span><span class="variable"> resume </span><span class="equals">=</span><span class="new-keyword"> new </span><span class="console">StringBuilder</span><span class="execute-method">()</span><span class="semicolon">;</span></p><br></li>
-                    </ol>
-    
-                    <ol class="code-row">
-                        <li><span class="row-number">10</span><br></li>
-                    </ol>
-    
-                    <ol class="code-row">
-                        <li><span class="row-number">11</span><p style="margin-left: 50px;"><span class="foreach-cycle">foreach </span><span class="execute-method">(</span>var<span class="variable"> myResume </span> <span class="in-keyword">in</span> <span class="collection">portfolio</span><span class="execute-method">)</span></p><br></li>
-                    </ol>
-    
-                    <ol class="code-row">
-                        <li><span class="row-number">12</span><p style="margin-left: 45px;">{</p><br></li>
-                    </ol>
-    
-                    <ol class="code-row">
-                        <li><span class="row-number">13</span><p style="margin-left: 65px;"><span class="variable">sb</span><span class="dot">.</span><span class="writeline">AppendLine</span><span class="execute-method">(</span><span class="text">$"<span class="execute-method">{</span><span class="variable">myResume.Name</span><span class="execute-method">}</span>"<span class="execute-method">)</span><span class="semicolon">;</span></p><br></li>
-                    </ol>
-
-                    <ol class="code-row">
-                        <li><span class="row-number">14</span><p style="margin-left: 65px;"><span class="variable">sb</span><span class="dot">.</span><span class="writeline">AppendLine</span><span class="execute-method">(</span><span class="text">$"<span class="execute-method">{</span><span class="variable"><a href="#id-contact-info">myResume.ContactInfo</a></span><span class="execute-method">}</span>"<span class="execute-method">)</span><span class="semicolon">;</span></p><br></li>
-                    </ol>
-
-                    <ol class="code-row">
-                        <li><span class="row-number">15</span><p style="margin-left: 65px;"><span class="variable">sb</span><span class="dot">.</span><span class="writeline">AppendLine</span><span class="execute-method">(</span><span class="text">$"<span class="execute-method">{</span><span class="variable"><a href="#id-education">myResume.Education</a></span><span class="execute-method">}</span>"<span class="execute-method">)</span><span class="semicolon">;</span></p><br></li>
-                    </ol>
-    
-                    <ol class="code-row">
-                        <li><span class="row-number">16</span><p style="margin-left: 65px;"><span class="variable">sb</span><span class="dot">.</span><span class="writeline">AppendLine</span><span class="execute-method">(</span><span class="text">$"<span class="execute-method">{</span><span class="variable"><a href="#id-certification">myResume.Certification</a></span><span class="execute-method">}</span>"<span class="execute-method">)</span><span class="semicolon">;</span></p><br></li>
-                    </ol>
-
-                        
-                    <ol class="code-row">
-                        <li><span class="row-number">17</span><p style="margin-left: 65px;"><span class="variable">sb</span><span class="dot">.</span><span class="writeline">AppendLine</span><span class="execute-method">(</span><span class="text">$"<span class="execute-method">{</span><span class="variable"><a href="#id-experience">myResume.Experience</a></span><span class="execute-method">}</span>"<span class="execute-method">)</span><span class="semicolon">;</span></p><br></li>
-                    </ol>
-
-                    <ol class="code-row">
-                        <li><span class="row-number">18</span><p style="margin-left: 65px;"><span class="variable">sb</span><span class="dot">.</span><span class="writeline">AppendLine</span><span class="execute-method">(</span><span class="text">$"<span class="execute-method">{</span><span class="variable"><a href="#id-tech-skills">myResume.TechSkills</a></span><span class="execute-method">}</span>"<span class="execute-method">)</span><span class="semicolon">;</span></p><br></li>
-                    </ol>
-
-                    <ol class="code-row">
-                        <li><span class="row-number">19</span><p style="margin-left: 65px;"><span class="variable">sb</span><span class="dot">.</span><span class="writeline">AppendLine</span><span class="execute-method">(</span><span class="text">$"<span class="execute-method">{</span><span class="variable"><a href="#id-soft-skills">myResume.SoftSkills</a></span><span class="execute-method">}</span>"<span class="execute-method">)</span><span class="semicolon">;</span></p><br></li>
-                    </ol>
-
-                    <ol class="code-row">
-                        <li><span class="row-number">20</span><p style="margin-left: 65px;"><span class="variable">sb</span><span class="dot">.</span><span class="writeline">AppendLine</span><span class="execute-method">(</span><span class="text">$"<span class="execute-method">{</span><span class="variable"><a href="#id-projects">myResume.Projects</a></span><span class="execute-method">}</span>"<span class="execute-method">)</span><span class="semicolon">;</span></p><br></li>
-                    </ol>
-
-                    <ol class="code-row">
-                        <li><span class="row-number">21</span><p style="margin-left: 65px;"><span class="variable">sb</span><span class="dot">.</span><span class="writeline">AppendLine</span><span class="execute-method">(</span><span class="text">$"<span class="execute-method">{</span><span class="variable"><a href="#id-additional-info">myResume.AdditionalInfo</a></span><span class="execute-method">}</span>"<span class="execute-method">)</span><span class="semicolon">;</span><span class="comment"> // languages, passions and additional skills</span></p><br></li>
-                    </ol>
-    
-                    <ol class="code-row">
-                        <li><span class="row-number">22</span><p style="margin-left: 45px;">}</p><br></li>
-                    </ol>
-    
-                    <ol class="code-row">
-                        <li><span class="row-number">23</span><p style="margin-left: 50px;"><span class="return-keyword">return </span><span class="variable">resume</span><span class="dot">.</span><span class="writeline">ToString</span><span class="execute-method">()</span><span class="dot">.</span><span class="writeline">Trim</span><span class="execute-method">()</span><span class="semicolon">;</span></p><br></li>
-                    </ol>
-    
-                    <ol class="code-row">
-                        <li><span class="row-number">24</span><p style="margin-left: 30px;">}</p><br></li>
-                    </ol>
-    
-                    <ol class="code-row">
-                        <li><span class="row-number">25</span><p style="margin-left: 20px;"><span class="method"><strong><a href="#resume-start">PrintResume</a></strong><span class="execute-method">()</span><span class="semicolon">;</span></strong><span class="comment"> // click the method to execute</span></span></p><br></li>
-                    </ol>
-                    
-                    <ol class="code-row">
-                        <li><span class="row-number">26</span><p>}</p><br></li>
-                    </ol>  
-    
-                </div>
-    
-                <div class="solution-explorer">
-    
-                    <div class="row"><p><img class="solution-icon" src="./icons/devblog-brand-visualstudio2022.png" alt="solution-icon">Solution 'Ivan-Marinov-Portfolio'</p></div>
-                    <div class="row"><ul style="margin-left: 1.5em;"><img class="solution-csharp-icon" src="./icons/file_type_csharp_icon.png" alt="chsarp-icon">Ivan-Marinov-Portfolio</ul></div>
-                    <a href="./index.html"><div class="row"><li><img class="solution-csharp-icon" src="./icons/file_type_csharp_icon.png" alt="chsarp-icon">Home.cs</li></div></a>
-                    <a href="./about-me.html"><div class="row"><li><img class="solution-csharp-icon" src="./icons/file_type_csharp_icon.png" alt="chsarp-icon">About-Me.cs</li></div></a>
-                    <a href="./projects.html"><div class="row"><li><img class="solution-csharp-icon" src="./icons/file_type_csharp_icon.png" alt="chsarp-icon">Projects.cs</li></div></a>
-                    <a href="./my-resume.html"><div class="row special"><li><img class="solution-csharp-icon" src="./icons/file_type_csharp_icon.png" alt="chsarp-icon">My-Resume.cs</li></div></a>
-    
-                </div>
-            </div>
-
-            <div class="print-resume-method">
-                <a href="./my-resume-hidden.html"><span class="method">PrintResume<span class="execute-method">()<span class="semicolonm">;</span></span> </span><span class="comment">// click to show the resume</span></a>  
-            </div>
-    
-        <div id="resume-start" class="resume-body">
+        <div id="resume-start" class="resume-body-hidden">
 
             <div class="big-container">
     
@@ -534,8 +378,16 @@
             </div>
         </div>
        
-        <div>
-            <a href="#start"><button class="go-to-start-button">Go to Top</button></a>
+        <div class="buttons-container">
+            <div>
+                <a href="#resume-start"><button class="go-to-start-button-hidden">Go to Top</button></a>
+            </div>
+            <div>
+                <a href="./my-resume.html"><button class="back-to-home-button">Back</button></a>
+            </div>
+            <div>
+                <a href="./index.html"><button class="back-to-home-button">Back to Home</button></a>
+            </div>
         </div>
 
     <footer>
