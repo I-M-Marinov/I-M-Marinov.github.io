@@ -479,6 +479,241 @@
     }
 }
 
+@media (max-width: 378px) {
+    /* Styles for phone */
+
+    body {
+        width: 100%;
+        height: auto;
+    }
+
+    .bottom-container{
+        font-size: 0.35em;
+    }
+
+    .app-container{
+        display: flex;
+        font-size: 0.75em;
+        flex-direction: column;
+        width: 85%;
+        padding: 0.5em 0em 0.5em 1em;
+        flex-grow: 2;
+
+    }
+
+    .row-number {
+        margin-right: 1em;
+        margin-left: 1.5em;
+        text-align: left;
+    }
+
+    .solution-explorer{
+        display: none;
+    }
+
+    .navigation {
+        display: flex;
+        flex-direction: row;
+        justify-content:flex-start;
+        align-items: center;
+        padding: 0;
+    }
+    
+    .navigation ul {
+        gap: 0.1em;
+    }
+    
+    .tab {
+        font-size: 0.45em;
+        padding: 0.3em 1.9em 0.3em 0;
+    }
+    
+    .console-container {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+    }
+
+    .console-window-header{
+        border: none;
+        width: 75%;
+        height: 0.8em;
+        margin: 0 auto;
+        margin-top: 2em;  
+        margin-left: 4.5em;
+        padding: 0 0 1em 0;
+        background-color: #2E2E2E;
+    }
+
+    .console-window-header.home{
+        border: none;
+        width: 75%;
+        height: 0.8em;
+        margin: 0 auto;
+        margin-top: 2em;  
+    }
+
+    .console-window {
+        height: 8em;
+        margin: 0 auto;
+        margin-left: 4.5em;
+        background-color: rgb(0, 0, 0);
+        color: #5FBDF9;
+        margin-bottom: 1em;
+    
+    }
+
+    .console-window.home{
+        height: 8em;
+        margin: 0 auto;
+    }
+    
+    .console-window-header span img {
+        display: flex;
+        position: relative;
+        margin-left: -0.25em;
+        padding-bottom: 0.25em;
+    }
+
+    .minimize,
+    .maximize,
+    .close{
+    padding-top: 0.25em;
+    width: 0.7em;
+    height: 0.7em;
+}
+
+    .console-window h1{
+        padding-top: 1.5em;
+        padding-left: 1.2em;
+        font-size: 0.55em;
+    }
+
+    .console-window h1:first-child{
+        padding-top: 3em;
+        font-size: 0.55em;
+    }
+
+    .console-window h2{
+        padding-top: 1.5em;
+        padding-left: 1.5em;
+        font-size: 0.4em;
+    }
+    
+    
+    .picture img{
+        pointer-events: none;
+        height: 3.5em;
+        width: 3.5em;
+        border-radius: 50%;
+        margin-left: -4.0em;
+        margin-bottom: -4.5em;
+    }
+
+    footer{
+        font-size: 0.35em;
+        padding-top: 1em;
+    }
+
+    .project-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        padding-top: 0.25em;
+        padding-left: 0;
+        height: auto;
+        width: 100%;
+    }
+    
+    .project-picture{
+        width: 20em;
+        height: 12em;
+        margin-right: 0.25em;
+        flex-shrink: 1;
+        order: 2;
+    }
+    
+    .project-picture img {
+        max-width: 100%;
+        height: auto;
+        width: auto;
+        pointer-events: none;
+        width: 30em;
+    }
+    
+    .project-picture.special {
+        max-width: 100%;
+        max-height: 100%;
+        width: 20em;
+        height: auto;
+        object-fit: contain;
+        pointer-events: none;
+    }
+    
+    .project-description {
+        width: 20em;
+        height: 12em;
+        margin-right: 0.25em;
+        order: 1;
+    }
+
+    .project-description.special {
+        width: 20em;
+        height: 12em;
+        margin-right: 0.25em;
+    }
+    
+    .project-description h2{
+        font-size: 0.85em;
+        padding-bottom: 0.15em;
+
+    }
+    .project-description h3{
+        font-size: 0.5em;
+        padding: 0.25em;
+    }
+    
+    .project-description p {
+        font-size: 0.45em;
+        line-height: 1.2em;
+    }
+    
+    .url-container{
+        display: flex;
+        flex-direction: column;
+        padding-top: 1em;
+        flex-grow: 2;
+    }
+    
+    .url-container img{
+        width: 12%;
+        border-radius: 0.2em;
+        overflow: visible;
+    }
+
+    .go-to-start-button{
+        display: none;
+    }
+
+    .resume-body{
+        display: none;
+    }
+
+    .print-resume-method{
+        display: flex;
+        justify-content: center;
+        color: #D0DCA1;
+        font-size: 0.55em;
+        font-weight: 700;
+        text-decoration: none;
+    }
+    .print-resume-method a{
+        text-decoration: none;
+    }
+}
+
 @media (min-width: 1024px) {
     
    
