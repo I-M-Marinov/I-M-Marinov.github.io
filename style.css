@@ -54,7 +54,7 @@ html {
     justify-content: flex-end;
     align-content: center;
     border: 3px black solid;
-    width: 65%; 
+    width: 50%;
     height: 35px;
     margin: 0 auto;
     /* padding: 0 0 1em 0; */
@@ -63,7 +63,7 @@ html {
 
 .console-window {
     border: 3px black solid;
-    width: 65%;
+    width: 50%;
     height: 475px;
     margin: 0 auto;
     background-color: rgb(0, 0, 0);
@@ -99,11 +99,11 @@ html {
 
 .picture img{
     pointer-events: none;
-    width: 15%;
+    width: 37%;
     height: auto;
     border-radius: 50%;
-    margin-left: -200px;
-    margin-bottom: -250px;
+    margin-left: -22em;
+    margin-bottom: -22em;
     background-color: rgba(255, 255, 255, 1);
     color: #000;
     box-shadow: 0px 19px 38px 0px rgba(0,0,0,0.3),
@@ -129,11 +129,16 @@ html {
     width: 100%;
     height: auto;
     margin: 0 auto;
+    object-fit: contain;
 }
 
 .project-picture.special img {
-    width: 50%;
-    height: 400px;
+    max-width: 100%;
+    max-height: 100%;
+    width: 15em;
+    height: auto;
+    object-fit: contain;
+    pointer-events: none;
 }
 
 .project-description{
@@ -146,6 +151,7 @@ html {
 }
 
 .project-description h2{
+    font-size: 2em;
     text-align: center;
     padding-bottom: 0.5em;
     color: #4EC9B0;
@@ -157,7 +163,7 @@ html {
 }
 
 .project-description p {
-    font-size: 16px;
+    font-size: 1em;
     line-height: 1.5em;
     padding-left: 1em;
     padding-right: 1em;

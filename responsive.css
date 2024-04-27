@@ -126,43 +126,40 @@
         pointer-events: none;
         height: auto;
         border-radius: 50%;
-        margin-left: -5.5em;
-        margin-bottom: -6.5em;
-
+        margin-left: -6.5em;
+        margin-bottom: -7.0em;
+        width: 20%;
     }
 
     footer{
-        font-size: 0.35em;
+        font-size: 0.45em;
     }
 
     .project-container{
         display: flex;
+        justify-content: center;
         padding-top: 0.5em;
         padding-left: 0.6em;
-
         max-width: 100%;
-        height: auto;
-        width: auto;
     }
     
     .project-picture{
-        width: 20em;
-        height: 12em;
         margin-right: 0.25em;
         flex-shrink: 1;
+        object-fit: contain;
     }
     
     .project-picture img {
+        pointer-events: none;
         max-width: 100%;
         height: auto;
-        width: auto;
-        pointer-events: none;
-        width: 20em;
+        object-fit: contain;
     }
     
     .project-picture.special img {
-        width: 14em;
-        height: 22em;
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
     }
     
     .project-description {
