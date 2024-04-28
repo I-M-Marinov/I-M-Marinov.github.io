@@ -551,17 +551,17 @@
 
         
     .console-window h1{
-        font-size: 0.80em;
-        padding-left: 1.5em;
+        font-size: 0.75em;
+        padding-left: 1em;
         padding-top: 1em;
     }
 
     .console-window h1:first-of-type{
-        padding-top: 3em;
+        padding-top: 2.5em;
     }
 
     .console-window h2{
-        font-size: 0.55em; 
+        font-size: 0.49em; 
         padding-left: 0.75em;
         padding-top: 0.50em;
     }
