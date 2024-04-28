@@ -34,8 +34,6 @@ html {
     padding-left: 0.3em;
 }
 
-
-
 .bottom-container{
     font-size: 14px;
     font-weight: 600;
@@ -57,7 +55,6 @@ html {
     width: 50%;
     height: 35px;
     margin: 0 auto;
-    /* padding: 0 0 1em 0; */
     background-color: #2E2E2E;
 }
 
@@ -85,18 +82,24 @@ html {
     height: 1.3em;
 }
 
-.console-window h1,
-.console-window h2{
-    padding-left: 2em;
+
+.console-window h1{
+    padding-left: 1.5em;
     padding-top: 1em;
+}
+
+.console-window h1:first-of-type{
+    padding-top: 3.5em;
 }
 
 .console-window h2{
     font-size: 1.3em; 
+    padding-left: 2em;
+    padding-top: 1em;
 }
 
-.console-window h2:first-child{
-    padding-top: 2.5em;
+.console-window h2:first-of-type{
+    padding-top: 3em;
 }
 
 .picture img{

@@ -1,3 +1,202 @@
+@media (min-width: 1200px) {
+    /* Styles for larger screens */
+
+}
+
+@media (max-width: 1024px) {
+
+
+    body {
+        width: 100%;
+        height: auto;
+    }
+
+    .bottom-container {
+        font-size: 0.9em;
+    }
+
+    .app-container {
+        display: flex;
+        font-size: 0.60em;
+        flex-direction: column;
+        width: 70%;
+        flex-grow: 2;
+    }
+
+    .solution-explorer {
+        font-size: 0.6em;
+    }
+
+    .navigation ul {
+        gap: 0.15em;
+    }
+
+    .tab {
+        font-size: 11px;
+        padding: 0.1em 4em 0.1em 0;
+    }
+
+    .console-container {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+    }
+
+    .console-window-header {
+
+        width: 45%;
+        height: 0.5em;
+        margin-top: 1em;
+        padding: 0 0 1em 0;
+    }
+
+    .minimize,
+    .maximize,
+    .close {
+        padding-top: 0.1em;
+        width: 1em;
+        height: 1em;
+    }
+
+    .console-window {
+        border: 3px black solid;
+        width: 45%;
+        height: 13em;
+        margin: 0 auto;
+        background-color: rgb(0, 0, 0);
+        color: #5FBDF9;
+        margin-bottom: 1em;
+
+    }
+
+    .console-window-header span img {
+        display: inline-flex;
+        position: relative;
+        margin-left: -0.25em;
+        padding-bottom: 0.25em;
+    }
+
+    .console-window h1 {
+        font-size: 1.05em;
+        padding-left: 1.5em;
+        padding-top: 1em;
+    }
+
+    .console-window h1:first-of-type {
+        padding-top: 2.5em;
+    }
+
+    .console-window h2 {
+        font-size: 0.65em;
+        padding-left: 2em;
+        padding-top: 1em;
+    }
+
+    .console-window h2:first-of-type {
+        padding-top: 2em;
+    }
+
+
+    .picture img {
+        margin-left: -8.5em;
+        margin-bottom: -8.5em;
+        width: 30%;
+    }
+
+    footer {
+        font-size: 0.45em;
+    }
+
+    .project-container {
+        display: flex;
+        justify-content: center;
+        padding-top: 0.5em;
+        padding-left: 0.6em;
+        max-width: 100%;
+    }
+
+    .project-picture {
+        margin-right: 0.25em;
+        flex-shrink: 1;
+        object-fit: contain;
+    }
+
+    .project-picture img {
+        pointer-events: none;
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .project-picture.special img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .project-description {
+        width: 20em;
+        height: 12em;
+        margin-right: 0.25em;
+    }
+
+    .project-description.special {
+        width: 20em;
+        height: 22em;
+    }
+
+    .project-description h2 {
+        font-size: 0.85em;
+        padding-bottom: 0.15em;
+
+    }
+
+    .project-description h3 {
+        font-size: 0.5em;
+        padding: 0.25em;
+    }
+
+    .project-description p {
+        font-size: 0.45em;
+        line-height: 1.2em;
+    }
+
+    .url-container {
+        display: flex;
+        flex-direction: column;
+        padding-top: 1em;
+        flex-grow: 2;
+    }
+
+    .url-container img {
+        width: 12%;
+        border-radius: 0.2em;
+    }
+
+    .go-to-start-button {
+        display: none;
+    }
+
+    .resume-body {
+        display: none;
+    }
+
+    .print-resume-method {
+        display: flex;
+        justify-content: center;
+        color: #D0DCA1;
+        font-size: 0.90em;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    .print-resume-method a {
+        text-decoration: none;
+    }
+
+}
+
 @media (max-width: 768px) {
     /* Tablet CSS here */
 
@@ -6,11 +205,11 @@
         height: auto;
     }
 
-    .bottom-container{
+    .bottom-container {
         font-size: 0.6em;
     }
 
-    .app-container{
+    .app-container {
         display: flex;
         font-size: 0.75em;
         flex-direction: column;
@@ -26,19 +225,18 @@
         text-align: right;
     }
 
-    .solution-explorer{
-        font-size: 0.7em;
+    .solution-explorer {
+        font-size: 0.20em;
     }
 
-    .solution-icon
-    {
+    .solution-icon {
         width: 7%;
         height: auto;
         margin-bottom: -0.35em;
         margin-right: 0.3em;
     }
 
-    .solution-csharp-icon{
+    .solution-csharp-icon {
         width: 4%;
         height: auto;
         margin-bottom: -0.35em;
@@ -51,34 +249,34 @@
         justify-content: flex-start;
         align-items: center;
     }
-    
+
     .navigation ul {
         gap: 0.20em;
     }
-    
+
     .tab {
         font-size: 11px;
-        padding: 0.1em 4em  0.1em 0;
+        padding: 0.1em 4em 0.1em 0;
     }
-    
+
     .console-container {
         display: flex;
         flex-direction: column;
         padding: 0;
         margin: 0;
     }
-    
-    .console-window-header{
+
+    .console-window-header {
         border: none;
-        width: 65%; 
+        width: 65%;
         height: 5px;
         margin: 0 auto;
         margin-top: 1em;
-        
+
         padding: 0 0 1em 0;
         background-color: #2E2E2E;
     }
-    
+
     .console-window {
         border: 3px black solid;
         width: 65%;
@@ -87,9 +285,9 @@
         background-color: rgb(0, 0, 0);
         color: #5FBDF9;
         margin-bottom: 1em;
-    
+
     }
-    
+
     .console-window-header span img {
         display: inline-flex;
         position: relative;
@@ -99,30 +297,30 @@
 
     .minimize,
     .maximize,
-    .close{
-    padding-top: 0.05em;
-    width: 1em;
-    height: 1em;
-}
+    .close {
+        padding-top: 0.05em;
+        width: 1em;
+        height: 1em;
+    }
 
-    .console-window h1{
+    .console-window h1 {
         padding-top: 1.5em;
         padding-left: 1.5em;
         font-size: 1.1em;
     }
 
-    .console-window h2{
+    .console-window h2 {
         padding-top: 1.5em;
         padding-left: 1.5em;
         font-size: 0.6em;
     }
-    
-    .console-window h2:first-child{
+
+    .console-window h2:first-child {
         padding-top: 0;
     }
-    
-    
-    .picture img{
+
+
+    .picture img {
         pointer-events: none;
         height: auto;
         border-radius: 50%;
@@ -131,37 +329,37 @@
         width: 20%;
     }
 
-    footer{
+    footer {
         font-size: 0.45em;
     }
 
-    .project-container{
+    .project-container {
         display: flex;
         justify-content: center;
         padding-top: 0.5em;
         padding-left: 0.6em;
         max-width: 100%;
     }
-    
-    .project-picture{
+
+    .project-picture {
         margin-right: 0.25em;
         flex-shrink: 1;
         object-fit: contain;
     }
-    
+
     .project-picture img {
         pointer-events: none;
         max-width: 100%;
         height: auto;
         object-fit: contain;
     }
-    
+
     .project-picture.special img {
         max-width: 100%;
         height: auto;
         object-fit: contain;
     }
-    
+
     .project-description {
         width: 20em;
         height: 12em;
@@ -172,43 +370,44 @@
         width: 20em;
         height: 22em;
     }
-    
-    .project-description h2{
+
+    .project-description h2 {
         font-size: 0.85em;
         padding-bottom: 0.15em;
 
     }
-    .project-description h3{
+
+    .project-description h3 {
         font-size: 0.5em;
         padding: 0.25em;
     }
-    
+
     .project-description p {
         font-size: 0.45em;
         line-height: 1.2em;
     }
-    
-    .url-container{
+
+    .url-container {
         display: flex;
         flex-direction: column;
         padding-top: 1em;
         flex-grow: 2;
     }
-    
-    .url-container img{
+
+    .url-container img {
         width: 12%;
         border-radius: 0.2em;
     }
 
-    .go-to-start-button{
+    .go-to-start-button {
         display: none;
     }
 
-    .resume-body{
+    .resume-body {
         display: none;
     }
 
-    .print-resume-method{
+    .print-resume-method {
         display: flex;
         justify-content: center;
         color: #D0DCA1;
@@ -216,7 +415,8 @@
         font-weight: 700;
         text-decoration: none;
     }
-    .print-resume-method a{
+
+    .print-resume-method a {
         text-decoration: none;
     }
 
@@ -230,11 +430,11 @@
         height: auto;
     }
 
-    .bottom-container{
+    .bottom-container {
         font-size: 0.5em;
     }
 
-    .app-container{
+    .app-container {
         display: flex;
         font-size: 0.90em;
         flex-direction: column;
@@ -250,11 +450,11 @@
         text-align: right;
     }
 
-    .solution-explorer{
+    .solution-explorer {
         display: none;
     }
 
-/*     .solution-icon
+    /*     .solution-icon
     {
         width: 7%;
         height: auto;
@@ -272,20 +472,20 @@
     .navigation {
         display: flex;
         flex-direction: row;
-        justify-content:flex-start;
+        justify-content: flex-start;
         align-items: center;
         padding: 0;
     }
-    
+
     .navigation ul {
         gap: 0.10em;
     }
-    
+
     .tab {
         font-size: 0.5em;
         padding: 0.3em 2.9em 0.3em 0;
     }
-    
+
     .console-container {
         display: flex;
         flex-direction: column;
@@ -293,23 +493,23 @@
         margin: 0;
     }
 
-    .console-window-header{
+    .console-window-header {
         border: none;
         width: 75%;
         height: 3.5px;
         margin: 0 auto;
-        margin-top: 2em;  
+        margin-top: 2em;
         margin-left: 4.5em;
         padding: 0 0 1em 0;
         background-color: #2E2E2E;
     }
 
-    .console-window-header.home{
+    .console-window-header.home {
         border: none;
         width: 75%;
         height: 3.5px;
         margin: 0 auto;
-        margin-top: 2em;  
+        margin-top: 2em;
     }
 
     .console-window {
@@ -321,15 +521,15 @@
         background-color: rgb(0, 0, 0);
         color: #5FBDF9;
         margin-bottom: 1em;
-    
+
     }
 
-    .console-window.home{
+    .console-window.home {
         width: 75%;
         height: 10em;
         margin: 0 auto;
     }
-    
+
     .console-window-header span img {
         display: flex;
         position: relative;
@@ -339,32 +539,35 @@
 
     .minimize,
     .maximize,
-    .close{
-    padding-top: 0.25em;
-    width: 0.7em;
-    height: 0.7em;
-}
-
-    .console-window h1:first-child{
-        padding-top: 4em;
-        padding-left: 1.2em;
-        font-size: 0.70em;
+    .close {
+        padding-top: 0.25em;
+        width: 0.7em;
+        height: 0.7em;
     }
 
+        
     .console-window h1{
-        padding-top: 1.5em;
-        padding-left: 1.2em;
-        font-size: 0.70em;
+        font-size: 0.75em;
+        padding-left: 1.5em;
+        padding-top: 1em;
+    }
+
+    .console-window h1:first-of-type{
+        padding-top: 3.5em;
     }
 
     .console-window h2{
-        padding-top: 1.5em;
-        padding-left: 1.5em;
-        font-size: 0.4em;
+        font-size: 1.3em; 
+        padding-left: 2em;
+        padding-top: 1em;
     }
-    
-    
-    .picture img{
+
+    .console-window h2:first-of-type{
+        padding-top: 3em;
+    }
+
+
+    .picture img {
         pointer-events: none;
         height: 3.5em;
         width: 3.5em;
@@ -373,12 +576,12 @@
         margin-bottom: -4.5em;
     }
 
-    footer{
+    footer {
         font-size: 0.35em;
         padding-top: 1em;
     }
 
-    .project-container{
+    .project-container {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -388,15 +591,15 @@
         height: auto;
         width: 100%;
     }
-    
-    .project-picture{
+
+    .project-picture {
         width: 20em;
         height: 12em;
         margin-right: 0.25em;
         flex-shrink: 1;
         order: 2;
     }
-    
+
     .project-picture img {
         max-width: 100%;
         height: auto;
@@ -404,7 +607,7 @@
         pointer-events: none;
         width: 30em;
     }
-    
+
     .project-picture.special {
         max-width: 100%;
         max-height: 100%;
@@ -413,7 +616,7 @@
         object-fit: contain;
         pointer-events: none;
     }
-    
+
     .project-description {
         width: 20em;
         height: 12em;
@@ -426,44 +629,45 @@
         height: 12em;
         margin-right: 0.25em;
     }
-    
-    .project-description h2{
+
+    .project-description h2 {
         font-size: 0.85em;
         padding-bottom: 0.15em;
 
     }
-    .project-description h3{
+
+    .project-description h3 {
         font-size: 0.5em;
         padding: 0.25em;
     }
-    
+
     .project-description p {
         font-size: 0.45em;
         line-height: 1.2em;
     }
-    
-    .url-container{
+
+    .url-container {
         display: flex;
         flex-direction: column;
         padding-top: 1em;
         flex-grow: 2;
     }
-    
-    .url-container img{
+
+    .url-container img {
         width: 12%;
         border-radius: 0.2em;
         overflow: visible;
     }
 
-    .go-to-start-button{
+    .go-to-start-button {
         display: none;
     }
 
-    .resume-body{
+    .resume-body {
         display: none;
     }
 
-    .print-resume-method{
+    .print-resume-method {
         display: flex;
         justify-content: center;
         color: #D0DCA1;
@@ -471,7 +675,8 @@
         font-weight: 700;
         text-decoration: none;
     }
-    .print-resume-method a{
+
+    .print-resume-method a {
         text-decoration: none;
     }
 }
@@ -484,18 +689,21 @@
         height: auto;
     }
 
-    .bottom-container{
+    .bottom-container {
         font-size: 0.35em;
     }
 
     .app-container{
         display: flex;
-        font-size: 0.75em;
         flex-direction: column;
-        width: 85%;
+        width: 100%;
         padding: 0.5em 0em 0.5em 1em;
         flex-grow: 2;
 
+    }
+
+    .app-container ol{
+        font-size: 1em;
     }
 
     .row-number {
@@ -504,27 +712,27 @@
         text-align: left;
     }
 
-    .solution-explorer{
+    .solution-explorer {
         display: none;
     }
 
     .navigation {
         display: flex;
         flex-direction: row;
-        justify-content:flex-start;
+        justify-content: flex-start;
         align-items: center;
         padding: 0;
     }
-    
+
     .navigation ul {
         gap: 0.1em;
     }
-    
-    .tab {
-        font-size: 0.45em;
-        padding: 0.3em 1.9em 0.3em 0;
+
+    .tab li{
+        font-size: 0.75em;
+        padding: 0.3em 0.55em 0.3em 0.2em;
     }
-    
+
     .console-container {
         display: flex;
         flex-direction: column;
@@ -533,39 +741,31 @@
     }
 
     .console-window-header{
-        border: none;
+        display: flex;
+        justify-content: flex-end;
+        align-content: center;
         width: 75%;
-        height: 0.8em;
+        height: 3.5px;
         margin: 0 auto;
-        margin-top: 2em;  
-        margin-left: 4.5em;
-        padding: 0 0 1em 0;
-        background-color: #2E2E2E;
+        margin-top: 1.5em;
+        margin-right: 1em;
     }
 
-    .console-window-header.home{
+    .console-window-header.home {
         border: none;
         width: 75%;
-        height: 0.8em;
+        height: 3.5px;
         margin: 0 auto;
-        margin-top: 2em;  
+        margin-top: 1.5em;
     }
-
+    
     .console-window {
+        width: 75%;
         height: 8em;
         margin: 0 auto;
-        margin-left: 4.5em;
-        background-color: rgb(0, 0, 0);
-        color: #5FBDF9;
-        margin-bottom: 1em;
-    
+        margin-right: 1em;
     }
 
-    .console-window.home{
-        height: 8em;
-        margin: 0 auto;
-    }
-    
     .console-window-header span img {
         display: flex;
         position: relative;
@@ -575,31 +775,35 @@
 
     .minimize,
     .maximize,
-    .close{
-    padding-top: 0.25em;
-    width: 0.7em;
-    height: 0.7em;
-}
-
-    .console-window h1{
-        padding-top: 1.5em;
-        padding-left: 1.2em;
-        font-size: 0.55em;
+    .close {
+        padding-top: 0.25em;
+        width: 0.85em;
+        height: 0.85em;
     }
 
-    .console-window h1:first-child{
-        padding-top: 3em;
-        font-size: 0.55em;
-    }
-
-    .console-window h2{
-        padding-top: 1.5em;
+    .console-window.home h1{
         padding-left: 1.5em;
-        font-size: 0.4em;
+        padding-top: 1em;
+        font-size: 0.6em;
     }
     
+    .console-window.home h1:first-of-type{
+        padding-top: 3.5em;
+        
+    }
     
-    .picture img{
+    .console-window h2{
+        font-size: 0.4em; 
+        padding-left: 2em;
+        padding-top: 1em;
+    }
+    
+    .console-window h2:first-of-type{
+        padding-top: 1em;
+    }
+
+
+    .picture img {
         pointer-events: none;
         height: 3.5em;
         width: 3.5em;
@@ -608,12 +812,12 @@
         margin-bottom: -4.5em;
     }
 
-    footer{
+    footer {
         font-size: 0.35em;
         padding-top: 1em;
     }
 
-    .project-container{
+    .project-container {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -623,15 +827,15 @@
         height: auto;
         width: 100%;
     }
-    
-    .project-picture{
+
+    .project-picture {
         width: 20em;
         height: 12em;
         margin-right: 0.25em;
         flex-shrink: 1;
         order: 2;
     }
-    
+
     .project-picture img {
         max-width: 100%;
         height: auto;
@@ -639,7 +843,7 @@
         pointer-events: none;
         width: 30em;
     }
-    
+
     .project-picture.special {
         max-width: 100%;
         max-height: 100%;
@@ -648,7 +852,7 @@
         object-fit: contain;
         pointer-events: none;
     }
-    
+
     .project-description {
         width: 20em;
         height: 12em;
@@ -661,44 +865,45 @@
         height: 12em;
         margin-right: 0.25em;
     }
-    
-    .project-description h2{
+
+    .project-description h2 {
         font-size: 0.85em;
         padding-bottom: 0.15em;
 
     }
-    .project-description h3{
+
+    .project-description h3 {
         font-size: 0.5em;
         padding: 0.25em;
     }
-    
+
     .project-description p {
         font-size: 0.45em;
         line-height: 1.2em;
     }
-    
-    .url-container{
+
+    .url-container {
         display: flex;
         flex-direction: column;
         padding-top: 1em;
         flex-grow: 2;
     }
-    
-    .url-container img{
+
+    .url-container img {
         width: 12%;
         border-radius: 0.2em;
         overflow: visible;
     }
 
-    .go-to-start-button{
+    .go-to-start-button {
         display: none;
     }
 
-    .resume-body{
+    .resume-body {
         display: none;
     }
 
-    .print-resume-method{
+    .print-resume-method {
         display: flex;
         justify-content: center;
         color: #D0DCA1;
@@ -706,17 +911,9 @@
         font-weight: 700;
         text-decoration: none;
     }
-    .print-resume-method a{
+
+    .print-resume-method a {
         text-decoration: none;
     }
 }
 
-@media (min-width: 1024px) {
-    
-   
-}
-
-@media (min-width: 1200px) {
-    /* Styles for larger screens */
-    
-}
