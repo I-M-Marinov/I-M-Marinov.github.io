@@ -51,7 +51,7 @@ html {
     display: flex;
     justify-content: flex-end;
     align-content: center;
-    border: 3px black solid;
+    border: 0.15em black solid;
     width: 50%;
     height: 35px;
     margin: 0 auto;
