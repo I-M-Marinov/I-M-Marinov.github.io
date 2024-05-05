@@ -674,7 +674,7 @@
     }
 
     .project-description.special {
-        height: 20em;
+        height: 12em;
         align-self: center;
     }
 
@@ -859,7 +859,7 @@
     }
 
     .project-description {
-        width: 32em;
+        width: 30em;
         height: 12em;
         margin-right: 0.25em;
         align-self: center;
@@ -867,7 +867,7 @@
 
     .project-description.special {
         width: 30em;
-        height: 22em;
+        height: 12em;
         align-self: center;
     }
 
