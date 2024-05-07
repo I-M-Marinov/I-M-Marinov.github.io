@@ -1,16 +1,16 @@
-@media (min-width: 2560px) {
+@media (max-width: 2560px) {
     /* Styles for WQHD screens */
 
     .bottom-container {
-        font-size: 1em;
+        font-size: 0.8em;
     }
 
     .app-container {
-        font-size: 1.5em;
+        font-size: 1em;
     }
 
     .solution-explorer {
-        font-size: 1.3em;
+        font-size: 0.8em;
     }
 
     .navigation {
@@ -25,8 +25,8 @@
         gap: 0.3em;
     }
 
-    .tab li{
-        font-size: 2em;
+    .tab li{ 
+        font-size: 1.1em;
         padding: 0.3em 0.75em 0em 0.3em;
     }
 
@@ -47,8 +47,8 @@
 
     .console-window {
         border: 3px black solid;
-        width: 30%;
-        height: 35em;
+        width: 45%;
+        height: 25em;
         margin: 0 auto;
         margin-bottom: 1em;
 
@@ -62,7 +62,7 @@
     }
 
     .console-window h1 {
-        font-size: 2.5em;
+        font-size: 1.75em;
         padding-left: 1em;
         padding-top: 1em;
     }
@@ -72,7 +72,7 @@
     }
 
     .console-window h2 {
-        font-size: 1.5em;
+        font-size: 1em;
         padding-left: 2em;
         padding-top: 1em;
     }
@@ -83,9 +83,9 @@
 
 
     .picture img {
-        margin-left: -19.5em;
-        margin-bottom: -21.5em;
-        width: 30%;
+        margin-left: -18.5em;
+        margin-bottom: -18.5em;
+        width: 35%;
     }
 
 
@@ -108,50 +108,54 @@
         max-width: 100%;
         height: auto;
         object-fit: contain;
+        scale: 80%;
+        align-self: center;
     }
 
     .project-picture.special img {
         max-width: 100%;
         height: auto;
         object-fit: contain;
+        scale: 80%;
     }
 
     .project-description {
-        width: 75em;
+        width: 50em;
         height: auto;
-        margin-right: 1em;
+        margin-right: 0.5em;
     }
 
     .project-description.special {
-        width: 75em;
+        width: 50em;
         height: auto;
     }
 
     .project-description h2 {
-        font-size: 2.5em;
+        font-size: 1.5em;
         padding-bottom: 0.30em;
 
     }
 
     .project-description h3 {
-        font-size: 2em;
+        font-size: 1.1em;
         padding: 0.25em;
     }
 
     .project-description p {
-        font-size: 1.2em;
+        font-size: 0.75em;
         line-height: 1.2em;
     }
 
     .url-container {
         display: flex;
         flex-direction: column;
-        padding-top: 1em;
+        padding-top: 2em;
         flex-grow: 2;
     }
 
     .url-container img {
-        width: 12%;
+        padding-top: 1.5em;
+        width: 6%;
         border-radius: 0.2em;
     }
 
@@ -160,22 +164,21 @@
     }
 
     .go-to-start-button {
-        font-size: 1.5em;
+        font-size: 0.8em;
         width: 6em;
         height: 2.5em;
     }
     .big-container{
-        margin-left: 19em;
+        margin-left: 5em;
     }
 
-    
     footer {
-        font-size: 1em;
+        font-size: 0.5em;
     }
 
 }
 
-@media (min-width: 1455px) {
+@media (max-width: 1455px) {
     /* Styles for larger screens */
 
     body {
@@ -369,7 +372,7 @@
 
 }
 
-@media (min-width: 1361px) {
+@media (max-width: 1361px) {
     /* Styles for larger screens */
 
     body {
@@ -577,7 +580,7 @@
     }
 
     .console-window-header {
-        width: 45%;
+        width: 40%;
         height: 0.5em;
         margin-top: 1em;
         padding: 0 0 1em 0;
@@ -593,7 +596,7 @@
 
     .console-window {
         border: 3px black solid;
-        width: 45%;
+        width: 40%;
         height: 14em;
         margin: 0 auto;
         margin-bottom: 1em;
@@ -766,7 +769,7 @@
     }
 
     .console-window-header {
-        width: 45%;
+        width: 40%;
         height: 0.5em;
         margin-top: 1em;
         padding: 0 0 1em 0;
@@ -782,8 +785,8 @@
 
     .console-window {
         border: 3px black solid;
-        width: 45%;
-        height: 13em;
+        width: 40%;
+        height: 10em;
         margin: 0 auto;
         background-color: rgb(0, 0, 0);
         color: #5FBDF9;
@@ -799,7 +802,7 @@
     }
 
     .console-window h1 {
-        font-size: 0.95em;
+        font-size: 0.80em;
         padding-left: 1.5em;
         padding-top: 1em;
     }
@@ -809,7 +812,7 @@
     }
 
     .console-window h2 {
-        font-size: 0.55em;
+        font-size: 0.50em;
         padding-left: 2em;
         padding-top: 1em;
     }
@@ -821,8 +824,8 @@
 
     .picture img {
         margin-left: -8.5em;
-        margin-bottom: -8.5em;
-        width: 30%;
+        margin-bottom: -6.5em;
+        width: 35%;
     }
 
     footer {
@@ -979,7 +982,7 @@
     }
 
     .console-window-header {
-        width: 65%;
+
         height: 0.5em;
         margin: 0 auto;
         margin-top: 1em;
@@ -988,9 +991,8 @@
 
     .console-window {
         border: 3px black solid;
-        width: 65%;
-        height: 12em;
-        margin: 0 auto;
+
+        height: 8em;
         background-color: rgb(0, 0, 0);
         color: #5FBDF9;
         margin-bottom: 1em;
@@ -1018,13 +1020,13 @@
     .console-window h1 {
         padding-top: 1em;
         padding-left: 1em;
-        font-size: 1em;
+        font-size: 0.70em;
     }
 
     .console-window h2 {
         padding-top: 1.5em;
         padding-left: 2.5em;
-        font-size: 0.6em;
+        font-size: 0.43em;
     }
 
     .console-window h2:first-of-type {
@@ -1036,9 +1038,9 @@
         pointer-events: none;
         height: auto;
         border-radius: 50%;
-        margin-left: -5.9em;
-        margin-bottom: -7.0em;
-        width: 20%;
+        margin-left: -6.5em;
+        margin-bottom: -5.0em;
+        width: 30%;
     }
 
     footer {
@@ -1212,37 +1214,40 @@
     }
 
     .console-window-header {
-        width: 75%;
         height: 3.5px;
-        margin: 0 auto;
         margin-top: 2em;
         margin-left: 4.5em;
         padding: 0 0 1em 0;
         background-color: #2E2E2E;
+        width: 65%;
+        max-width: 75%;
     }
 
     .console-window-header.home {
-        width: 75%;
         height: 3.5px;
         margin: 0 auto;
         margin-top: 2em;
+        width: 65%;
+        max-width: 75%;
     }
 
     .console-window {
-        width: 75%;
         height: 10em;
         margin: 0 auto;
         margin-left: 4.5em;
         background-color: rgb(0, 0, 0);
         color: #5FBDF9;
         margin-bottom: 1em;
+        width: 65%;
+        max-width: 75%;
 
     }
 
     .console-window.home {
-        width: 75%;
         height: 10em;
         margin: 0 auto;
+        width: 65%;
+        max-width: 75%;
     }
 
     .console-window-header span img {
@@ -1289,10 +1294,12 @@
         border-radius: 50%;
         margin-left: -4.0em;
         margin-bottom: -4.5em;
+        width: 20%;
+        height: auto;
     }
 
     footer {
-        font-size: 0.35em;
+        font-size: 0.20em;
         padding-top: 1em;
     }
 
@@ -1459,26 +1466,32 @@
         display: flex;
         justify-content: flex-end;
         align-content: center;
-        width: 75%;
-        height: 3.5px;
-        margin: 0 auto;
+        height: 0.55em;
+        width: 65%;
+        max-width: 75%;
         margin-top: 1.5em;
         margin-right: 1em;
 
     }
 
     .console-window-header.home {
-        width: 75%;
-        height: 3.5px;
+        width: 65%;
+        max-width: 75%;
+        height: 0.65em;
         margin: 0 auto;
         margin-top: 1.5em;
     }
     
     .console-window {
-        width: 75%;
-        height: 8em;
-        margin: 0 auto;
+        width: 65%;
+        max-width: 75%;
+        height: 7em;
         margin-right: 1em;
+    }
+
+       
+    .console-window.home{
+        height: 8em;
     }
 
     .console-window-header span img {
@@ -1499,7 +1512,7 @@
     .console-window.home h1{
         padding-left: 1.5em;
         padding-top: 1em;
-        font-size: 0.6em;
+        font-size: 0.5em;
     }
     
     .console-window.home h1:first-of-type{
@@ -1508,7 +1521,7 @@
     }
     
     .console-window h2{
-        font-size: 0.4em; 
+        font-size: 0.32em; 
         padding-left: 2em;
         padding-top: 1em;
     }
