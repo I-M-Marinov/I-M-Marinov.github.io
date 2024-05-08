@@ -98,11 +98,11 @@
                     </ol>
 
                     <ol class="code-row">
-                        <li><span class="row-number">14</span><p style="margin-left: 5.50em;"><span class="variable">sb</span><span class="dot">.</span><span class="writeline">AppendLine</span><span class="execute-method">(</span><span class="text">$"<span class="execute-method">{</span><span class="variable"><a href="#id-contact-info">myResume.ContactInfo</a></span><span class="execute-method">}</span>"<span class="execute-method">)</span><span class="semicolon">;</span><span class="comment"> // click me</span></p><br></li>
+                        <li><span class="row-number">14</span><p style="margin-left: 5.50em;"><span class="variable">sb</span><span class="dot">.</span><span class="writeline">AppendLine</span><span class="execute-method">(</span><span class="text">$"<span class="execute-method">{</span><span class="variable"><a href="#id-contact-info" onclick="scrollToSection('id-contact-info')">myResume.ContactInfo</a></span><span class="execute-method">}</span>"<span class="execute-method">)</span><span class="semicolon">;</span><span class="comment"> // click me</span></p><br></li>
                     </ol>
 
                     <ol class="code-row">
-                        <li><span class="row-number">15</span><p style="margin-left: 5.50em;"><span class="variable">sb</span><span class="dot">.</span><span class="writeline">AppendLine</span><span class="execute-method">(</span><span class="text">$"<span class="execute-method">{</span><span class="variable"><a href="#id-education">myResume.Education</a></span><span class="execute-method">}</span>"<span class="execute-method">)</span><span class="semicolon">;</span><span class="comment"> // click me</span></p><br></li>
+                        <li><span class="row-number">15</span><p style="margin-left: 5.50em;"><span class="variable">sb</span><span class="dot">.</span><span class="writeline">AppendLine</span><span class="execute-method">(</span><span class="text">$"<span class="execute-method">{</span><span class="variable"><a href="#id-education" onclick="scrollToSection('id-education')">myResume.Education</a></span><span class="execute-method">}</span>"<span class="execute-method">)</span><span class="semicolon">;</span><span class="comment"> // click me</span></p><br></li>
                     </ol>
     
                     <ol class="code-row">
@@ -550,6 +550,20 @@
 
 
     </div>
+
+    <script>
+        function scrollToSection(sectionId) {
+          // Scroll to the section with the given id
+          const section = document.getElementById(sectionId);
+          if (section) {
+            section.classList.add('flash'); // Add the flashing effect
+            setTimeout(() => {
+              section.classList.remove('flash'); // Remove the flashing effect after 1 second
+            }, 2000);
+            section.scrollIntoView({ behavior: 'smooth' }); // Scroll to the section smoothly
+          }
+        }
+      </script>
 
     <footer>
         <p>2024 Copyright® I-M-Marinov</p>
