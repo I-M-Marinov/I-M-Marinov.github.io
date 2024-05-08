@@ -49,26 +49,16 @@
     color: rgb(255, 255, 255);
 }
 
-
-  /* Apply the flashing effect to sections with the specified IDs */
-  /* #id-contact-info:target,
-  #id-education:target,
-  #id-tech-skills:target,
-  #soft-skills:target,
-  #id-projects:target,
-  #id-additional-info:target {
-    animation: flash-animation 6s ease-in-out;
-  } */
-
-  .flash {
-    animation: flash-animation 2s linear;
-  }
-  
   @keyframes flash-animation {
     0% { opacity: 1; }
     50% { 
-        font-size: 0.5em;
+        font-size: 0.55em;
+        color: #307de2;
      }
     100% { opacity: 1; }
+  }
+
+  .flash {
+    animation: flash-animation 2s ;
   }
 
