@@ -178,6 +178,200 @@
 
 }
 
+@media (max-width: 1650px) {
+    /* Styles for larger screens */
+
+    body {
+        width: 100%;
+        height: auto;
+    }
+
+    .bottom-container {
+        font-size: 1.1em;
+    }
+
+    .app-container {
+        font-size: 1em;
+    }
+
+    .solution-explorer {
+        font-size: 0.75em;
+    }
+
+    .console-window-header {
+        width: 45%;
+        max-width: 45%;
+        height: 0.7em;
+        margin-top: 1em;
+        padding: 0 0 1em 0;
+    }
+
+    .minimize,
+    .maximize,
+    .close {
+        padding-top: 0.1em;
+        width: 1em;
+        height: 1em;
+    }
+
+    .console-window {
+        border: 3px black solid;
+        width: 45%;
+        max-width: 45%;
+        height: 17em;
+        margin: 0 auto;
+        margin-bottom: 1em;
+
+    }
+
+    .console-window-header span img {
+        display: flex;
+        position: relative;
+        margin-left: -0.25em;
+        padding-bottom: 0.25em;
+    }
+
+    .console-window h1 {
+        font-size: 1.60em;
+        padding-left: 0.8em;
+        padding-top: 1em;
+    }
+
+    .console-window h1:first-of-type {
+        padding-top: 2.5em;
+    }
+
+    .console-window h2 {
+        font-size: 1em;
+        padding-left: 2em;
+        padding-top: 1em;
+    }
+
+    .console-window h2:first-of-type {
+        padding-top: 2em;
+    }
+
+
+    .picture img {
+        margin-left: -13.5em;
+        margin-bottom: -12.5em;
+        width: 30%;
+    }
+
+    footer {
+        font-size: 0.45em;
+    }
+
+    .project-container {
+        display: flex;
+        justify-content: center;
+        padding-top: 0.5em;
+        padding-left: 0.6em;
+        max-width: 100%;
+    }
+
+    .project-picture {
+        margin-right: 0.25em;
+        flex-shrink: 1;
+        object-fit: contain;
+    }
+
+    .project-picture img {
+        width: 30em;
+        height: 20em;
+        pointer-events: none;
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+        scale: 75%;
+    }
+
+    .project-picture.special img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .project-description {
+        width: 40em;
+        height: 15em;
+        margin-right: 0.25em;
+        align-self: center;
+    }
+
+    .project-description.special {
+        width: 40em;
+        height: 15em;
+    }
+
+    .project-description h2 {
+        font-size: 1.3em;
+        padding-bottom: 0.15em;
+
+    }
+
+    .project-description h3 {
+        font-size: 1em;
+        padding: 0.25em;
+    }
+
+    .project-description p {
+        font-size: 0.75em;
+        line-height: 1.2em;
+    }
+
+    /* .url-container {
+        display: flex;
+        flex-direction: column;
+        padding-top: 1em;
+        flex-grow: 2;
+    } */
+
+    .url-container img {
+        width: 8%;
+        border-radius: 0.2em;
+    }
+
+    /* .go-to-start-button {
+        display: none;
+    } */
+
+    /* .resume-body {
+        display: none;
+    } */
+
+    .go-to-start-button {
+    
+        display: inline-block;
+        position: absolute;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        width: 100px;
+        height: 50px;
+        margin-top: 1.2em;
+        background-color: #307de2;
+        box-shadow: 0px -23px 25px 0px rgba(0, 0, 0, 0.17) 
+        inset, 0px -36px 30px 0px rgba(0, 0, 0, 0.15) 
+        inset, 0px -79px 40px 0px rgba(0, 0, 0, 0.1) 
+        inset, 0px 2px 1px rgba(0, 0, 0, 0.06), 0px 4px 2px rgba(0, 0, 0, 0.09), 0px 8px 4px rgba(0, 0, 0, 0.09), 0px 16px 8px rgba(0, 0, 0, 0.09);
+     
+    }
+
+    .print-resume-method {
+        display: none;
+    }
+
+    .print-resume-method a {
+        text-decoration: none;
+    }
+
+    .resume-body{
+        align-self:baseline;
+    }
+
+
+}
+
 @media (max-width: 1455px) {
     /* Styles for larger screens */
 
