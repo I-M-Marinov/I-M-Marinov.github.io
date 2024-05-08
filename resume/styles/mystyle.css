@@ -431,7 +431,8 @@ image {
 
 .linkedin-container,
 .github-container,
-.facebook-container{
+.facebook-container,
+.portfolio-container{
     display: flex;
     width: 300px;
     align-items: flex-end;
@@ -443,11 +444,17 @@ image {
 
 .linkedin-container img,
 .github-container img,
-.facebook-container img{
+.facebook-container img,
+.portfolio-container img{
     width: 35px;
     height: 35px;
     overflow: hidden;
     margin: 0;
+}
+
+.portfolio-container img{
+    margin-top: 0.5em;
+    margin-bottom: -0.8em;
 }
 
 .linkedin-container img{
@@ -455,7 +462,8 @@ image {
 
 }
 
-.facebook-container img{
+.facebook-container img,
+.portfolio-container img{
     margin-left: 2em;
 }
 
