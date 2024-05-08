@@ -62,3 +62,43 @@
     animation: flash-animation 2s ;
   }
 
+  .console-window h1,
+  .console-window h2{
+    visibility: hidden;
+  }
+
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  @keyframes blinking {
+    0%, 50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  .letter-by-letter::before {
+    content: '> '; /* Add ">" sign before the text */
+    display: inline; /* Use inline display */
+    overflow: hidden;
+    white-space: nowrap;
+    animation: blinking 1s infinite; /* Apply blinking animation to the ">" sign */
+  }
+
+  .letter-by-letter::after {
+    content: attr(data-text); /* Add text after the ">" sign */
+    display: inline-block; /* Use inline-block display */
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 2s steps(30) forwards; /* Apply typing animation to the text */
+    animation-delay: calc(1s * var(--index)); /* Delay each animation */
+  }
+
+  /* Specific rule for elements with letter-by-letter class and without need of ">" sign */
+  .no-prefix::before {
+    content: none; /* No content before the text */
+  }
+  
+
+
+
