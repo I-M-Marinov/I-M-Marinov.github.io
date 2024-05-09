@@ -1488,9 +1488,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-evenly;
-        padding-top: 0.25em;
-        padding-left: 0;
         height: auto;
         width: 100%;
     }
@@ -1500,7 +1497,7 @@
         height: 12em;
         margin-right: 0.25em;
         flex-shrink: 1;
-        order: 2;
+
     }
 
     .project-picture img {
@@ -1511,26 +1508,12 @@
         width: 30em;
     }
 
-    .project-picture.special {
-        max-width: 100%;
-        max-height: 100%;
-        width: 20em;
-        height: auto;
-        object-fit: contain;
-        pointer-events: none;
-    }
 
     .project-description {
         width: 20em;
         height: 12em;
         margin-right: 0.25em;
-        order: 1;
-    }
 
-    .project-description.special {
-        width: 20em;
-        height: 12em;
-        margin-right: 0.25em;
     }
 
     .project-description h2 {
@@ -1726,82 +1709,82 @@
         padding-top: 1em;
     }
 
+    .comment.projects.scroll{
+        display: none;
+    }
+
+    .comment.projects{
+    font-size: 0.5em;
+    align-self: center;
+    font-weight: 600;
+    z-index: 300;
+    }
+
+    .carousel-container {
+        display: flex;
+        margin-top: 9em;
+        overflow-y: auto;
+        height: 60%; 
+        scroll-snap-type: y mandatory;
+        -webkit-overflow-scrolling: touch; 
+        z-index: 299;
+    }
+
     .project-container {
+        padding: 0 0.5em 0 0.5em;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
-        padding-top: 0.25em;
-        padding-left: 0;
-        height: auto;
-        width: 100%;
+        justify-content: center;
+        align-content: center;
     }
 
     .project-picture {
-        width: 20em;
-        height: 12em;
-        margin-right: 0.25em;
         flex-shrink: 1;
-        order: 2;
+        margin: 0 auto;
     }
 
-    .project-picture img {
+    .project-picture img { 
         max-width: 100%;
-        height: auto;
-        width: auto;
-        pointer-events: none;
-        width: 30em;
-    }
-
-    .project-picture.special {
-        max-width: 100%;
-        max-height: 100%;
-        width: 20em;
-        height: auto;
-        object-fit: contain;
-        pointer-events: none;
-    }
-
-    .project-description {
-        width: 20em;
-        height: 12em;
-        margin-right: 0.25em;
+        align-self: center;
         order: 1;
     }
 
-    .project-description.special {
-        width: 20em;
-        height: 12em;
-        margin-right: 0.25em;
+    .project-description {
+        padding: 1em 0 0 0;
+        width: 90%;
+        padding-right: 0;
+        height: 9em;
+        order: 2;
     }
 
     .project-description h2 {
-        font-size: 0.85em;
+        font-size: 0.60em;
         padding-bottom: 0.15em;
 
     }
 
     .project-description h3 {
-        font-size: 0.5em;
+        font-size: 0.4em;
         padding: 0.25em;
     }
 
     .project-description p {
-        font-size: 0.45em;
-        line-height: 1.2em;
+        padding-top: 0.25em;
+        font-size: 0.35em;
+        line-height: 1.3em;
     }
 
     .url-container {
         display: flex;
         flex-direction: column;
-        padding-top: 1em;
         flex-grow: 2;
     }
 
     .url-container img {
-        width: 12%;
-        border-radius: 0.2em;
-        overflow: visible;
+        margin-top: -1.5em;
+        width: 10%;
+        border-radius: 0.5em;
+        overflow: hidden;
     }
 
     .go-to-start-button {
