@@ -1,3 +1,14 @@
+.comment.projects.swipe{
+    display: none;
+}
+
+.comment.projects{
+    font-size: 0.8em;
+    align-self: center;
+    font-weight: 600;
+    z-index: 300;
+    }
+
 .my-projects-container {
     margin-top: -13.5em;
     display: flex;
