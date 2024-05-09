@@ -1,44 +1,65 @@
-.project-container{
+.my-projects-container {
+    margin-top: -13.5em;
     display: flex;
-    padding-top: 1.3em;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    height: 100vh; 
 }
 
+.carousel-container {
+    overflow-y: auto;
+    height: 45%; 
+    width: 100%;
+    scroll-snap-type: y mandatory;
+    -webkit-overflow-scrolling: touch; 
+}
 
-.project-picture{
+.project-container {
     display: flex;
-    width: 34%;
-    height: auto;
-    margin-right: 0.5em;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 24em;
+    scroll-snap-align: start;
+    padding: 0 1em 1em 1em; 
+}
+
+.project-picture {
+    height: auto; 
+    overflow: hidden;
+    object-fit: contain;
+    align-self: center;
+    pointer-events: none;
+    scale: 70%;
 }
 
 .project-picture img {
-    pointer-events: none;
-    width: 100%;
+    width: 20em;
     height: auto;
-    margin: 0 auto;
-    object-fit: contain;
+    align-self: center;
 }
 
-.project-picture.special img {
-    max-width: 100%;
-    max-height: 100%;
-    width: 15em;
-    height: auto;
-    object-fit: contain;
-    pointer-events: none;
-}
-
-.project-description{
+.project-description {
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 1em;
     color: beige;
     border: 2px #4e4d4d solid;
-    width: 65%;
-    height: auto;
     text-align: center;
     align-content: center;
 }
 
+.project-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
 .project-description h2{
-    font-size: 2em;
+    font-size: 2.3em;
     text-align: center;
     padding-bottom: 0.5em;
     color: #4EC9B0;
@@ -50,7 +71,7 @@
 }
 
 .project-description p {
-    font-size: 1em;
+    font-size: 1.2em;
     line-height: 1.5em;
     padding-left: 1em;
     padding-right: 1em;
@@ -61,16 +82,39 @@
 }
 
 .url-container{
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
     padding-top: 1em;
     flex-grow: 1;
 }
 
+.url-container a {
+    text-decoration: none;
+    color: #007bff; 
+}
 
 .url-container img{
     width: 6%;
     height: auto;
     border-radius: 0.95em;
     align-self: center;
+}
+
+
+.carousel-container::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+.carousel-container::-webkit-scrollbar-track {
+    background: #1F1F1F; /* Color of the track */
+}
+
+.carousel-container::-webkit-scrollbar-thumb {
+    background: #1F1F1F; /* Color of the thumb */
+    border-radius: 1em; /* Radius of the thumb */
+}
+
+.carousel-container::-webkit-scrollbar-thumb:hover {
+    background: #1F1F1F; /* Color of the thumb on hover */
 }
