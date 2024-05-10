@@ -40,7 +40,7 @@
 
 .project-picture {
     height: auto; 
-    overflow: hidden;
+    overflow: visible;
     object-fit: contain;
     align-self: center;
     pointer-events: none;
