@@ -463,26 +463,14 @@
         max-width: 100%;
         height: auto;
         object-fit: contain;
-        scale: 75%;
-    }
-
-    .project-picture.special img {
-        max-width: 100%;
-        height: auto;
-        object-fit: contain;
+        scale: 80%;
     }
 
     .project-description {
         width: 40em;
-        height: 15em;
-        margin-right: 0.25em;
-        align-self: center;
+        height: auto;
     }
 
-    .project-description.special {
-        width: 40em;
-        height: 15em;
-    }
 
     .project-description h2 {
         font-size: 1.3em;
@@ -865,7 +853,7 @@
     }
 
     .project-description h2 {
-        font-size: 1.4em;
+        font-size: 1.5em;
         padding-top: 0.45em;
         padding-bottom: 0.15em;
     }
@@ -877,7 +865,7 @@
 
     .project-description p {
         padding-top: 0.25em;
-        font-size: 0.85em;
+        font-size: 0.75em;
         line-height: 1.3em;
     }
 
@@ -889,7 +877,7 @@
 
     .url-container img {
         margin-top: -1.5em;
-        width: 7.5%;
+        width: 4.5%;
         border-radius: 0.5em;
         overflow: hidden;
     }
