@@ -445,6 +445,7 @@
     .project-container {
         display: flex;
         justify-content: center;
+        height: 20em;
         padding-top: 0.5em;
         padding-left: 0.6em;
         max-width: 100%;
