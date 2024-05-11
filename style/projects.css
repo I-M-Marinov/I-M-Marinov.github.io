@@ -39,7 +39,6 @@
 
 .project-picture {
     height: auto; 
-    overflow: hidden;
     object-fit: contain;
     align-self: center;
     pointer-events: none;
