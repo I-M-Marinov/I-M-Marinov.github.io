@@ -96,6 +96,7 @@
         padding-top: 0.5em;
         padding-left: 0.6em;
         width: 100%;
+        height: 22.5em;
     }
 
     .project-picture {
@@ -113,8 +114,8 @@
     }
 
     .project-description {
-        width: 45em;
-        height: auto;
+        width: 60%;
+        height: 14em;
         margin-right: 0.5em;
     }
 
@@ -141,8 +142,8 @@
     }
 
     .url-container img {
-        padding-top: 1.5em;
-        width: 6.5%;
+        padding-top: 0.5em;
+        width: 5.5%;
         border-radius: 0.5em;
     }
 
@@ -174,15 +175,15 @@
     }
 
     .bottom-container {
-        font-size: 0.85em;
-    }
-
-    .app-container {
         font-size: 1em;
     }
 
+    .app-container {
+        font-size: 0.65em;
+    }
+
     .solution-explorer {
-        font-size: 0.75em;
+        font-size: 0.60em;
     }
 
     .console-window-header {
@@ -254,11 +255,13 @@
         justify-content: center;
         padding-top: 0.5em;
         padding-left: 0.6em;
-        max-width: 100%;
+        width: 100%;
+        height: 20em;
+
     }
 
     .project-picture {
-        margin-right: 0.25em;
+        margin-right: 0.em;
         flex-shrink: 1;
         object-fit: contain;
     }
@@ -273,23 +276,13 @@
         scale: 75%;
     }
 
-    .project-picture.special img {
-        max-width: 100%;
-        height: auto;
-        object-fit: contain;
-    }
-
     .project-description {
-        width: 40em;
-        height: 15em;
+        width: 60%;
+        height: auto;
         margin-right: 0.25em;
         align-self: center;
     }
 
-    .project-description.special {
-        width: 40em;
-        height: 15em;
-    }
 
     .project-description h2 {
         font-size: 1.3em;
@@ -315,7 +308,7 @@
     } */
 
     .url-container img {
-        width: 8%;
+        width: 6.5%;
         border-radius: 0.2em;
     }
 
@@ -445,7 +438,7 @@
     .project-container {
         display: flex;
         justify-content: center;
-        height: 20em;
+        height: 21em;
         padding-top: 0.5em;
         padding-left: 0.6em;
         max-width: 100%;
@@ -468,13 +461,13 @@
     }
 
     .project-description {
-        width: 40em;
+        width: 60%;
         height: auto;
     }
 
 
     .project-description h2 {
-        font-size: 1.3em;
+        font-size: 1.25em;
         padding-bottom: 0.15em;
 
     }
@@ -490,8 +483,9 @@
     }
 
     .url-container img {
-        width: 8%;
+        width: 6.5%;
         border-radius: 0.2em;
+        padding-bottom: 0.05em;
     }
 
     .go-to-start-button {
@@ -798,7 +792,7 @@
 
     .comment.projects.swipe{
         display: inline;
-        font-size: 0.65em;
+        font-size: 0.75em;
         padding-bottom: 0.2em;
     }
 
@@ -809,7 +803,6 @@
     }
 
     .carousel-container {
-        padding-top: 2em;
         margin: 0;
         display: flex;
         flex-direction: row;
@@ -822,12 +815,13 @@
     }
 
     .project-container {
-        padding-top: 2em;
+        /* padding-top: 2em; */
         display: flex;
         flex-direction: column;
         align-content: flex-start;
         align-items: flex-start;
         width: 100%;
+        height: 23.5em;
         flex-shrink: 0;
         flex-direction: column;
 
@@ -849,24 +843,24 @@
     .project-description {
         padding: 0;
         margin-top: -2em;
-        width: 95%;
+        width: 85%;
         order: 2;
     }
 
     .project-description h2 {
-        font-size: 1.5em;
+        font-size: 1.1em;
         padding-top: 0.45em;
         padding-bottom: 0.15em;
     }
 
     .project-description h3 {
-        font-size: 1em;
+        font-size: 0.85em;
         padding: 0.25em;
     }
 
     .project-description p {
         padding-top: 0.25em;
-        font-size: 0.75em;
+        font-size: 0.65em;
         line-height: 1.3em;
     }
 
@@ -878,7 +872,7 @@
 
     .url-container img {
         margin-top: -1.5em;
-        width: 4.5%;
+        width: 5.5%;
         border-radius: 0.5em;
         overflow: hidden;
     }
@@ -1062,6 +1056,7 @@
         align-content: flex-start;
         align-items: flex-start;
         width: 100%;
+        height: 22.5em;
         flex-shrink: 0;
         flex-direction: column;
 
@@ -1084,24 +1079,24 @@
     .project-description {
         padding: 0;
         margin-top: -2em;
-        width: 95%;
+        width: 75%;
         order: 2;
     }
 
     .project-description h2 {
-        font-size: 1.1em;
+        font-size: 1em;
         padding-top: 0.25em;
         padding-bottom: 0.15em;
     }
 
     .project-description h3 {
-        font-size: 0.80em;
+        font-size: 0.70em;
         padding: 0.25em;
     }
 
     .project-description p {
         padding-top: 0.25em;
-        font-size: 0.65em;
+        font-size: 0.50em;
         line-height: 1.3em;
     }
 
@@ -1113,7 +1108,7 @@
 
     .url-container img {
         margin-top: -1.5em;
-        width: 7.5%;
+        width: 6.5%;
         border-radius: 0.5em;
         overflow: hidden;
     }
@@ -1327,6 +1322,7 @@
         align-content: space-between;
         align-items: center;
         width: 100%;
+        height: 18.5em;
         flex-shrink: 0;
         flex-grow: 1;
 
@@ -1583,6 +1579,7 @@
         align-content: space-between;
         align-items: center;
         width: 100%;
+        height: 17em;
         flex-shrink: 0;
         flex-direction: column;
 
