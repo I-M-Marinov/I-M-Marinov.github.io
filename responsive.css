@@ -6,11 +6,11 @@
     }
 
     .app-container {
-        font-size: 0.85em;
+        font-size: 0.75em;
     }
 
     .solution-explorer {
-        font-size: 0.75em;
+        font-size: 0.65em;
     }
 
     .navigation {
@@ -22,11 +22,11 @@
     }
 
     .navigation ul {
-        gap: 0.3em;
+        gap: 0.2em;
     }
 
     .tab li{ 
-        font-size: 1.1em;
+        font-size: 1em;
         padding: 0.3em 0.75em 0em 0.3em;
     }
 
@@ -103,7 +103,7 @@
         flex-wrap: nowrap;
         overflow-y: auto;
         scroll-snap-type: y mandatory;
-        height: 50%; 
+        height: 40%; 
         z-index: 299;
     }
 
