@@ -46,7 +46,7 @@
 }
 
 .project-picture img {
-    width: 20em;
+    width: 30em;
     height: auto;
     align-self: center;
 }
@@ -110,6 +110,7 @@
     align-self: center;
 }
 
+/* Colors of the scrollbar and the track are the same to hide them  */
 
 .carousel-container::-webkit-scrollbar {
     width: 0.5em;

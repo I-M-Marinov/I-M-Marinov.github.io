@@ -2,11 +2,11 @@
     /* Styles for WQHD screens */
 
     .bottom-container {
-        font-size: 0.8em;
+        font-size: 1em;
     }
 
     .app-container {
-        font-size: 0.81em;
+        font-size: 0.85em;
     }
 
     .solution-explorer {
@@ -26,7 +26,7 @@
     }
 
     .tab li{ 
-        font-size: 0.95em;
+        font-size: 1.1em;
         padding: 0.3em 0.75em 0em 0.3em;
     }
 
@@ -83,9 +83,28 @@
 
 
     .picture img {
-        margin-left: -18.5em;
+        margin-left: -22.5em;
         margin-bottom: -18.5em;
         width: 35%;
+    }
+
+    .my-projects-container {
+        margin: 0;
+        display: flex;
+        width: 100%;
+    }
+
+    .carousel-container {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        align-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-y: auto;
+        scroll-snap-type: y mandatory;
+        height: 25.5%; 
+        z-index: 299;
     }
 
     .project-container {
@@ -96,7 +115,7 @@
         padding-top: 0.5em;
         padding-left: 0.6em;
         width: 100%;
-        height: 22.5em;
+        height: 30.5em;
     }
 
     .project-picture {
@@ -110,27 +129,26 @@
         height: auto;
         object-fit: contain;
         scale: 100%;
-        align-self: center;
     }
 
     .project-description {
         width: 60%;
-        height: 14em;
-        margin-right: 0.5em;
+        height: auto;
+        margin-right: 0.9em;
     }
 
     .project-description h2 {
-        font-size: 1.2em;
+        font-size: 1.5em;
         padding-bottom: 0.25em;
     }
 
     .project-description h3 {
-        font-size: 1em;
+        font-size: 1.2em;
         padding: 0.25em;
     }
 
     .project-description p {
-        font-size: 0.70em;
+        font-size: 0.90em;
         line-height: 1.2em;
     }
 
@@ -142,8 +160,8 @@
     }
 
     .url-container img {
-        padding-top: 0.5em;
-        width: 5.5%;
+        margin-top: 0.5em;
+        width: 5%;
         border-radius: 0.5em;
     }
 
@@ -157,11 +175,30 @@
         height: 2.5em;
     }
     .big-container{
-        margin-left: 5em;
+        margin-left: 0;   
+    }
+    .resume-body{
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .go-to-start-button {
+    
+        display: inline-block;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        font-size: 0.8em;
+        padding: 0;
+        margin-bottom: 2em;
+        margin-left: -10em;
+        width: 10em;
+        height: 5em;
+
     }
 
     footer {
-        font-size: 0.5em;
+        font-size: 0.7em;
     }
 
 }
@@ -250,14 +287,33 @@
         font-size: 0.45em;
     }
 
+    .my-projects-container {
+        margin: 0;
+        display: flex;
+        width: 100%;
+    }
+
+    .carousel-container {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        align-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-y: auto;
+        scroll-snap-type: y mandatory;
+        height: 22.5%; 
+        z-index: 299;
+    }
+
     .project-container {
         display: flex;
         justify-content: center;
-        padding-top: 0.5em;
+        padding-top: 0.2em;
+        padding-bottom: 0.2em;
         padding-left: 0.6em;
         width: 100%;
-        height: 20em;
-
+        height: 28.5em;
     }
 
     .project-picture {
@@ -308,8 +364,10 @@
     } */
 
     .url-container img {
+        margin-top: 0.05em;
         width: 6.5%;
         border-radius: 0.2em;
+        margin-bottom: 0;
     }
 
     /* .go-to-start-button {
@@ -320,22 +378,6 @@
         display: none;
     } */
 
-    .go-to-start-button {
-    
-        display: inline-block;
-        position: absolute;
-        font-family: "Montserrat", sans-serif;
-        font-weight: 700;
-        width: 100px;
-        height: 50px;
-        margin-top: 1.2em;
-        background-color: #307de2;
-        box-shadow: 0px -23px 25px 0px rgba(0, 0, 0, 0.17) 
-        inset, 0px -36px 30px 0px rgba(0, 0, 0, 0.15) 
-        inset, 0px -79px 40px 0px rgba(0, 0, 0, 0.1) 
-        inset, 0px 2px 1px rgba(0, 0, 0, 0.06), 0px 4px 2px rgba(0, 0, 0, 0.09), 0px 8px 4px rgba(0, 0, 0, 0.09), 0px 16px 8px rgba(0, 0, 0, 0.09);
-     
-    }
 
     .print-resume-method {
         display: none;
@@ -345,8 +387,21 @@
         text-decoration: none;
     }
 
-    .resume-body{
-        align-self:baseline;
+    .go-to-start-button {
+    
+        display: inline-block;
+        position: absolute;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        font-size: 0.8em;
+        padding: 0;
+        margin-bottom: 0.5;
+        margin-top: 1.5em;
+        margin-bottom: 2em;
+        margin-left: 1.5em;
+        width: 10em;
+        height: 5em;
+
     }
 
 
@@ -435,10 +490,30 @@
         font-size: 0.55em;
     }
 
+    .my-projects-container {
+        margin: 0;
+        display: flex;
+        width: 100%;
+    }
+
+    .carousel-container {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        align-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-y: auto;
+        scroll-snap-type: y mandatory;
+        height: 22.5%; 
+        z-index: 299;
+    }
+
+
     .project-container {
         display: flex;
         justify-content: center;
-        height: 21em;
+        height: 28.5em;
         padding-top: 0.5em;
         padding-left: 0.6em;
         max-width: 100%;
@@ -483,9 +558,9 @@
     }
 
     .url-container img {
+        margin-top: 0.05em;
         width: 6.5%;
         border-radius: 0.2em;
-        padding-bottom: 0.05em;
     }
 
     .go-to-start-button {
@@ -596,12 +671,31 @@
         font-size: 0.45em;
     }
 
+    .my-projects-container {
+        margin: 0;
+        display: flex;
+        width: 100%;
+    }
+
+    .carousel-container {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        align-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-y: auto;
+        scroll-snap-type: y mandatory;
+        height: 22.5%; 
+        z-index: 299;
+    }
+
     .project-container {
         display: flex;
         justify-content: center;
         padding-top: 0.5em;
         padding-left: 0.6em;
-        max-width: 100%;
+        height: 27.5em;
     }
 
     .project-picture {
@@ -650,15 +744,9 @@
         line-height: 1.2em;
     }
 
-    /* .url-container {
-        display: flex;
-        flex-direction: column;
-        padding-top: 1em;
-        flex-grow: 2;
-    } */
-
     .url-container img {
-        width: 8%;
+        margin-top: 0.05em;
+        width: 6.5%;
         border-radius: 0.2em;
     }
 
@@ -808,6 +896,7 @@
         flex-direction: row;
         align-items: flex-start;
         align-content: flex-start;
+        flex-wrap: nowrap;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
         height: 100%; 
@@ -836,8 +925,8 @@
 
     .project-picture {
         display: flex;
-        padding: 0;
         flex-shrink: 0;
+        object-fit: contain;
     }
 
     .project-description {
@@ -871,8 +960,8 @@
     }
 
     .url-container img {
-        margin-top: -1.5em;
-        width: 5.5%;
+        margin-top: 0.05em;
+        width: 6.5%;
         border-radius: 0.5em;
         overflow: hidden;
     }
@@ -1107,7 +1196,7 @@
     }
 
     .url-container img {
-        margin-top: -1.5em;
+        margin-top: 0.05em;
         width: 6.5%;
         border-radius: 0.5em;
         overflow: hidden;
@@ -1370,8 +1459,8 @@
     }
 
     .url-container img {
-        margin-top: -1.5em;
-        width: 10%;
+        margin-top: 0.2em;
+        width: 8%;
         border-radius: 0.5em;
         overflow: hidden;
     }
@@ -1626,8 +1715,8 @@
     }
 
     .url-container img {
-        margin-top: -1.5em;
-        width: 10%;
+        margin-top: 0.2em;
+        width: 8%;
         border-radius: 0.5em;
         overflow: hidden;
     }
