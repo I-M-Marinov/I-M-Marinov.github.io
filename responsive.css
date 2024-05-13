@@ -100,7 +100,6 @@
         flex-direction: column;
         align-items: flex-start;
         align-content: flex-start;
-        flex-wrap: nowrap;
         overflow-y: auto;
         scroll-snap-type: y mandatory;
         height: 40%; 
@@ -112,25 +111,37 @@
         flex-direction: row;
         justify-content: center;
         align-content: flex-start;
+        align-items: flex-start;
         padding-top: 0.5em;
         padding-left: 0.6em;
         width: 100%;
-        height: 30.5em;
+        height: 25em;
     }
 
     .project-picture {
         pointer-events: none;
         margin-right: 0.25em;
-        flex-shrink: 1;
+        flex-shrink: 0;
     }
 
     .project-picture img {
-        max-width: 100%;
+        align-self: flex-start;
         height: auto;
         object-fit: contain;
         scale: 100%;
     }
 
+    #project-picture1{
+        padding-bottom: 8em;
+    }
+    
+    #project-picture2{
+        padding-bottom: 9em;
+    }
+    
+    #project-picture3{
+        padding-bottom: 9em;
+    }
     .project-description {
         width: 60%;
         height: auto;
@@ -302,35 +313,41 @@
         /* flex-wrap: nowrap; */
         overflow-y: auto;
         scroll-snap-type: y mandatory;
-        height: 45%;
+        height: 50%;
         z-index: 299;
     }
 
     .project-container {
         display: flex;
+        flex-direction: row;
         justify-content: center;
-        padding-top: 0.2em;
-        padding-bottom: 0.2em;
-        padding-left: 0.6em;
+        align-content: flex-start;
+        align-items: flex-start;
+        padding-top: 0.3em;
+        padding-left: 0.3em;
         width: 100%;
         height: 20em;
     }
 
     .project-picture {
-        margin-right: 0.em;
-        flex-shrink: 1;
-        object-fit: contain;
+        pointer-events: none;
+        margin-right: 0.25em;
+        flex-shrink: 0;
     }
 
     .project-picture img {
-        width: 30em;
-        height: 20em;
-        pointer-events: none;
-        max-width: 100%;
+        align-self: flex-start;
         height: auto;
-        object-fit: contain;    
-        scale: 75%;
+        object-fit: contain;
+        scale: 100%;
     }
+
+    #project-picture1,
+    #project-picture2,
+    #project-picture3{
+        padding-bottom: 0em;
+    }
+    
 
     .project-description {
         width: 60%;
@@ -510,30 +527,35 @@
 
     .project-container {
         display: flex;
+        flex-direction: row;
         justify-content: center;
-        padding-top: 0.2em;
-        padding-bottom: 0.2em;
-        padding-left: 0.6em;
+        align-content: flex-start;
+        align-items: flex-start;
+        padding-top: 0.3em;
+        padding-left: 0.3em;
         width: 100%;
-        height: 28.5em;
+        height: 20em;
     }
 
     .project-picture {
-        margin-right: 0.em;
-        flex-shrink: 1;
-        object-fit: contain;
+        pointer-events: none;
+        margin-right: 0.25em;
+        flex-shrink: 0;
     }
 
     .project-picture img {
-        width: 30em;
-        height: 20em;
-        pointer-events: none;
-        max-width: 100%;
+        align-self: flex-start;
         height: auto;
-        object-fit: contain;    
-        scale: 75%;
+        object-fit: contain;
+        scale: 100%;
     }
 
+    #project-picture1,
+    #project-picture2,
+    #project-picture3{
+        padding-bottom: 0em;
+    }
+    
     .project-description {
         width: 60%;
         height: auto;
@@ -712,29 +734,34 @@
 
     .project-container {
         display: flex;
+        flex-direction: row;
         justify-content: center;
-        height: 28.5em;
-        padding-top: 0.5em;
-        padding-left: 0.6em;
-        max-width: 100%;
+        align-content: flex-start;
+        align-items: flex-start;
+        padding-top: 0.3em;
+        padding-left: 0.3em;
+        width: 100%;
+        height: 20em;
     }
 
     .project-picture {
+        pointer-events: none;
         margin-right: 0.25em;
-        flex-shrink: 1;
-        object-fit: contain;
+        flex-shrink: 0;
     }
 
     .project-picture img {
-        width: 30em;
-        height: 20em;
-        pointer-events: none;
-        max-width: 100%;
+        align-self: flex-start;
         height: auto;
         object-fit: contain;
-        scale: 80%;
+        scale: 100%;
     }
 
+    #project-picture1,
+    #project-picture2,
+    #project-picture3{
+        padding-bottom: 0em;
+    }
     .project-description {
         width: 60%;
         height: auto;
@@ -883,49 +910,49 @@
         flex-direction: column;
         align-items: flex-start;
         align-content: flex-start;
-        flex-wrap: nowrap;
+        justify-content: flex-start;
         overflow-y: auto;
         scroll-snap-type: y mandatory;
-        height: 45%; 
+        height: 40%; 
         z-index: 299;
     }
 
     .project-container {
         display: flex;
+        flex-direction: row;
         justify-content: center;
-        padding-top: 0.5em;
-        padding-left: 0.6em;
-        height: 25.5em;
+        align-content: flex-start;
+        align-items: flex-start;
+        padding-top: 0.3em;
+        padding-left: 0.3em;
+        width: 100%;
+        height: 22em;
     }
 
     .project-picture {
+        pointer-events: none;
         margin-right: 0.25em;
-        flex-shrink: 1;
-        object-fit: contain;
+        flex-shrink: 0;
+        width: 40%;
     }
 
     .project-picture img {
-        pointer-events: none;
-        max-width: 100%;
+        align-self: flex-start;
         height: auto;
         object-fit: contain;
-        scale: 75%;
+        scale: 85%;
     }
 
-    .project-picture.special img {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-        scale: 75%;
+    #project-picture1,
+    #project-picture2,
+    #project-picture3{
+        padding-bottom: 0em;
     }
 
     .project-description {
         margin-right: 0.25em;
         align-self: center;
-    }
-
-    .project-description.special {
-        align-self: center;
+        width: 80%;
     }
 
     .project-description h2 {
@@ -1110,29 +1137,35 @@
         align-content: flex-start;
         align-items: flex-start;
         width: 100%;
-        height: 23.5em;
+        height: 28em;
         flex-shrink: 0;
-        flex-direction: column;
 
+    }
+
+    .project-picture {
+        display: flex;
+        justify-content: flex-start;
+        flex-shrink: 0;
+        object-fit: contain;
+        width: 85%;
     }
 
     .project-picture img { 
         width: 100%;
         height: auto;
         order: 1;
-        object-fit: contain;
     }
 
-    .project-picture {
-        display: flex;
-        flex-shrink: 0;
-        object-fit: contain;
+    #project-picture1,
+    #project-picture2,
+    #project-picture3{
+        padding-bottom: 1em;
     }
 
     .project-description {
         padding: 0;
         margin-top: -2em;
-        width: 85%;
+        width: 95%;
         order: 2;
     }
 
@@ -1611,7 +1644,7 @@
         align-content: space-between;
         align-items: center;
         width: 100%;
-        height: 18.5em;
+        height: 19em;
         flex-shrink: 0;
         flex-grow: 1;
 
