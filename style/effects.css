@@ -21,7 +21,7 @@
 
 .go-to-start-button:hover {
     opacity: 0.8;
-    color: rgb(255, 255, 255);
+    color: rgb(140, 204, 56, 1);
   }
   .go-to-start-button-hidden:hover {
     opacity: 0.8;
@@ -97,6 +97,15 @@
   /* Specific rule for elements with letter-by-letter class and without need of ">" sign */
   .no-prefix::before {
     content: none; /* No content before the text */
+  }
+
+  .close:hover{
+    background-color: crimson;
+  }
+
+  .minimize:hover,
+  .maximize:hover{
+    background-color: #424040;
   }
   
 
