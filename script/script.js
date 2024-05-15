@@ -170,14 +170,29 @@ function showExitAlert(message) {
   const alertMessage = document.getElementById('alertMessage');
   const closeAlert = document.getElementById('closeAlertButton');
   const customAlertPicture = document.getElementById('customAlertPicture');
+  const closeIcon = document.querySelector('.close');
+  const exitMessages = [
+    "Don't fail me again, Admiral.",
+    "I find your lack of faith disturbing.",
+    "There is no escape! Don't make me destroy you!",
+  ];
+
+  const handleCloseAlert = () => {
+    customAlert.style.display = 'none';
+    closeIcon.addEventListener('click', handleIconClick); // Add event listener back to closeIcon
+  };
+
+  const handleIconClick = () => {
+    closeIcon.removeEventListener('click', handleIconClick);
+    const randomIndex = Math.floor(Math.random() * exitMessages.length);
+    const randomMessage = exitMessages[randomIndex];
+    showExitAlert(randomMessage);
+  };
 
   alertMessage.textContent = message;
   customAlert.style.display = 'block';
   customAlertPicture.style.display = 'inline';
-
-  closeAlert.addEventListener('click', () => {
-    customAlert.style.display = 'none';
-  });
+  closeAlert.addEventListener('click', handleCloseAlert); // Add event listener to closeAlertButton
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -188,11 +203,12 @@ document.addEventListener('DOMContentLoaded', () => {
     "There is no escape! Don't make me destroy you!",
   ];
 
-  closeIcon.addEventListener('click', () => {
-
+  const handleIconClick = () => {
+    closeIcon.removeEventListener('click', handleIconClick);
     const randomIndex = Math.floor(Math.random() * exitMessages.length);
     const randomMessage = exitMessages[randomIndex];
-    
     showExitAlert(randomMessage);
-  });
+  };
+
+  closeIcon.addEventListener('click', handleIconClick); // Add event listener to closeIcon
 });
