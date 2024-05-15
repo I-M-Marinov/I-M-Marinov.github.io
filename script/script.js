@@ -182,8 +182,17 @@ function showExitAlert(message) {
 
 document.addEventListener('DOMContentLoaded', () => {
   const closeIcon = document.querySelector('.close');
+  const exitMessages = [
+    "Don't fail me again, Admiral.",
+    "I find your lack of faith disturbing.",
+    "There is no escape! Don't make me destroy you!",
+  ];
 
   closeIcon.addEventListener('click', () => {
-    showExitAlert(`Don't fail me again, Admiral.`);
-  })
+
+    const randomIndex = Math.floor(Math.random() * exitMessages.length);
+    const randomMessage = exitMessages[randomIndex];
+    
+    showExitAlert(randomMessage);
+  });
 });
