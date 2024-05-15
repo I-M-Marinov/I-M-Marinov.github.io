@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
       h2.style.fontSize = newFontSize;
       picture.style.display = "none";
       if (index === 0) {
-        h2.style.paddingTop = '3em'; // Change the padding top
+        h2.style.paddingTop = '2em'; // Change the padding top
       } else {
         h2.style.paddingTop = ''; // Revert padding top to default
       }
