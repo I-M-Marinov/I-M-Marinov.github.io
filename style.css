@@ -77,5 +77,42 @@ html {
 }
 
 
+.alert {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #bebebe;
+    border: 2px solid #7160E8;
+    padding: 1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    text-align: center;  /* center the elements inside the div  */
+    display: none;
+
+  }
+  
+  #alertMessage {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1em;
+  }
+  
+  #closeAlertButton {
+    background-color: #000000;
+    color: #ffffff;
+    border: 1px solid #7160E8;
+    padding: 0.5em 1em;
+    cursor: pointer;
+  }
+
+  #customAlertPicture{
+    margin-bottom: 10px;
+    display: hidden;
+  }
+  
+
+
+
 
 

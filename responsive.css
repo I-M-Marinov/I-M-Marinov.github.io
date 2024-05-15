@@ -719,7 +719,7 @@
         align-self: flex-start;
         height: auto;
         object-fit: contain;
-        scale: 100%;
+        scale: 80%;
     }
 
     #project-picture1,
@@ -1034,7 +1034,7 @@
     }
 
     .console-window h1 {
-        font-size: 1em;
+        font-size: 0.85em;
         padding-left: 1.5em;
         padding-top: 1em;
     }
@@ -1280,7 +1280,7 @@
     .console-window h1 {
         padding-top: 1em;
         padding-left: 0.75em;
-        font-size: 0.75em;
+        font-size: 0.55em;
     }
 
     .console-window h1:first-of-type {
