@@ -169,9 +169,11 @@ function showExitAlert(message) {
   const customAlert = document.getElementById('customAlert');
   const alertMessage = document.getElementById('alertMessage');
   const closeAlert = document.getElementById('closeAlertButton');
+  const customAlertPicture = document.getElementById('customAlertPicture');
 
   alertMessage.textContent = message;
   customAlert.style.display = 'block';
+  customAlertPicture.style.display = 'inline';
 
   closeAlert.addEventListener('click', () => {
     customAlert.style.display = 'none';
