@@ -1,12 +1,13 @@
 @media print {
 
     /* hide before printing */
-    .print,
+  
     .navigation,
     .bottom-container,
     .go-to-start-button,
     .print-resume-method,
-    .buttons-container {
+    .buttons-container,
+    .resume-buttons{
         display: none;
     }
 
