@@ -165,50 +165,59 @@ function showAlert(message) {
   });
 }
 
-function showExitAlert(message) {
-  const customAlert = document.getElementById('customAlert');
-  const alertMessage = document.getElementById('alertMessage');
-  const closeAlert = document.getElementById('closeAlertButton');
-  const customAlertPicture = document.getElementById('customAlertPicture');
-  const closeIcon = document.querySelector('.close');
-  const exitMessages = [
-    "Don't fail me again, Admiral.",
-    "I find your lack of faith disturbing.",
-    "There is no escape! Don't make me destroy you!",
-  ];
+// Object mapping exit messages to their corresponding audio files
+const exitSounds = {
+  "Don't fail me again, Admiral.": "./audio/Don't fail me again.mp3",
+  "I find your lack of faith disturbing.": "./audio/I find your lack of faith disturbing.mp3",
+  "There is no escape! Don't make me destroy you!": "./audio/There is no escape.mp3",
+};
 
-  const handleCloseAlert = () => {
-    customAlert.style.display = 'none';
-    closeIcon.addEventListener('click', handleIconClick); // Add event listener back to closeIcon
-  };
+const exitMessages = [
+  "Don't fail me again, Admiral.",
+  "I find your lack of faith disturbing.",
+  "There is no escape! Don't make me destroy you!",
+];
 
-  const handleIconClick = () => {
-    closeIcon.removeEventListener('click', handleIconClick);
-    const randomIndex = Math.floor(Math.random() * exitMessages.length);
-    const randomMessage = exitMessages[randomIndex];
-    showExitAlert(randomMessage);
-  };
-
-  alertMessage.textContent = message;
-  customAlert.style.display = 'block';
-  customAlertPicture.style.display = 'inline';
-  closeAlert.addEventListener('click', handleCloseAlert); // Add event listener to closeAlertButton
-}
+// Flag to track whether an audio is currently playing
+let isAudioPlaying = false;
 
 document.addEventListener('DOMContentLoaded', () => {
   const closeIcon = document.querySelector('.close');
-  const exitMessages = [
-    "Don't fail me again, Admiral.",
-    "I find your lack of faith disturbing.",
-    "There is no escape! Don't make me destroy you!",
-  ];
+  const customAlert = document.getElementById('customAlert');
+  const alertMessage = document.getElementById('alertMessage');
 
-  const handleIconClick = () => {
-    closeIcon.removeEventListener('click', handleIconClick);
-    const randomIndex = Math.floor(Math.random() * exitMessages.length);
-    const randomMessage = exitMessages[randomIndex];
-    showExitAlert(randomMessage);
+  // Function to show the exit alert
+  const showExitAlert = (message) => {
+    alertMessage.textContent = message;
+    customAlert.style.display = 'block';
+
+    const audioFile = exitSounds[message];
+    const exitSound = new Audio(audioFile);
+
+    if (audioFile) {
+      isAudioPlaying = true;
+      closeIcon.disabled = true; // Disable close button while sound is playing
+      exitSound.play();
+
+      exitSound.addEventListener('ended', () => {
+        isAudioPlaying = false;
+        closeIcon.disabled = false; // Enable close button after sound ends
+        customAlert.style.display = 'none'; // Close alert window after sound ends
+        closeIcon.addEventListener('click', handleIconClick); // Reapply event listener to closeIcon
+      });
+    }
   };
 
-  closeIcon.addEventListener('click', handleIconClick); // Add event listener to closeIcon
+  // Function to handle clicking the closeIcon
+  const handleIconClick = () => {
+    if (!isAudioPlaying) {
+      const randomIndex = Math.floor(Math.random() * exitMessages.length);
+      const randomMessage = exitMessages[randomIndex];
+      showExitAlert(randomMessage);
+      closeIcon.removeEventListener('click', handleIconClick); // Remove event listener from closeIcon
+    }
+  };
+
+  // Initial event listener for closeIcon
+  closeIcon.addEventListener('click', handleIconClick);
 });
