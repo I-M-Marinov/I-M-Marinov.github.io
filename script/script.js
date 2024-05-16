@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
         isFontSizeChanged = false;
       }
     } else {
-      showAlert('Screen width should be between 1910px and 2560px to maximize this window ! ');
+      showAlert('Screen width should be between 1910px and 2560px to maximize this window !');
     }
   });
 });
@@ -183,13 +183,16 @@ let isAudioPlaying = false;
 
 document.addEventListener('DOMContentLoaded', () => {
   const closeIcon = document.querySelector('.close');
+  const closeAlertButton = document.getElementById('closeAlertButton');
   const customAlert = document.getElementById('customAlert');
   const alertMessage = document.getElementById('alertMessage');
+  const customAlertPicture = document.getElementById('customAlertPicture');
 
   // Function to show the exit alert
   const showExitAlert = (message) => {
     alertMessage.textContent = message;
     customAlert.style.display = 'block';
+    customAlertPicture.style.display = 'inline';
 
     const audioFile = exitSounds[message];
     const exitSound = new Audio(audioFile);
@@ -218,6 +221,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  // Function to handle clicking the closeAlertButton
+  const handleCloseAlert = () => {
+      customAlert.style.display = 'none';
+
+  };
+
   // Initial event listener for closeIcon
   closeIcon.addEventListener('click', handleIconClick);
+
+  // Event listener for closeAlertButton
+  closeAlertButton.addEventListener('click', handleCloseAlert);
 });
+
+
