@@ -78,7 +78,7 @@
     }
 
     .console-window h2:first-of-type {
-        padding-top: 3em;
+        padding-top: 2em;
     }
 
 
@@ -1787,7 +1787,7 @@
     .minimize,
     .maximize,
     .close {
-        padding-top: 0.25em;
+        padding-top: 0.10em;
         width: 0.75em;
         height:  0.75em;
     }
@@ -1810,7 +1810,7 @@
     }
     
     .console-window h2:first-of-type{
-        padding-top: 1em;
+        padding-top: 0;
     }
 
 

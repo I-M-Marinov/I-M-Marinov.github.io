@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
       h2.style.fontSize = newFontSize;
       picture.style.display = "none";
       if (index === 0) {
-        h2.style.paddingTop = '2em'; // Change the padding top
+        h2.style.paddingTop = '1em'; // Change the padding top
       } else {
         h2.style.paddingTop = ''; // Revert padding top to default
       }
@@ -164,19 +164,19 @@ function showAlert(message) {
     customAlert.style.display = 'none';
   });
 }
-
-// Object mapping exit messages to their corresponding audio files
-const exitSounds = {
-  "Don't fail me again, Admiral.": "./audio/Don't fail me again.mp3",
-  "I find your lack of faith disturbing.": "./audio/I find your lack of faith disturbing.mp3",
-  "There is no escape! Don't make me destroy you!": "./audio/There is no escape.mp3",
-};
-
+// Exit messages 
 const exitMessages = [
   "Don't fail me again, Admiral.",
   "I find your lack of faith disturbing.",
   "There is no escape! Don't make me destroy you!",
 ];
+
+// Object mapping Exit messages  to their corresponding audio files
+const exitSounds = {
+  "Don't fail me again, Admiral.": "./audio/Don't fail me again.mp3",
+  "I find your lack of faith disturbing.": "./audio/I find your lack of faith disturbing.mp3",
+  "There is no escape! Don't make me destroy you!": "./audio/There is no escape.mp3",
+};
 
 // Flag to track whether an audio is currently playing
 let isAudioPlaying = false;
