@@ -200,6 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (audioFile) {
       isAudioPlaying = true;
       closeIcon.disabled = true; // Disable close button while sound is playing
+      exitSound.volume = 0.3;
       exitSound.play();
 
       exitSound.addEventListener('ended', () => {
