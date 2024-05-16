@@ -3,10 +3,6 @@
     background-color: #3D3D3D;
 }
 
-.solution-explorer:hover {
-    border-top: 3px #7160E8 solid;
-}
-
 .row:hover {
     background-color: #2E2E2E;
 }
@@ -18,6 +14,36 @@
 .url-container img:hover{
     background-color: #424040;
 }
+
+/* Effect for the solution explorer container  */
+
+.solution-explorer {
+  position: relative;
+}
+
+.solution-explorer::before {
+  content: '';
+  position: absolute;
+  top: -3px; /* move the content over the existing top border */
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #7160E8;
+  animation: load-bar 10s linear infinite;
+}
+
+@keyframes load-bar {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 50%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
 
 .go-to-start-button:hover {
     opacity: 0.8;
@@ -90,7 +116,7 @@
     display: inline-block; /* Use inline-block display */
     overflow: hidden;
     white-space: nowrap;
-    animation: typing 2s steps(30) forwards; /* Apply typing animation to the text */
+    animation: typing 2s steps(35) forwards; /* Apply typing animation to the text */
     animation-delay: calc(1s * var(--index)); /* Delay each animation */
   }
 
