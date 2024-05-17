@@ -107,7 +107,34 @@ html {
   }
 
   #customAlertPicture{
+    scale: 80%;
     margin-bottom: 10px;
+  }
+
+  #minimized-window{
+    border: 0.15em black solid;
+    border-bottom: solid #7160E8;
+    background-color: #2E2E2E;
+    width: 20em;
+    height: 3em;
+    padding: 0 0.5em 0 0.50em;
+    margin: 2em 0 5em 1em;
+    align-self: center;
+    text-align: center;
+    display: none;
+  }
+
+  .minimized{
+    display: none;
+  }
+
+  #minimized-window a{
+    text-decoration: none;
+    color: #4EC9B0;
+  }
+
+  #minimized-window:hover{
+    background-color: #3D3D3D;
   }
   
 

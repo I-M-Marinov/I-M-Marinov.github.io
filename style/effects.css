@@ -26,21 +26,24 @@
   position: absolute;
   top: -3px; /* move the content over the existing top border */
   left: 0;
-  width: 0;
+  width: 10em; /* width of the little piece */
   height: 3px;
   background-color: #7160E8;
-  animation: load-bar 10s linear infinite;
+  animation: load-bar 3s linear infinite; /* Adjusted duration to match a back-and-forth movement */
 }
 
 @keyframes load-bar {
   0% {
-    width: 0;
+    left: 0;
+    transform: translateX(0);
   }
   50% {
-    width: 50%;
+    left: calc(100% -  10em); /* Move to the end, considering the piece's width */
+    transform: translateX(0);
   }
   100% {
-    width: 100%;
+    left: 0;
+    transform: translateX(0);
   }
 }
 
@@ -126,14 +129,13 @@
   }
 
   .close:hover{
-    background-color: crimson;
+    background-color: rgb(179, 11, 45);
   }
 
-  .minimize:hover,
   .maximize:hover{
-    background-color: #424040;
+    background-color: rgb(35, 116, 14);
   }
-  
 
-
-
+  .minimize:hover{
+    background-color: rgb(255, 255, 255);
+  }

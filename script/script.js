@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
     h2Elements.forEach((h2) => {
       h2.style.fontSize = h2.dataset.originalFontSize;
       h2.style.paddingTop = ''; // Revert padding top to default
-      picture.style.display = "block";
+      picture.style.display = "flex";
     });
   }
 
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!isMaximized) {
         consoleHeader.style.width = '85%';
         consoleWindow.style.width = '85%';
-        consoleWindow.style.height = '30em';
+        consoleWindow.style.height = '35em';
         isMaximized = true;
       } else {
         consoleHeader.style.width = '';
@@ -235,4 +235,30 @@ document.addEventListener('DOMContentLoaded', () => {
   closeAlertButton.addEventListener('click', handleCloseAlert);
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const minimizedWindow = document.getElementById('minimized-window');
+  const consoleContainer = document.querySelector('.console-container');
+  const minimizeIcon = document.querySelector('.minimize');
+  const pictureElement = document.querySelector('.picture');
+  const footerElement = document.querySelector('footer');
 
+  minimizeIcon.addEventListener('click', () => {
+    consoleContainer.classList.add('minimized');
+    if (pictureElement) { // check if there is a picture element present on the page
+      pictureElement.style.order = '2';
+    }
+    footerElement.style.order = '3';
+    minimizedWindow.style.order = '1';
+    minimizedWindow.classList.add('visible');
+  });
+
+  minimizedWindow.addEventListener('click', () => {
+    consoleContainer.classList.remove('minimized');
+    if (pictureElement) { // check if there is a picture element present on the page
+      pictureElement.style.order = '';
+    }
+    footerElement.style.order = '';
+    minimizedWindow.style.order = '';
+    minimizedWindow.classList.remove('visible');
+  });
+});
