@@ -419,8 +419,12 @@ image {
 }
 
 .links-container1 h4 {
-    padding-top: 2em;
+    padding-top: 1.3em;
     text-align: center;
+}
+
+.links-right-column h4{
+    padding-top: 2em;
 }
 
 .find-me-online {
@@ -578,4 +582,11 @@ image {
 .schedule-interview-button:hover{
     opacity: 0.8;
     color: rgb(140, 204, 56, 1);
+}
+
+.resume-icons {
+    width: 1.60em;
+    height: auto; 
+    margin-bottom: -0.5em;
+    margin-right: 0.30em;
 }

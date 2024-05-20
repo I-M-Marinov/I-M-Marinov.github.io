@@ -100,3 +100,7 @@
 			   -2px 0px 0px rgba(64, 116, 181, 1), 
 			   0px -2px 0px rgba(64, 116, 181, 1);
 }
+
+.links-left-column a:hover{
+    opacity: 0.8;
+}
