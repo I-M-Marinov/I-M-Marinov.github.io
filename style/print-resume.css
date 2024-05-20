@@ -17,7 +17,7 @@
 
     body {
         width: 100%;
-        background-color: #fafafa;
+        background-color: #1F1F1F;
         border: 1px #4e4d4d solid;
         padding: 0;
         margin: 0;
@@ -26,7 +26,7 @@
     .main-container {
         padding: 0;
         margin: 0;
-        background-color: #fafafa;
+        background-color: #1F1F1F;
     }
 
     .resume-body,
@@ -39,7 +39,7 @@
         -webkit-print-color-adjust: economy;
         print-color-adjust: economy;
         width: 960px;
-        background-color: #ffffff;
+        background-color: #1F1F1F;
 
     }
 
@@ -143,6 +143,10 @@
     .driving-container {
         padding-bottom: 0;
         margin-bottom: 0;
+    }
+
+    #id-languages{
+        padding-top: 2em;
     }
 
 }
