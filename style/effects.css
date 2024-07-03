@@ -9,6 +9,9 @@
 
 .code-row:hover {
     background-color: #2E2E2E;
+    .row-number{
+      color: #dcd9d9;
+   }
 }
 
 .url-container img:hover{
