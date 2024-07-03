@@ -7,7 +7,10 @@
     .go-to-start-button,
     .print-resume-method,
     .buttons-container,
-    .resume-buttons{
+    .resume-buttons,
+    .go-to-top-button-container,
+    footer,
+    .softuni-svg{
         display: none;
     }
 
@@ -36,8 +39,6 @@
         padding: 0;
         flex-direction: column;
         opacity: 100%;
-        -webkit-print-color-adjust: economy;
-        print-color-adjust: economy;
         width: 960px;
         background-color: #1F1F1F;
 
@@ -51,7 +52,7 @@
     }
 
     .bigger-container {
-        height: 450px;
+        height: 24.5em;
         padding: 2em;
         background-color: #182D41;
         color: #FFFFEE;
@@ -69,7 +70,9 @@
     }
 
     .links-left-column,
-    .links-left-column a .links-right-column .links-right-column a {
+    .links-left-column a,
+    .links-right-column,
+    .links-right-column a {
         text-decoration: none;
     }
 
