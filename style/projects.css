@@ -1,3 +1,8 @@
+.main-container.projects{
+    height: 101vh;
+    overflow: hidden;
+}
+
 .comment.projects.swipe{
     display: none;
 }
@@ -20,7 +25,7 @@
 
 .carousel-container {
     overflow-y: auto;
-    height: 45%; 
+    height: 50%; 
     width: 100%;
     scroll-snap-type: y mandatory;
     scroll-snap-align: start;
