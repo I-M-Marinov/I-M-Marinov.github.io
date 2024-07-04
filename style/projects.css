@@ -118,6 +118,34 @@
     align-self: center;
 }
 
+.icon-links-projects{
+    display: flex;
+    height: auto;
+    justify-content: center;
+    
+}
+
+.icon-link-1,
+.icon-link-2{
+    display: flex;
+    flex-direction: column;  
+    width: 30%;
+}
+
+.icon-link-2 span a img{
+    margin-top: 0.5em;
+    align-self: flex-start;
+    width: 15%;
+    
+}
+
+.icon-link-1 span a img{
+    margin-top: 0.5em;
+    align-self: flex-start;
+    width: 18%;
+}
+
+
 /* Colors of the scrollbar and the track are the same to hide them  */
 
 .carousel-container::-webkit-scrollbar {
