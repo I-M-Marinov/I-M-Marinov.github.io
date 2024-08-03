@@ -570,6 +570,21 @@ image {
     margin-right: 0.30em;
 }
 
+.resume-icons-efc{
+    width: 1.75em;
+    height: auto; 
+    margin-bottom: -0.5em;
+    margin-right: 0.30em;
+}
+
+
+.resume-icons-csharp{
+    width: 1.75em;
+    height: auto; 
+    margin-bottom: -0.5em;
+    margin-right: 0.30em;
+}
+
 .profession-icon{
     width: 1.60em;
     height: auto; 
