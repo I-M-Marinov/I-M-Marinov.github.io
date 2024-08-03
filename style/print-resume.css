@@ -52,7 +52,7 @@
     }
 
     .bigger-container {
-        height: 24.5em;
+        height: 28.5em;
         padding: 2em;
         background-color: #182D41;
         color: #FFFFEE;
@@ -116,11 +116,11 @@
     }
 
     #id-experience {
-        margin-top: 4em;
+        margin-top: 0.2em;
     }
 
     #id-tech-skills {
-        margin-top: 2.5em;
+        margin-top: 1em;
     }
 
     #id-soft-skills {
@@ -139,8 +139,8 @@
         align-self: center;
     }
 
-    #ruse {
-        margin-top: 1.5em;
+    .school-name{
+        margin-top: -0.75em;
     }
 
     .driving-container {
@@ -149,7 +149,7 @@
     }
 
     #id-languages{
-        padding-top: 2em;
+        margin-top: 2em;
     }
 
 }
