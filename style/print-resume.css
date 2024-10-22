@@ -152,4 +152,85 @@
         margin-top: 2em;
     }
 
+/*CSS FOR PRINTING BLACK AND WHITE */
+
+    /* .left-container,
+    .right-container,
+    .profession,
+    .summary p,
+    .links-container1  h4 a,
+    .links-container1  h2,
+    .links-right-column h2,
+    .links-right-column a,
+    .right-container,
+    #id-projects,
+    .projects-container h4 a,
+    .coma,
+    .coma-white,
+    .bigger-container{
+        color: black;
+        border: none;
+    }
+
+    .coma{
+        background-color: black;
+        border: 1px black solid;
+    }
+
+    .coma-white{
+        background-color: lightblue;
+    }
+
+    .linkedin-container p,
+    .github-container p,
+    .facebook-container p,
+    .portfolio-container p{
+        color: black;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-left: 4.5em;
+    }
+
+    
+    .linkedin-container img,
+    .github-container img,
+    .facebook-container img,
+    .portfolio-container img{
+        color: lightblue;
+        width: 25px;
+        height: 25px;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        margin-left: 4.5em;
+        
+    }
+
+    .links-right-column h4 {
+        padding-top: 0;
+    }
+
+    .links-right-column{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .linkedin-container, .github-container, .facebook-container, .portfolio-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+ 
+    }
+
+    .bigger-container{
+        border-top: 1px black solid;
+        border-bottom: 1px black solid;
+
+    }
+    .right-container{
+
+        border-left: 2px black solid;
+    } */
+    
 }
