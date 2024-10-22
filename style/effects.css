@@ -1,6 +1,13 @@
 .tab:hover {
     color: #ffffff;
     background-color: #3D3D3D;
+    -webkit-box-shadow: 0 0 15px 0 #7160E8;
+    box-shadow: 0 0 12px 0 #7160E8;
+    border-top: 3px #7160E8 solid;
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    -o-transition-duration: 0.2s;
+    transition-duration: 0.2s;
 }
 
 .row:hover {
