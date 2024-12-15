@@ -48,17 +48,21 @@
         border-width: 1px 0 0 1px;
         padding: 0;
         margin-left: 0.25em;
-   
+        height: 168.9em;
     }
 
     .bigger-container {
-        height: 28.5em;
+        height: 48.5em;
         padding: 2em;
         background-color: #182D41;
         color: #FFFFEE;
         font-size: 1em;
         margin-left: 0;
-        margin-top: 0.5em;
+        margin-top: 1em;
+    }
+
+    #ruse{
+        padding-top: 6em;
     }
 
     .inner-columns {
@@ -83,8 +87,8 @@
 
     .links-container1 {
         display: flex;
-        flex-direction: row;
-        align-items: flex-start;
+        flex-direction: column;
+        align-items: center;
         align-content: space-evenly;
         width: 908px;
         margin-top: -2em;
@@ -100,6 +104,10 @@
         margin-right: 4em;
     }
 
+    .links-right-column{
+        margin-top: 3em;
+    }
+
     .find-me-online {
         padding-top: 0px;
         margin-bottom: 20px;
@@ -109,7 +117,17 @@
     .github-container,
     .facebook-container {
         text-align: center;
+       
     }
+
+    .linkedin-container,
+    .github-container,
+    .facebook-container,
+    .portfolio-container{
+        margin-left: 4em;
+    }
+
+
 
     .skills.passions {
         margin-top: 1.5em;
@@ -131,10 +149,6 @@
         margin-top: 1.5em;
     }
 
-    #id-additional-info {
-        margin-top: 2.5em;
-    }
-
     .certificate-container h4:first-of-type {
         align-self: center;
     }
@@ -148,8 +162,12 @@
         margin-bottom: 0;
     }
 
+    #id-additional-info {
+        margin-top: 9em;
+    }
+
     #id-languages{
-        margin-top: 2em;
+        margin-top: 9em;
     }
 
 /*CSS FOR PRINTING BLACK AND WHITE */
