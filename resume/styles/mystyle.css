@@ -234,6 +234,10 @@ image {
  padding-top: 1.5em;
 }
 
+#ruse{
+    padding-top: 1.25em;
+}
+
 .school-name{
     align-self: flex-start;
     padding-bottom: 1em;
@@ -396,13 +400,14 @@ image {
 }
 
 .links-container1 {
-    padding-top: 1em;
+    margin-bottom: -15em;
+    padding-top: 0.5em;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: sticky;
     top: 5px;
-    width: 313px;
+    width: 350px;
 }
 
 .links-container1 h2 {
