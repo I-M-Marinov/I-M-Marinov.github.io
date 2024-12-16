@@ -52,7 +52,7 @@
     }
 
     .bigger-container {
-        height: 48.5em;
+        height: 49.5em;
         padding: 2em;
         background-color: #182D41;
         color: #FFFFEE;
@@ -168,6 +168,10 @@
 
     #id-languages{
         margin-top: 9em;
+    }
+
+    .certificate-details{
+        font-size: 11px;
     }
 
 /*CSS FOR PRINTING BLACK AND WHITE */
