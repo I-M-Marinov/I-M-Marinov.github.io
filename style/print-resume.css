@@ -62,7 +62,7 @@
     }
 
     #ruse{
-        padding-top: 6em;
+        padding-top: 8em;
     }
 
     .inner-columns {
@@ -162,16 +162,22 @@
         margin-bottom: 0;
     }
 
-    #id-additional-info {
-        margin-top: 9em;
+    #id-tech-skills{
+        margin-top: 3em;
     }
 
-    #id-languages{
-        margin-top: 9em;
+    #id-projects{
+        margin-top: 13.5em;
     }
 
     .certificate-details{
         font-size: 11px;
+    }
+
+    .profile-picture {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
     }
 
 /*CSS FOR PRINTING BLACK AND WHITE */
