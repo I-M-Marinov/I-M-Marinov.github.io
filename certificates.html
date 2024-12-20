@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I-M-Marinov-Certificates</title>
+    <link rel="icon" type="image/x-icon" href="/resume/images/ICO/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+
+
+
+</head>
+<body>
+
+    <div class="main-container projects">
+
+        <nav class="navigation">
+            <div>
+                <ul>
+                    <a href="./index.html">
+                        <div class="tab">
+                            <li>Home.cs</li>
+                        </div>
+                    </a>
+                    <a href="./about-me.html">
+                        <div class="tab">
+                            <li>About-Me.cs</li>
+                        </div>
+                    </a>
+                    <a href="./certificates.html">
+                        <div class="tab special">
+                            <li>Certificates.cs</li>
+                        </div>
+                    </a>
+                    <a href="./projects.html">
+                        <div class="tab">
+                            <li>Projects.cs</li>
+                        </div>
+                    </a>
+                    <a href="./my-resume.html">
+                        <div class="tab">
+                            <li>My-Resume.cs</li>
+                        </div>
+                    </a>
+                    
+                </ul>
+            </div>
+        </nav>
+
+        <div class="bottom-container">
+
+            <div class="app-container projects" >
+
+                <ol class="code-row">
+                    <li><span class="row-number" style="margin-left: 0.6em;">1</span><p>using <span class="usings">System<span class="semicolon">;</span></span></p><br></li>
+                </ol>
+
+                <ol class="code-row">
+                    <li><span class="row-number" style="margin-left: 0.6em;">2</span><p>using <span class="usings">System.Text<span class="semicolon">;</span></span></p><br></li>
+                </ol>
+
+                <ol class="code-row">
+                    <li><span class="row-number" style="margin-left: 0.6em;">3</span><p>using <span class="usings">Ivan-Marinov-Portfolio.Certificates<span class="semicolon">;</span></span></p><br></li>
+                </ol>
+
+                <ol class="code-row">
+                    <li><span class="row-number" style="margin-left: 0.6em;">4</span><br></li>
+                </ol>
+
+                <ol class="code-row">
+                    <li><span class="row-number"style="margin-left: 0.6em;">5</span><p>namespace <span class="usings">Ivan-Marinov-Portfolio</span></p><br></li>
+                </ol>
+                <ol class="code-row">
+                    <li><span class="row-number" style="margin-left: 0.6em;">6</span><p>{</p><br></li>
+                </ol>
+                    
+                <ol class="code-row">
+                    <li><span class="row-number" style="margin-left: 0.6em;">7</span><p style="margin-left: 1.5em;">static string <span class="method"><strong>PrintCertificates<span class="parentheses">()</span></strong></span></p></li>
+                </ol>
+
+                <ol class="code-row">
+                    <li><span class="row-number" style="margin-left: 0.6em;">8</span><p style="margin-left: 1.5em;">{</p><br></li>
+                </ol>
+
+                <ol class="code-row">
+                    <li><span class="row-number" style="margin-left: 0.6em;">9</span><p style="margin-left: 3em;"><span class="console">StringBuilder</span><span class="variable"> sb </span><span class="equals">=</span><span class="new-keyword"> new </span><span class="console">StringBuilder</span><span class="execute-method">()</span><span class="semicolon">;</span></p><br></li>
+                </ol>
+
+                <ol class="code-row">
+                    <li><span style="margin-left: 0em;" class="row-number">10</span><br></li>
+                </ol>
+
+                <ol class="code-row">
+                    <li><span style="margin-left: 0em;" class="row-number">11</span><p style="margin-left: 3.2em;"><span class="foreach-cycle">foreach </span><span class="execute-method">(</span>var<span class="variable"> certificate </span> <span class="in-keyword">in</span> <span class="collection">certificates</span><span class="execute-method">)</span></p><br></li>
+                </ol>
+
+                <ol class="code-row">
+                    <li><span style="margin-left: 0em;" class="row-number">12</span><p style="margin-left: 3em;">{</p><br></li>
+                </ol>
+
+                <ol class="code-row">
+                    <li><span style="margin-left: 0em;" class="row-number">13</span><p style="margin-left: 4.5em;"><span class="variable">sb</span><span class="dot">.</span><span class="writeline">AppendLine</span><span class="execute-method">(</span><span class="text">$"<span class="execute-method">{</span><span class="variable">certificate.Name</span><span class="execute-method">}</span>"<span class="execute-method">)</span><span class="semicolon">;</span></p><br></li>
+                </ol>
+
+                <ol class="code-row">
+                    <li><span style="margin-left: 0em;" class="row-number">14</span><p style="margin-left: 4.5em;"><span class="variable">sb</span><span class="dot">.</span><span class="writeline">AppendLine</span><span class="execute-method">(</span><span class="text">$"<span class="execute-method">{</span><span class="variable">certificate.Description</span><span class="execute-method">}</span>"<span class="execute-method">)</span><span class="semicolon">;</span></p><br></li>
+                </ol>
+
+                <ol class="code-row">
+                    <li><span style="margin-left: 0em;" class="row-number">15</span><p style="margin-left: 3em;">}</p><br></li>
+                </ol>
+
+                <ol class="code-row">
+                    <li><span style="margin-left: 0em;" class="row-number">16</span><p style="margin-left: 2.5em;"><span class="return-keyword">return </span><span class="variable">sb</span><span class="dot">.</span><span class="writeline">ToString</span><span class="execute-method">()</span><span class="dot">.</span><span class="writeline">Trim</span><span class="execute-method">()</span><span class="semicolon">;</span></p><br></li>
+                </ol>
+
+                <ol class="code-row">
+                    <li><span style="margin-left: 0em;" class="row-number">17</span><p style="margin-left: 1.5em;">}</p><br></li>
+                </ol>
+
+                <ol class="code-row">
+                    <li><span style="margin-left: 0em;" class="row-number">18</span><p style="margin-left: 1em;"><span class="method"><strong>PrintCertificates</strong><span class="execute-method">()</span><span class="semicolon">;</span></strong></span></p><br></li>
+                </ol>
+                
+                <ol class="code-row">
+                    <li><span style="margin-left: 0em;" class="row-number">19</span><p>}</p><br></li>
+                </ol>      
+
+            </div>
+
+            <div class="solution-explorer">
+
+                <div class="row"><p><img class="solution-icon" src="./icons/devblog-brand-visualstudio2022.png" alt="solution-icon">Solution 'Ivan-Marinov-Portfolio'</p></div>
+                <div class="row"><ul style="margin-left: 1.5em;"><img class="solution-csharp-icon" src="./icons/file_type_csharp_icon.png" alt="chsarp-icon">Ivan-Marinov-Portfolio</ul></div>
+                <a href="./index.html"><div class="row"><li><img class="solution-csharp-icon" src="./icons/file_type_csharp_icon.png" alt="chsarp-icon">Home.cs</li></div></a>
+                <a href="./about-me.html"><div class="row"><li><img class="solution-csharp-icon" src="./icons/file_type_csharp_icon.png" alt="chsarp-icon">About-Me.cs</li></div></a>
+                <a href="./certificates.html"><div class="row special"><li><img class="solution-csharp-icon" src="./icons/file_type_csharp_icon.png" alt="chsarp-icon">Certificates.cs</li></div></a>
+                <a href="./projects.html"><div class="row"><li><img class="solution-csharp-icon" src="./icons/file_type_csharp_icon.png" alt="chsarp-icon">Projects.cs</li></div></a>
+                <a href="./my-resume.html"><div class="row"><li><img class="solution-csharp-icon" src="./icons/file_type_csharp_icon.png" alt="chsarp-icon">My-Resume.cs</li></div></a>
+
+            </div>
+
+        </div>
+
+        <div class="comment projects scroll"><p>// click on a card to open certificate</p></div>
+
+        <div class="scrollable-container">
+            <div class="certificates-container">
+                <a href="https://softuni.bg/certificates/details/159134/31ffff0a" target=”_blank”> 
+                    <div class="certificate-card">
+                        <img class="resume-icons-csharp" src="./resume/images/ICO/resume-ico-extra/c-sharp.svg">
+                        <h4 class="certificate-header">
+                            Basics
+                        </h4>
+                        <p class="certificate-description">
+                            Conditonal Statements, Advanced Conditional Statements, For-Loop, While-Loop,Nested Loops, Good Practices
+                        </p>
+                    </div>
+                </a>
+                <a href="https://softuni.bg/certificates/details/179563/d2d5a42d" target="_blank">
+                 
+                    <div class="certificate-card">
+                        <img class="resume-icons-csharp" src="./resume/images/ICO/resume-ico-extra/c-sharp.svg">
+                        <h4 class="certificate-header">
+                            Fundamentals
+                        </h4>
+                        <p class="certificate-description">
+                            Data Types and Variables, HTTP Basics, Arrays, Associative Arrays, Methods, Lists, Objects and Classes,
+                            Software Development Concepts, Regular Expressions, Database Basics, QA Introduction
+                        </p>
+                    </div>
+                </a>
+                <a href="https://softuni.bg/certificates/details/198064/87e761f9" target=”_blank”>
+                    <div class="certificate-card">
+                        <img class="resume-icons-csharp" src="./resume/images/ICO/resume-ico-extra/c-sharp.svg">
+                        <h4 class="certificate-header">
+                           Advanced
+                        </h4>
+                        <p class="certificate-description">
+                            Stacks and Queues, Multidimensional Arrays, Advanced Sets and Dictionaries, Streams, 
+                            Files and Directories, Implementing Linked List, Stack & Queues, Iterators and Comparators, Generics 
+                        </p>
+                    </div>
+                </a>
+                <a href="https://softuni.bg/certificates/details/213178/c2ba3081" target=”_blank”>
+                    <div class="certificate-card">
+                        <img class="resume-icons-csharp" src="./resume/images/ICO/resume-ico-extra/c-sharp.svg">
+                        <h4 class="certificate-header">Object Oriented Programming</h4>
+                        <p class="certificate-description">Inheritance and Encapsulation, Interfaces and Abstraction, 
+                            Polymorphism, Exception Handling, SOLID Principles, Reflection and Attributes, Unit Testing, Mocking, Mocking and Test Driven Development, Design Patterns </p>
+                    </div>
+                </a>
+                <a href="https://softuni.bg/certificates/details/205229/fafcbc88" target=”_blank”>
+                    <div class="certificate-card">
+                        <img class="html-icon" src="./resume/images/ICO/resume-ico-extra/html-5.svg" alt="">
+                        <img class="css-icon" src="./resume/images/ICO/resume-ico-extra//css-3.svg" alt="">
+                        <h4 class="certificate-header">HTML & CSS</h4>
+                    <p class="certificate-description">Typography in CSS, Box Model and Position, Flexbox, Responsive Web Design, Forms & Working with Forms</p>
+                    </div>
+                </a>
+                <a href="https://softuni.bg/certificates/details/212341/ecd3f678" target=”_blank”>
+                    <div class="certificate-card">
+                        <img class="javascript-icon" src="./resume/images/ICO/resume-ico-extra/javascript.svg" alt="">
+                        <h4 class="certificate-header">JavaScript</h4>
+                        <p class="certificate-description">JavaScript Syntax Fundamentals, JS Arrays & Strings, Functions & Statements, Objects & Classes, DOM Manipulation and Events, HTTP and REST, Asynchronous Programming</p>
+                    </div>
+                </a>
+                <a href="https://softuni.bg/certificates/details/221090/02b8cfb5" target=”_blank”>
+                    <div class="certificate-card">
+                        <img class="resume-icons-efc" src="./resume/images/ICO/resume-ico-extra/EFC-icon.svg" alt="">
+                        <h4 class="certificate-header">Entity Framework Core</h4>
+                        <p class="certificate-description">ORM Fundamentals, Entity Relations, LINQ, Advanced Querying, Migrations in EF Core, JSON & XML Processing, EF Core Essentials for ASP.NET, Best Practices, NoSQL</p>
+                    </div>
+                </a>
+                <a href="https://softuni.bg/certificates/details/216705/0315fe7b" target=”_blank”>
+                    <div class="certificate-card">
+                        <img class="resume-icons" src="./resume/images/ICO/resume-ico-extra/sql-database.svg" alt="">
+                        <h4 class="certificate-header">MS SQL</h4>
+                    <p class="certificate-description">Databases, CRUD, Table Relations, Built-In Functions, Subqueries and Joins, Indices and Data Aggregation, Functions and Stored Procedures, Triggers and Transactions</p>
+                    </div>
+                </a>
+                <a href="https://softuni.bg/certificates/details/228350/37811186" target=”_blank”>
+                    <div class="certificate-card">
+                        <img class="resume-icons" src="./resume/images/ICO/resume-ico-extra/asp-net-ico.svg" alt="">
+                        <h4 class="certificate-header">ASP.NET Fundamentals</h4>
+                        <p class="certificate-description">HTTP Protocol, ASP.NET and Databases, State Management & Asynchronous Processing, ASP.NET Core Identity</p>
+                    </div>
+                </a>
+                <a href="https://softuni.bg/certificates/details/232792/e8e0bf10" target=”_blank”>
+                    <div class="certificate-card">
+                        <img class="resume-icons" src="./resume/images/ICO/resume-ico-extra/asp-net-ico.svg" alt="">
+                        <h4 class="certificate-header">ASP.NET Advanced</h4>
+                        <p class="certificate-description">Routing and Binding, Views, DI and Services, Filters & Middleware, Web API, Web Application Security and ASP.NET Core, ASP.NET Core Identity, Architecture, Testing, SignalR  </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+
+
+        <footer>
+            <p>2024 Ivan Marinov ® All Rights Reserved.</p>
+        </footer>
+
+    </div>
+    
+</body>
+</html>
