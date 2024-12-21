@@ -180,6 +180,10 @@
         border-radius: 50%;
     }
 
+    #snow-canvas{
+        display: none;
+    }
+
 /*CSS FOR PRINTING BLACK AND WHITE */
 
     /* .left-container,
