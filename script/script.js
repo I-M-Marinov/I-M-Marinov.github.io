@@ -270,65 +270,53 @@ document.addEventListener('DOMContentLoaded', () => {
 const canvas = document.getElementById("snow-canvas");
 const ctx = canvas.getContext("2d");
 
+const snowflakes = [];
+const numSnowflakes = 200; 
+
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-
-const snowflakes = [];
-const maxSnowflakes = 200;
 
 function createSnowflake() {
     return {
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        radius: Math.random() * 4 + 1,
-        speed: Math.random() * 3 + 1,
-        wind: Math.random() * 2 - 1,
+        radius: Math.random() * 3 + 1,
+        speed: Math.random() * 1 + 0.55,
+        wind: Math.random() * 5 - 5, 
     };
 }
 
-for (let i = 0; i < maxSnowflakes; i++) {
+for (let i = 0; i < numSnowflakes; i++) {
     snowflakes.push(createSnowflake());
 }
 
-function drawSnowflakes() {
+function randomizeWind() {
+    snowflakes.forEach(snowflake => {
+        snowflake.wind = Math.random() * 5 - 5; 
+    });
+}
+
+setInterval(randomizeWind, 6000);
+
+function animateSnowflakes() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    ctx.fillStyle = "white";
-    ctx.beginPath();
-    for (const flake of snowflakes) {
-        ctx.moveTo(flake.x, flake.y);
-        ctx.arc(flake.x, flake.y, flake.radius, 0, Math.PI * 2);
-    }
-    ctx.fill();
+    snowflakes.forEach(snowflake => {
+        snowflake.x += snowflake.wind * 0.1; 
+        snowflake.y += snowflake.speed;
+
+        if (snowflake.y > canvas.height) snowflake.y = 0;
+        if (snowflake.x > canvas.width) snowflake.x = 0;
+        if (snowflake.x < 0) snowflake.x = canvas.width;
+
+        ctx.beginPath();
+        ctx.arc(snowflake.x, snowflake.y, snowflake.radius, 0, Math.PI * 2);
+        ctx.fillStyle = "white";
+        ctx.fill();
+    });
+
+    requestAnimationFrame(animateSnowflakes);
 }
 
-function updateSnowflakes() {
-    for (const flake of snowflakes) {
-        flake.y += flake.speed;
-        flake.x += flake.wind;
+animateSnowflakes();
 
-        if (flake.y > canvas.height) {
-            flake.y = 0;
-            flake.x = Math.random() * canvas.width;
-        }
-
-        if (flake.x > canvas.width) {
-            flake.x = 0;
-        } else if (flake.x < 0) {
-            flake.x = canvas.width;
-        }
-    }
-}
-
-function loop() {
-    drawSnowflakes();
-    updateSnowflakes();
-    requestAnimationFrame(loop);
-}
-
-loop();
-
-window.addEventListener("resize", () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-});
