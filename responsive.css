@@ -1257,6 +1257,13 @@
         text-decoration: none;
     }
 
+    .cup-svg2{
+        width: 45px;
+        height: 45px;
+        margin-top: 0.25em;
+        margin-left: 0.25em;
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -1767,6 +1774,13 @@
         text-decoration: none;
     }
 
+    .cup-svg2{
+        width: 35px;
+        height: 35px;
+        margin-top: 0.25em;
+        margin-left: 0.25em;
+    }
+
 }
 
 @media (max-width: 479px) {
@@ -2036,6 +2050,13 @@
     .print-resume-method a {
         text-decoration: none;
     }
+
+    .cup-svg2{
+        width: 35px;
+        height: 35px;
+        margin-top: -0.5em;
+        margin-left: 0em;
+    }
 }
 
 @media (max-width: 378px) {
@@ -2297,6 +2318,13 @@
 
     .print-resume-method a {
         text-decoration: none;
+    }
+
+    .cup-svg2{
+        width: 25px;
+        height: 25px;
+        margin-top: -0.5em;
+        margin-left: 0em;
     }
 
 }
