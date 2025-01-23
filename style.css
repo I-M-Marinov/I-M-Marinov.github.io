@@ -27,6 +27,11 @@ body {
 html {
     font: 18px/1.5 "Space Mono";
     scroll-behavior: smooth;
+    scrollbar-width: none; /* Hides scrollbar in Firefox */
+}
+
+html::-webkit-scrollbar {
+  display: none; /* Hides scrollbar */
 }
 
 .buttons-container{
