@@ -195,8 +195,8 @@
 
     .go-to-start-button {
         font-size: 0.8em;
-        width: 6em;
-        height: 2.5em;
+        width: 3em;
+        height: 3em;
     }
     .big-container{
         margin-left: 0;   
@@ -214,9 +214,9 @@
         font-weight: 700;
         font-size: 0.8em;
         padding: 0;
-        margin-bottom: 2em;
-        margin-left: -8em;
-        width: 6.5em;
+        margin-bottom: 1em;
+        margin-left: -6em;
+        width: 4em;
         height: 4em;
 
     }
@@ -421,9 +421,9 @@
         font-weight: 700;
         font-size: 0.8em;
         padding: 0;
-        margin-bottom: 2em;
-        margin-left: -8em;
-        width: 6.5em;
+        margin-bottom: 1em;
+        margin-left: -6em;
+        width: 4em;
         height: 4em;
 
     }
@@ -628,7 +628,7 @@
         margin-top: 1.5em;
         margin-bottom: 2em;
         margin-left: 1.5em;
-        width: 6.5em;
+        width: 4em;
         height: 4em;
 
     }
@@ -815,7 +815,7 @@
         margin-top: 1.5em;
         margin-bottom: 2em;
         margin-left: 1.5em;
-        width: 6.5em;
+        width: 4em;
         height: 4em;
 
     }
