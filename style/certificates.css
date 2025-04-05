@@ -67,9 +67,11 @@
 .certificates-container a:nth-of-type(7) .certificate-header {
     padding-top: 0.65em;
 }
-
+.certificates-container a:nth-of-type(8) .certificate-header {
+    padding-top: 0.85em;
+}
 .certificates-container a:nth-of-type(9) .certificate-header {
-    padding-top: 0.65em;
+    padding-top: -1em;
 }
 
 .certificates-container a:nth-of-type(10) .certificate-header {
