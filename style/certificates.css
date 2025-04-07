@@ -113,3 +113,22 @@
     border: 2px rgb(203, 238, 255) solid;
 }
 
+
+/* Colors of the scrollbar and the track are the same to hide them  */
+
+.scrollable-container::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+.scrollable-container::-webkit-scrollbar-track {
+    background: #1F1F1F; /* Color of the track */
+}
+
+.scrollable-container::-webkit-scrollbar-thumb {
+    background: #1F1F1F; /* Color of the thumb */
+    border-radius: 1em; /* Radius of the thumb */
+}
+
+.scrollable-container::-webkit-scrollbar-thumb:hover {
+    background: #1F1F1F; /* Color of the thumb on hover */
+}
