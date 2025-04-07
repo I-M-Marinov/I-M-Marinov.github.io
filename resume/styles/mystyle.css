@@ -396,7 +396,17 @@ image {
     height:50px;
     margin-bottom: -1.5em;
     margin-left: -3.5em;
+    animation: bounce 1.5s ease-in-out infinite;
 }
+
+@keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px); 
+    }
+  }
 
 .cup-svg2{
     width: 60px;
