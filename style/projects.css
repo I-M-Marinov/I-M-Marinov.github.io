@@ -150,6 +150,36 @@
     width: 18%;
 }
 
+/* Styling for the SVG CUP Icon and text in the first project */
+
+.cup-container {
+    display: flex;
+    align-items: center;
+    gap: 2px; 
+}
+
+@keyframes bounce-scale {
+    0%, 100% {
+      transform: translateY(0) scale(0.90);
+    }
+    50% {
+      transform: translateY(-4px) scale(1); 
+    }
+  }
+  
+  .cup-svg2 {
+    animation: bounce-scale 2s ease-in-out infinite;
+    height: auto;
+  }
+  
+  .cup-text {
+    margin-bottom: 1.5em;
+    padding-left: 0em !important;
+    font-size: 0.65em !important;
+    color: #ffd900;
+    font-weight: bold;
+  }
+
 
 /* Colors of the scrollbar and the track are the same to hide them  */
 
