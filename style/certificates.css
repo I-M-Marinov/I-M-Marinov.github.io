@@ -65,17 +65,17 @@
 }
 
 .certificates-container a:nth-of-type(7) .certificate-header {
-    padding-top: 0.65em;
+    padding-top: 0.2em;
 }
 .certificates-container a:nth-of-type(8) .certificate-header {
-    padding-top: 0.85em;
+    padding-top: 0.2em;
 }
 .certificates-container a:nth-of-type(9) .certificate-header {
-    padding-top: -1em;
+    padding-top: 0.2em;
 }
 
 .certificates-container a:nth-of-type(10) .certificate-header {
-    padding-top: 0em;
+    padding-top: 0.2em;
 }
 .icons-container{
     display: flex;
