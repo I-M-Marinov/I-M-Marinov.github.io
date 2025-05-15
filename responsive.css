@@ -1529,6 +1529,10 @@
         text-decoration: none;
     }
 
+    .diploma-image {
+        display: none;
+    }
+
 }
 
 @media (max-width: 650px) {
