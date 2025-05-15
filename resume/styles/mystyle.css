@@ -240,7 +240,7 @@ image {
 
 .school-name{
     align-self: flex-start;
-    padding-bottom: 1em;
+    padding-bottom: 0.2em;
 }
 
 .certificate-name,
@@ -248,6 +248,15 @@ image {
     text-decoration: none;
     color: #307de2;
 }
+
+.diploma-name,
+.diploma-name a{
+    text-decoration: none;
+    color: #FFFFEE;
+    padding: 0 0.2em;
+    filter: drop-shadow(0 0 0.1rem #000000);
+}
+
 .certificate-details{
     font-size: 12px;
     font-weight: 450;
@@ -624,4 +633,46 @@ image {
     width: 1.60em;
     height: auto; 
     margin-bottom: -0.45em;
+}
+
+.diploma-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0.5em;
+    margin: 0 auto;
+    background-color:#2a5c8b;
+    border-radius: 0.65em 1em;
+}
+
+.diploma-certificates-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em;
+    margin: 0 auto;
+    border-radius: 0.65em;
+}
+
+.diploma-certificates-container h4{
+    padding: 0.2em;
+    line-height: 0.85em !important;
+}
+
+.graduate-icon{
+    width: 2.5em;
+    height: auto; 
+    filter: drop-shadow(0 0 0.45rem #ffffff);
+}
+
+.graduate-icon2{
+    margin-bottom: -0.75em; 
+    padding-right: 0.2em;
+    width: 2.5em;
+    height: 2.5em;
+    filter: invert(100%) drop-shadow(0 0 0.45rem rgb(109, 2, 180));
+    transition: filter 0.5s ease; 
 }
