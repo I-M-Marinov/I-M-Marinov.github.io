@@ -26,6 +26,10 @@
         margin: 0;
     }
 
+    .summary p{
+        font-size: 0.65em;
+    }
+
     .main-container {
         padding: 0;
         margin: 0;
@@ -52,7 +56,7 @@
     }
 
     .bigger-container {
-        height: 55.5em;
+        height: 56.5em;
         padding: 2em;
         background-color: #182D41;
         color: #FFFFEE;
@@ -186,6 +190,10 @@
 
     .cup-svg{
         display: none;
+    }
+
+    .id-certification{
+        padding-top: 0.1em;
     }
 
 /*CSS FOR PRINTING BLACK AND WHITE */
