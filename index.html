@@ -196,9 +196,9 @@
 
 <script>
 (function(){
-  const url = "https://darkside-nas.synology.me/public-stats?startAt=0&endAt=" + Date.now();
+  const url = "https://darkside-nas.synology.me:444/stats?startAt=0&endAt=" + Date.now();
   const el = document.getElementById("uv");
-  fetch(url, { cache:"no-store" })
+  fetch(url, { cache: "no-store" })
     .then(r => r.ok ? r.json() : Promise.reject())
     .then(d => el.textContent =
       (typeof d?.visitors?.value === "number") ? d.visitors.value.toLocaleString() : "n/a")
