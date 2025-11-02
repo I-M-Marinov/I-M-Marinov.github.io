@@ -10,7 +10,7 @@
     <!-- <script src="/script/script.js"></script> -->
 
     <script async defer
-    data-website-id="5814958c-53b7-44ad-85da-fdd56c75459d" 
+    data-website-id="5814958c-53b7-44ad-85da-fdd56c75459d"
     src="https://darkside-nas.synology.me/script.js">
     </script>
     
@@ -171,16 +171,16 @@
 
 <script>
 (function () {
-  const UMAMI_BASE = "https://darkside-nas.synology.me";
-  const SHARE_UUID = "5814958c-53b7-44ad-85da-fdd56c75459d"; // e.g. 86f9...ce3
-  const url = `${UMAMI_BASE}/api/websites/${SHARE_UUID}/stats?startAt=0&endAt=${Date.now()}`;
-
+  const SHARE_ID = "DzAO0GFIR0rkiJ1d"; // from the Share URL tab
+  const url = `https://darkside-nas.synology.me/api/websites/${SHARE_ID}/stats?startAt=0&endAt=${Date.now()}`;
   const uvEl = document.getElementById("uv");
+
   fetch(url, { cache: "no-store", credentials: "omit" })
     .then(r => r.ok ? r.json() : Promise.reject(r.status))
-    .then(d => uvEl.textContent = (typeof d?.visitors?.value === "number")
-                                  ? d.visitors.value.toLocaleString()
-                                  : "n/a")
+    .then(d => {
+      const n = d?.visitors?.value;
+      uvEl.textContent = (typeof n === "number") ? n.toLocaleString() : "n/a";
+    })
     .catch(() => uvEl.textContent = "n/a");
 })();
 </script>
