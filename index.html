@@ -169,15 +169,11 @@
    <canvas id="snow-canvas"></canvas>
    <script src="/script/script.js"></script>
 
-
-
-
-
 <script>
     (function () {
     const UMAMI_BASE = "https://darkside-nas.synology.me";
-    const WEBSITE_ID = "5gEf2HyIdq7YEGbH"; // short id from Umami URL
-    const SHARE_ID   = "86f9720f-f556-4a12-9b91-3b0db96a8ce3"; // UUID from Share URL
+    const WEBSITE_ID = "5814958c-53b7-44ad-85da-fdd56c75459d"; // short id from Umami URL
+    const SHARE_ID   = "5gEf2HyIdq7YEGbH"; // UUID from Share URL
     const url = `${UMAMI_BASE}/api/websites/${WEBSITE_ID}/stats?startAt=0&endAt=${Date.now()}`;
 
     const uvEl = document.getElementById("uv");
@@ -190,7 +186,7 @@
     .then(r => r.ok ? r.json() : Promise.reject())
     .then(d => {
         const unique = d?.visitors?.value;
-        uvEl.textContent = (typeof unique === "number") ? unique.toLocaleString() : "n/a";
+        uvEl.textContent = unique.toLocaleString();
     })
     .catch(() => uvEl.textContent = "n/a");
     })();
