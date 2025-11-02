@@ -169,7 +169,7 @@
    <canvas id="snow-canvas"></canvas>
    <script src="/script/script.js"></script>
 
-<script>
+<!-- <script>
 (function () {
   const UMAMI_BASE   = "https://darkside-nas.synology.me";
   const WEBSITE_ID   = "5814958c-53b7-44ad-85da-fdd56c75459d";          // short website id
@@ -192,8 +192,19 @@
   })
   .catch(() => uvEl.textContent = "n/a");
 })();
-</script>
+</script> -->
 
+<script>
+(function(){
+  const url = "https://darkside-nas.synology.me/public-stats?startAt=0&endAt=" + Date.now();
+  const el = document.getElementById("uv");
+  fetch(url, { cache:"no-store" })
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(d => el.textContent =
+      (typeof d?.visitors?.value === "number") ? d.visitors.value.toLocaleString() : "n/a")
+    .catch(() => el.textContent = "n/a");
+})();
+</script>
 
 </body>
 </html>
