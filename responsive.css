@@ -1281,6 +1281,14 @@
 
     }
 
+    .umami{
+        display: none;
+    }
+
+    .main-container #counter{
+        font-size: 0.50em;
+    }
+
     .row-number {
         margin-right: 1em;
         margin-left: 0.5em;
@@ -1785,6 +1793,15 @@
         margin-left: 0.25em;
     }
 
+      .umami{
+        display: none;
+    }
+
+        .main-container #counter{
+        font-size: 0.50em;
+    }
+
+
 }
 
 @media (max-width: 479px) {
@@ -2061,6 +2078,15 @@
         margin-top: -0.5em;
         margin-left: 0em;
     }
+
+      .umami{
+        display: none;
+    }
+
+        .main-container #counter{
+        font-size: 0.45em;
+    }
+
 }
 
 @media (max-width: 378px) {
@@ -2330,6 +2356,15 @@
         margin-top: -0.5em;
         margin-left: 0em;
     }
+
+     .umami{
+        display: none;
+    }
+
+        .main-container #counter{
+        font-size: 0.40em;
+    }
+
 
 }
 
