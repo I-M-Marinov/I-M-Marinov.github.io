@@ -151,19 +151,21 @@
 
    <!-- <div class="counter"> <script type="text/javascript" src="//counter.websiteout.com/js/21/5/150/0"></script></div> -->
 
-   <div id="counter" 
-   style="font: 14px/1.4 Space Mono, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; 
-   opacity:.9; 
-   display:flex; 
-   gap:.5em; 
-   align-items:center; 
-   justify-content: center;
-   color: ghostwhite;
-   font-size: 0.65em;" >
-    <span>Visitors:</span>
-    <strong id="uv">—</strong>
-    <span style="opacity:.7">· Powered by <a href="#" style="opacity:.7" rel="noopener">Umami</a></span>
-    </div>
+  <div id="counter"
+     style="font: 14px/1.4 Space Mono, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+     opacity:.9;
+     display:flex;
+     gap:.5em;
+     align-items:center;
+     justify-content:center;
+     color:ghostwhite;
+     font-size:0.65em;">
+  <span>Visitors:</span>
+  <strong id="visitors">—</strong>
+  <span>Views:</span>
+  <strong id="views">—</strong>
+  <span style="opacity:.7">· Powered by <a href="#" style="opacity:.7" rel="noopener">Umami</a></span>
+</div>
 
     
    <canvas id="snow-canvas"></canvas>
@@ -197,14 +199,23 @@
 <script>
 (function(){
   const url = "https://darkside-nas.synology.me:444/stats?startAt=0&endAt=" + Date.now();
-  const el = document.getElementById("uv");
+  const elVisitors = document.getElementById("visitors");
+  const elViews    = document.getElementById("views");
+
   fetch(url, { cache: "no-store" })
     .then(r => r.ok ? r.json() : Promise.reject())
-    .then(d => el.textContent =
-      (typeof d?.visitors?.value === "number") ? d.visitors.value.toLocaleString() : "n/a")
-    .catch(() => el.textContent = "n/a");
+    .then(data => {
+      const visitors = data?.visitors?.value;
+      const views    = data?.pageviews?.value;
+      elVisitors.textContent = (typeof visitors === "number") ? visitors.toLocaleString() : "n/a";
+      elViews.textContent    = (typeof views === "number") ? views.toLocaleString() : "n/a";
+    })
+    .catch(() => {
+      elVisitors.textContent = elViews.textContent = "n/a";
+    });
 })();
 </script>
+
 
 </body>
 </html>
