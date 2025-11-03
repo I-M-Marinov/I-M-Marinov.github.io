@@ -155,6 +155,7 @@ html::-webkit-scrollbar {
     justify-content:center;
     color:ghostwhite;
     font-size:0.60em;
+    order: 3;
 }
 
 .umami a{
