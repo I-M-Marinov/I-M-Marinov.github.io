@@ -150,6 +150,12 @@
     background-color: rgb(255, 255, 255);
   }
 
+.close,
+.maximize,
+.minimize {
+  transition: background-color 0.25s ease;
+}
+
   /* SNOWING EFFECT */
 
 #snow-canvas {
