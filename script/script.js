@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
       elements[index].style.animation = 'none'; // Reset animation
       void elements[index].offsetWidth; // Trigger reflow
       elements[index].style.animation = null; // Clear inline style
-      elements[index].style.animationDelay = 'calc(1s * var(--index))'; // Reset animation delay
+      elements[index].style.animationDelay = 'calc(0.85s * var(--index))'; // Reset animation delay
       elements[index].addEventListener('animationend', function () {
         animate(index + 1);
       });
