@@ -167,24 +167,38 @@
    <script src="/script/script.js"></script>
 
 <script>
-(function(){
+(function () {
   const url = "https://darkside-nas.synology.me:444/stats?startAt=0&endAt=" + Date.now();
   const elVisitors = document.getElementById("visitors");
   const elViews    = document.getElementById("views");
 
+  function extractMetric(obj, key) {
+    if (!obj) return undefined;
+    const v = obj[key];
+    if (typeof v === "number") return v;        
+    if (v && typeof v.value === "number") return v.value; 
+    return undefined;
+  }
+
   fetch(url, { cache: "no-store" })
     .then(r => r.ok ? r.json() : Promise.reject())
     .then(data => {
-      const visitors = data?.visitors?.value;
-      const views    = data?.pageviews?.value;
-      elVisitors.textContent = (typeof visitors === "number") ? visitors.toLocaleString() : "n/a";
-      elViews.textContent    = (typeof views === "number") ? views.toLocaleString() : "n/a";
+      const visitors = extractMetric(data, "visitors");
+      const views    = extractMetric(data, "pageviews");
+
+      elVisitors.textContent =
+        (typeof visitors === "number") ? visitors.toLocaleString() : "n/a";
+
+      elViews.textContent =
+        (typeof views === "number") ? views.toLocaleString() : "n/a";
     })
     .catch(() => {
-      elVisitors.textContent = elViews.textContent = "n/a";
+      elVisitors.textContent = "n/a";
+      elViews.textContent    = "n/a";
     });
 })();
 </script>
+
 
 
 </body>
