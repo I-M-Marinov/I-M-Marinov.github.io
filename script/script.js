@@ -344,3 +344,19 @@ function startSnowAnimation() {
 
 startSnowAnimation();
 
+document.addEventListener("DOMContentLoaded", () => {
+    const img = document.querySelector(".profile-picture");
+    if (!img) return; 
+
+    const christmasImg = "./resume/images/imarinov_christmas.png";
+
+    const today = new Date();
+    const month = today.getMonth() + 1; 
+    const day = today.getDate();
+
+    const isChristmas = (month === 12 && (day === 8 || day === 25 || day === 26));
+
+    if (isChristmas) {
+        img.src = christmasImg;
+    }
+});
