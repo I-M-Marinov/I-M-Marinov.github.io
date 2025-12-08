@@ -354,7 +354,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const month = today.getMonth() + 1; 
     const day = today.getDate();
 
-    const isChristmas = (month === 12 && (day === 8 || day === 25 || day === 26));
+    const isChristmas = (month === 12 && (day === 24 || day === 25 || day === 26));
 
     if (isChristmas) {
         img.src = christmasImg;
