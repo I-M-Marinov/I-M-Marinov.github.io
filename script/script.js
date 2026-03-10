@@ -360,3 +360,8 @@ document.addEventListener("DOMContentLoaded", () => {
         img.src = christmasImg;
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const year = new Date().getFullYear();
+    document.getElementById("year").textContent = `2024-${year}`;
+});
