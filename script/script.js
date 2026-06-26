@@ -33,101 +33,61 @@ document.addEventListener('DOMContentLoaded', () => {
   const consoleHeader = document.querySelector('.console-window-header');
   const consoleWindow = document.querySelector('.console-window');
   const h1Elements = document.querySelectorAll('.console-window h1');
-
-
-  let isMaximized = false;
-  let isFontSizeChanged = false;
-
-  function changeFontSize(newFontSize) {
-    h1Elements.forEach((h1, index) => {
-      if (!h1.dataset.originalFontSize) {
-        h1.dataset.originalFontSize = window.getComputedStyle(h1).fontSize;
-      }
-      h1.style.fontSize = newFontSize;
-      if (index === 0) {
-        h1.style.paddingTop = '2em';
-      } else {
-        h1.style.paddingTop = '';
-      }
-    });
-  }
-
-  function revertToOriginalFontSize() {
-    h1Elements.forEach((h1) => {
-      h1.style.fontSize = h1.dataset.originalFontSize;
-      h1.style.paddingTop = '';
-    });
-  }
-
-  maximizeButton.addEventListener('click', () => {
-    const screenWidth = window.innerWidth;
-    if (screenWidth >= 1910 && screenWidth <= 2560) {
-      if (!isMaximized) {
-        consoleHeader.style.width = '85%';
-        consoleWindow.style.width = '85%';
-        consoleWindow.style.height = '30em';
-        isMaximized = true;
-      } else {
-        consoleHeader.style.width = '';
-        consoleHeader.style.height = '';
-        consoleWindow.style.width = '';
-        consoleWindow.style.height = '';
-        isMaximized = false;
-      }
-
-      if (!isFontSizeChanged) {
-        changeFontSize('3em');
-        isFontSizeChanged = true;
-      } else {
-        revertToOriginalFontSize();
-        isFontSizeChanged = false;
-      }
-    } else {
-      showAlert('Screen width should be between 1910px and 2560px to maximize this window ! ');
-    }
-  });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  const maximizeButton = document.querySelector('.maximize');
-  const consoleHeader = document.querySelector('.console-window-header');
-  const consoleWindow = document.querySelector('.console-window');
   const h2Elements = document.querySelectorAll('.console-window h2');
-  const picture = document.querySelector('.picture');
+  const picture = document.querySelector('.picture'); // only present on About Me page
+
+  const hasH1 = h1Elements.length > 0;
+  const hasH2 = h2Elements.length > 0;
 
   let isMaximized = false;
   let isFontSizeChanged = false;
 
-  function changeFontSize(newFontSize) {
-    h2Elements.forEach((h2, index) => {
-      if (!h2.dataset.originalFontSize) {
-        h2.dataset.originalFontSize = window.getComputedStyle(h2).fontSize;
-      }
-      h2.style.fontSize = newFontSize;
-      picture.style.display = "none";
-      if (index === 0) {
-        h2.style.paddingTop = '1em'; // Change the padding top
-      } else {
-        h2.style.paddingTop = ''; // Revert padding top to default
-      }
-    });
+  function changeFontSize() {
+    if (hasH1) {
+      h1Elements.forEach((h1, index) => {
+        if (!h1.dataset.originalFontSize) {
+          h1.dataset.originalFontSize = window.getComputedStyle(h1).fontSize;
+        }
+        h1.style.fontSize = '3em';
+        h1.style.paddingTop = index === 0 ? '2em' : '';
+      });
+    }
+    if (hasH2) {
+      h2Elements.forEach((h2, index) => {
+        if (!h2.dataset.originalFontSize) {
+          h2.dataset.originalFontSize = window.getComputedStyle(h2).fontSize;
+        }
+        h2.style.fontSize = '2em';
+        h2.style.paddingTop = index === 0 ? '1em' : '';
+      });
+      if (picture) picture.style.display = 'none';
+    }
   }
 
-  function revertToOriginalFontSize() {
-    h2Elements.forEach((h2) => {
-      h2.style.fontSize = h2.dataset.originalFontSize;
-      h2.style.paddingTop = ''; // Revert padding top to default
-      picture.style.display = "flex";
-    });
+  function revertFontSize() {
+    if (hasH1) {
+      h1Elements.forEach((h1) => {
+        h1.style.fontSize = h1.dataset.originalFontSize;
+        h1.style.paddingTop = '';
+      });
+    }
+    if (hasH2) {
+      h2Elements.forEach((h2) => {
+        h2.style.fontSize = h2.dataset.originalFontSize;
+        h2.style.paddingTop = '';
+      });
+      if (picture) picture.style.display = 'flex';
+    }
   }
 
   maximizeButton.addEventListener('click', () => {
     const screenWidth = window.innerWidth;
-    if (screenWidth >= 1910 && screenWidth <= 2560) {
+    if (screenWidth >= 1500 && screenWidth <= 2560) {
+      const expandedHeight = hasH1 ? '30em' : '35em';
       if (!isMaximized) {
         consoleHeader.style.width = '85%';
         consoleWindow.style.width = '85%';
-        consoleWindow.style.height = '35em';
+        consoleWindow.style.height = expandedHeight;
         isMaximized = true;
       } else {
         consoleHeader.style.width = '';
@@ -138,14 +98,14 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       if (!isFontSizeChanged) {
-        changeFontSize('2em');
+        changeFontSize();
         isFontSizeChanged = true;
       } else {
-        revertToOriginalFontSize();
+        revertFontSize();
         isFontSizeChanged = false;
       }
     } else {
-      showAlert('Screen width should be between 1910px and 2560px to maximize this window !');
+      showAlert('Screen width should be at least 1500px to maximize this window !');
     }
   });
 });
@@ -183,6 +143,7 @@ let isAudioPlaying = false;
 
 document.addEventListener('DOMContentLoaded', () => {
   const closeIcon = document.querySelector('.close');
+  if (!closeIcon) return; // no console window on this page — skip close handler
   const closeAlertButton = document.getElementById('closeAlertButton');
   const customAlert = document.getElementById('customAlert');
   const alertMessage = document.getElementById('alertMessage');
@@ -191,16 +152,23 @@ document.addEventListener('DOMContentLoaded', () => {
   // Function to show the exit alert
   const showExitAlert = (message) => {
     alertMessage.textContent = message;
-    customAlert.style.display = 'block';
-    customAlertPicture.style.display = 'inline';
+    // Flex row in Matrix mode (picture left, text right); block otherwise
+    customAlert.style.display = matrixModeActive ? 'flex' : 'block';
+    customAlertPicture.style.display = matrixModeActive ? 'block' : 'inline';
+    // Swap alert picture: Agent Smith in Matrix mode, Vader otherwise
+    customAlertPicture.src = matrixModeActive
+        ? './images/alert-picture/agent-smith.jpg'
+        : './images/alert-picture/alert-picture.jpg';
 
-    const audioFile = exitSounds[message];
+    // Use Smith sounds when Matrix mode is active, Vader sounds otherwise
+    const activeSounds = matrixModeActive ? smithSounds : exitSounds;
+    const audioFile = activeSounds[message];
     const exitSound = new Audio(audioFile);
 
     if (audioFile) {
       isAudioPlaying = true;
       closeIcon.disabled = true; // Disable close button while sound is playing
-      exitSound.volume = 0.3;
+      exitSound.volume = 0.8;
       exitSound.play();
 
       exitSound.addEventListener('ended', () => {
@@ -215,8 +183,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // Function to handle clicking the closeIcon
   const handleIconClick = () => {
     if (!isAudioPlaying) {
-      const randomIndex = Math.floor(Math.random() * exitMessages.length);
-      const randomMessage = exitMessages[randomIndex];
+      // Pick from Smith or Vader depending on active theme
+      const activeMessages = matrixModeActive ? smithMessages : exitMessages;
+      const randomIndex = Math.floor(Math.random() * activeMessages.length);
+      const randomMessage = activeMessages[randomIndex];
       showExitAlert(randomMessage);
       closeIcon.removeEventListener('click', handleIconClick); // Remove event listener from closeIcon
     }
@@ -365,3 +335,186 @@ document.addEventListener("DOMContentLoaded", () => {
     const year = new Date().getFullYear();
     document.getElementById("year").textContent = `2024-${year}`;
 });
+
+/*********************************************
+    MATRIX THEME SYSTEM
+    - Floating toggle button (fixed, bottom-right)
+    - Matrix rain canvas animation (~5s on activation)
+    - body.matrix-mode class swap for full color override
+    - ItWorksOnMyMachineException alert after rain
+    - Agent Smith quotes replace Vader when active
+*********************************************/
+
+// Agent Smith quotes — active when Matrix mode is on
+const smithMessages = [
+    "Mr. Anderson...",
+    "You hear that, Mr. Anderson? That is the sound of inevitability.",
+    "Never send a human to do a machine's job.",
+];
+
+// Audio paths stubbed — guarded in showExitAlert, safe if files are missing
+const smithSounds = {
+    "Mr. Anderson...":
+        "./audio/smith-mr-anderson.mp3",
+    "You hear that, Mr. Anderson? That is the sound of inevitability.":
+        "./audio/smith-inevitability.mp3",
+    "Never send a human to do a machine's job.":
+        "./audio/smith-never-send-human.mp3",
+};
+
+// Shared state flags
+let matrixModeActive = false;
+let matrixRainRunning = false;
+
+// Restore Matrix mode from a previous page navigation (no rain on restore)
+if (localStorage.getItem('matrixMode') === 'true') {
+    document.body.classList.add('matrix-mode');
+    matrixModeActive = true;
+}
+
+// Inject the floating button and the Matrix exception alert element
+document.addEventListener('DOMContentLoaded', () => {
+    // ── Floating toggle button — icon reflects restored state ──
+    const btn = document.createElement('button');
+    btn.id = 'matrix-toggle-btn';
+    btn.title = matrixModeActive ? 'Exit the Matrix' : 'Enter the Matrix';
+    btn.textContent = matrixModeActive ? '×' : '⬡';
+    document.body.appendChild(btn);
+
+    btn.addEventListener('click', () => {
+        if (matrixRainRunning) return;
+        if (!matrixModeActive) {
+            startMatrixRain(() => activateMatrixTheme());
+        } else {
+            deactivateMatrixTheme();
+        }
+    });
+
+    // ── Matrix exception alert (separate from the Vader/Smith alert) ──
+    const alertEl = document.createElement('div');
+    alertEl.id = 'matrix-alert';
+    alertEl.innerHTML =
+        '<pre id="matrix-alert-message"></pre>' +
+        '<button id="matrix-alert-close">[ OK ]</button>';
+    document.body.appendChild(alertEl);
+
+    document.getElementById('matrix-alert-close').addEventListener('click', () => {
+        alertEl.style.display = 'none';
+    });
+});
+
+function activateMatrixTheme() {
+    document.body.classList.add('matrix-mode');
+    matrixModeActive = true;
+    localStorage.setItem('matrixMode', 'true');
+    const btn = document.getElementById('matrix-toggle-btn');
+    btn.textContent = '×';
+    btn.title = 'Exit the Matrix';
+    showMatrixException();
+}
+
+function deactivateMatrixTheme() {
+    document.body.classList.remove('matrix-mode');
+    matrixModeActive = false;
+    localStorage.removeItem('matrixMode');
+    const btn = document.getElementById('matrix-toggle-btn');
+    btn.textContent = '⬡';
+    btn.title = 'Enter the Matrix';
+}
+
+function showMatrixException() {
+    const alertEl = document.getElementById('matrix-alert');
+    const msg = document.getElementById('matrix-alert-message');
+    if (!alertEl || !msg) return;
+
+    msg.innerHTML =
+        '<span style="color:#00FF41;font-weight:bold;">System.ItWorksOnMyMachineException</span>\n' +
+        '<span class="dim">--------------------------------------------------</span>\n' +
+        'Unhandled exception in Ivan-Marinov-Portfolio.exe\n\n' +
+        '  Code executed successfully in local environment.\n' +
+        '  Production is someone else\'s problem.\n\n' +
+        '<span class="dim">Stack trace:</span>\n' +
+        '<span class="dim">   at Ivan_Marinov_Portfolio.Matrix.Activate()          Matrix.cs:line 1</span>\n' +
+        '<span class="dim">   at Ivan_Marinov_Portfolio.Visitor.TriggerEasterEgg() Easter.cs:line 42</span>\n' +
+        '<span class="dim">   at Ivan_Marinov_Portfolio.Home.SayHello()            Home.cs:line 1337</span>\n\n' +
+        'Press F5 to continue, or CTRL+ALT+DEL to throw it away.';
+
+    alertEl.style.display = 'block';
+}
+
+function startMatrixRain(onComplete) {
+    matrixRainRunning = true;
+
+    // Reuse or create the canvas element
+    let canvas = document.getElementById('matrix-canvas');
+    if (!canvas) {
+        canvas = document.createElement('canvas');
+        canvas.id = 'matrix-canvas';
+        document.body.appendChild(canvas);
+    }
+
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    canvas.style.display = 'block';
+    canvas.style.opacity = '1';
+
+    // Katakana + alphanumeric + code symbols for authenticity
+    const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEF<>{}[];';
+    const fontSize = 16;
+    const columns = Math.floor(canvas.width / fontSize);
+    const drops = Array(columns).fill(1);
+
+    let startTime = null;
+    let themeActivated = false;
+    const RAIN_MS   = 3500; // active rain duration
+    const FADE_MS   = 1000; // fade-out duration
+
+    function draw(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const elapsed = timestamp - startTime;
+
+        // All done — hide canvas
+        if (elapsed >= RAIN_MS + FADE_MS) {
+            canvas.style.opacity = '0';
+            canvas.style.display = 'none';
+            matrixRainRunning = false;
+            return;
+        }
+
+        // Fire theme switch at the START of the fade so it's already applied
+        // as the rain clears — no delay between rain ending and theme appearing
+        if (elapsed >= RAIN_MS && !themeActivated) {
+            themeActivated = true;
+            if (onComplete) onComplete();
+        }
+
+        // Fade out during last second
+        if (elapsed >= RAIN_MS) {
+            canvas.style.opacity = String(1 - (elapsed - RAIN_MS) / FADE_MS);
+        }
+
+        // Trail effect: semi-transparent black over previous frame
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.font = `${fontSize}px "Space Mono", monospace`;
+
+        for (let i = 0; i < drops.length; i++) {
+            const char = chars[Math.floor(Math.random() * chars.length)];
+            // Randomly flash a character white-hot; the rest are Matrix green
+            ctx.fillStyle = (Math.random() > 0.98) ? '#FFFFFF' : '#00FF41';
+            ctx.fillText(char, i * fontSize, drops[i] * fontSize);
+
+            // Reset drop to top once it reaches the bottom (with randomness)
+            if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                drops[i] = 0;
+            }
+            drops[i]++;
+        }
+
+        requestAnimationFrame(draw);
+    }
+
+    requestAnimationFrame(draw);
+}
