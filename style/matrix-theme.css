@@ -1,0 +1,516 @@
+/* =====================================================
+   MATRIX THEME
+   Applied when <body> carries the .matrix-mode class.
+   All rules are scoped to body.matrix-mode so they
+   never bleed into the normal VS2022 theme.
+   ===================================================== */
+
+/* ── Page shell ─────────────────────────────────────── */
+body.matrix-mode {
+    background-color: #000;
+    border-color: #003300;
+}
+
+body.matrix-mode .main-container {
+    background-color: #000;
+}
+
+/* ── Navigation ─────────────────────────────────────── */
+body.matrix-mode .tab {
+    background-color: #0a0a0a;
+    color: #00AA00;
+}
+
+body.matrix-mode .tab.special {
+    border-top-color: #00FF41;
+    color: #00FF41;
+}
+
+body.matrix-mode .navigation a {
+    color: #00AA00;
+}
+
+body.matrix-mode .tab:hover {
+    color: #00FF41;
+    background-color: #0d1a0d;
+    -webkit-box-shadow: 0 0 15px 0 #00FF41;
+    box-shadow: 0 0 12px 0 #00FF41;
+    border-top: 3px #00FF41 solid;
+}
+
+/* ── Code editor / app-container ────────────────────── */
+body.matrix-mode .bottom-container {
+    border-top-color: #003300;
+    border-bottom-color: #003300;
+}
+
+body.matrix-mode .app-container {
+    border-top-color: #00FF41;
+}
+
+/* Syntax highlighting remapped to green shades */
+body.matrix-mode .usings          { color: #33FF66; }
+body.matrix-mode .semicolon       { color: #006600; }
+body.matrix-mode .dot             { color: #006600; }
+body.matrix-mode .method          { color: #00FF41; }
+body.matrix-mode .method a        { color: #00FF41; }
+body.matrix-mode .execute-method  { color: #00CC33; }
+body.matrix-mode .parentheses     { color: #00AA00; }
+body.matrix-mode .console         { color: #00FF41; }
+body.matrix-mode .writeline       { color: #33FF99; }
+body.matrix-mode .text            { color: #009900; }
+body.matrix-mode .variable        { color: #00EE44; }
+body.matrix-mode .equals          { color: #005500; }
+body.matrix-mode .new-keyword     { color: #00BB33; }
+body.matrix-mode .return-keyword  { color: #00FF41; }
+body.matrix-mode .foreach-cycle   { color: #00DD55; }
+body.matrix-mode .in-keyword      { color: #00DD55; }
+body.matrix-mode .collection      { color: #00FF41; }
+body.matrix-mode .comment         { color: #004400; }
+body.matrix-mode .row-number      { color: #003300; }
+
+body.matrix-mode .code-row:hover {
+    background-color: #0d1a0d;
+}
+
+body.matrix-mode .code-row:hover .row-number {
+    color: #009900;
+}
+
+/* ── Solution explorer ──────────────────────────────── */
+body.matrix-mode .solution-explorer {
+    background-color: #000;
+    color: #00AA00;
+    border-color: #003300;
+}
+
+body.matrix-mode .solution-explorer a { color: #00AA00; }
+
+body.matrix-mode .row.special { background-color: #0a1a0a; }
+
+body.matrix-mode .row:hover { background-color: #0d1a0d; }
+
+body.matrix-mode .solution-explorer::before {
+    background-color: #00FF41;
+}
+
+/* ── Console window ─────────────────────────────────── */
+body.matrix-mode .console-window-header {
+    background-color: #0a0a0a;
+    border-color: #003300;
+    border-bottom: 1px solid #005500; /* separates header from console body */
+}
+
+body.matrix-mode .console-window {
+    border-color: #00FF41;
+    background-color: #000;
+    color: #00FF41;
+}
+
+body.matrix-mode .console-window h1,
+body.matrix-mode .console-window h2 {
+    color: #00FF41;
+}
+
+/* Make SVG icons visible — invert to white, dimmed at rest */
+body.matrix-mode .minimize,
+body.matrix-mode .maximize,
+body.matrix-mode .close {
+    filter: brightness(0) invert(1);
+    opacity: 0.55;
+    border: 1px solid #003300;
+    border-radius: 2px;
+    transition: opacity 0.2s ease, background-color 0.25s ease;
+}
+
+/* Brighten on hover and tint green */
+body.matrix-mode .minimize:hover,
+body.matrix-mode .maximize:hover,
+body.matrix-mode .close:hover {
+    opacity: 1;
+    filter: brightness(0) invert(1) sepia(1) saturate(4) hue-rotate(95deg);
+}
+
+/* ── Vader/Smith alert ──────────────────────────────── */
+body.matrix-mode .alert {
+    background-color: #0a0a0a;
+    border-color: #00FF41;
+    color: #00FF41;
+    /* Side-by-side layout: picture left, text right, button below */
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0;
+    text-align: left;
+    max-width: 460px;
+    padding: 1em 1.5em;
+}
+
+body.matrix-mode #customAlertPicture {
+    width: 120px;
+    height: auto;
+    flex-shrink: 0;
+    scale: 1;
+    margin: 0 1.2em 0 0;
+}
+
+body.matrix-mode #alertMessage {
+    color: #00FF41;
+    flex: 1;
+    min-width: 150px;
+    margin-bottom: 0;
+}
+
+body.matrix-mode #closeAlertButton {
+    background-color: #000;
+    color: #00FF41;
+    border-color: #00FF41;
+    flex-basis: 100%;
+    margin-top: 0.8em;
+}
+
+body.matrix-mode #closeAlertButton:hover {
+    background-color: #00FF41;
+    color: #000;
+}
+
+/* ── Minimized window ───────────────────────────────── */
+body.matrix-mode #minimized-window {
+    background-color: #0a0a0a;
+    border-color: #003300;
+    border-bottom-color: #00FF41;
+}
+
+body.matrix-mode #minimized-window a { color: #00FF41; }
+
+body.matrix-mode #minimized-window:hover { background-color: #0d1a0d; }
+
+/* ── Footer & visitor counter ───────────────────────── */
+body.matrix-mode footer              { color: #004400; }
+body.matrix-mode .main-container #counter { color: #004400; }
+body.matrix-mode .umami a            { color: #009900; }
+body.matrix-mode #visitors,
+body.matrix-mode #views              { color: #00AA00; }
+
+/* =====================================================
+   MATRIX TOGGLE BUTTON
+   Fixed floating button — always injected by script.js
+   ===================================================== */
+
+#matrix-toggle-btn {
+    position: fixed;
+    bottom: 1.8em;
+    right: 1.8em;
+    z-index: 9994;
+    width: 2.8em;
+    height: 2.8em;
+    border-radius: 50%;
+    background-color: #1F1F1F;
+    border: 2px solid #00FF41;
+    color: #00FF41;
+    font-family: "Space Mono", monospace;
+    font-size: 0.85em;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    line-height: 1;
+    box-shadow: 0 0 8px rgba(0, 255, 65, 0.3);
+    transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+#matrix-toggle-btn:hover {
+    background-color: #00FF41;
+    color: #000;
+    box-shadow: 0 0 18px rgba(0, 255, 65, 0.7);
+}
+
+/* Active (Matrix mode on) state */
+body.matrix-mode #matrix-toggle-btn {
+    background-color: #00FF41;
+    color: #000;
+    box-shadow: 0 0 18px rgba(0, 255, 65, 0.8);
+}
+
+body.matrix-mode #matrix-toggle-btn:hover {
+    background-color: #000;
+    color: #00FF41;
+}
+
+/* =====================================================
+   MATRIX RAIN CANVAS
+   Injected by script.js, managed via inline style
+   ===================================================== */
+
+#matrix-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9993;
+    display: none;
+}
+
+/* =====================================================
+   MATRIX EXCEPTION ALERT
+   Injected by script.js — separate from the Vader/Smith alert
+   ===================================================== */
+
+#matrix-alert {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000;
+    border: 2px solid #00FF41;
+    padding: 1.5em 2em;
+    font-family: "Space Mono", monospace;
+    font-size: 0.80em;
+    color: #00FF41;
+    z-index: 9995;
+    min-width: 44em;
+    max-width: min(70em, 92vw);
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.4);
+    text-align: left;
+}
+
+#matrix-alert pre {
+    white-space: pre-wrap;
+    font-family: "Space Mono", monospace;
+    color: #00FF41;
+    margin-bottom: 1.2em;
+    line-height: 1.6;
+}
+
+#matrix-alert pre .dim {
+    color: #006600;
+}
+
+#matrix-alert-close {
+    display: block;
+    margin: 0 auto;
+    background-color: #000;
+    color: #00FF41;
+    border: 1px solid #00FF41;
+    padding: 0.4em 1.2em;
+    cursor: pointer;
+    font-family: "Space Mono", monospace;
+    font-size: 1em;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#matrix-alert-close:hover {
+    background-color: #00FF41;
+    color: #000;
+}
+
+@media (max-width: 480px) {
+    #matrix-alert {
+        min-width: 90vw;
+        font-size: 0.65em;
+        padding: 1em;
+    }
+
+    #matrix-toggle-btn {
+        bottom: 1em;
+        right: 1em;
+    }
+}
+
+/* =====================================================
+   CERTIFICATES PAGE — Matrix mode overrides
+   ===================================================== */
+
+/* Base card style */
+body.matrix-mode .certificate-card,
+body.matrix-mode .diploma-card {
+    background-color: #050f05;
+    border-color: #003300;
+    box-shadow: none;
+}
+
+body.matrix-mode #engineering-diploma {
+    border-color: #003300;
+}
+
+/* Card headers */
+body.matrix-mode .certificate-header {
+    color: #00FF41;
+    text-shadow: none;
+}
+
+body.matrix-mode .diploma-header {
+    color: #00FF41;
+    text-shadow: none;
+}
+
+/* Description text */
+body.matrix-mode .certificate-description {
+    color: #009900;
+}
+
+/* Scrollbar */
+body.matrix-mode .scrollable-container::-webkit-scrollbar-track { background: #000; }
+body.matrix-mode .scrollable-container::-webkit-scrollbar-thumb { background: #003300; }
+
+/* ── Neon border flicker on hover ───────────────────
+   Complements the text glitch on projects: same
+   "unstable signal" theme, different visual channel. */
+
+@keyframes matrix-border-flicker {
+    /* Mostly glowing, brief double-flicker off */
+    0%,  17%, 19%, 21%, 51%, 53%, 100% {
+        box-shadow: 0 0 6px #00FF41, 0 0 20px rgba(0, 255, 65, 0.45);
+        border-color: #00FF41;
+    }
+    18%, 20%, 52% {
+        box-shadow: none;
+        border-color: #003300;
+    }
+}
+
+/* Rapid chromatic split when hovering a card header */
+@keyframes matrix-card-header-glitch {
+    0%,  84%, 100% { text-shadow: none; transform: none; color: #fff; }
+    85% { text-shadow: -3px 0 #ff003c, 3px 0 #00fff9; transform: skewX(-4deg); color: #fff; }
+    87% { text-shadow:  3px 0 #ff003c, -3px 0 #00fff9; transform: skewX( 3deg); color: #ccff00; }
+    89% { text-shadow: none; transform: none; color: #fff; }
+}
+
+body.matrix-mode .certificates-container a:hover .certificate-card,
+body.matrix-mode a:hover .diploma-card {
+    animation: matrix-border-flicker 1.6s ease-in-out infinite;
+    transform: scale(1.06);
+}
+
+body.matrix-mode .certificates-container a:hover .certificate-header,
+body.matrix-mode a:hover .diploma-header {
+    color: #fff;
+    text-shadow: none;
+    animation: matrix-card-header-glitch 1.4s ease-in-out infinite;
+}
+
+/* =====================================================
+   PROJECTS PAGE — Matrix mode overrides
+   ===================================================== */
+
+/* ── Animated running border + greyed-out image ─────
+   @property lets us animate only the conic gradient
+   start angle, so the element itself never rotates. */
+
+@property --matrix-border-angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes matrix-border-spin {
+    from { --matrix-border-angle: 0deg; }
+    to   { --matrix-border-angle: 360deg; }
+}
+
+/* Running border lives on ::before, interior mask on ::after */
+body.matrix-mode .project-picture {
+    position: relative;
+    isolation: isolate;
+}
+
+body.matrix-mode .project-picture::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    background: conic-gradient(
+        from var(--matrix-border-angle),
+        transparent    0%,
+        #003300       10%,
+        #00FF41       17%,
+        #00FF41       22%,
+        #003300       29%,
+        transparent   39%
+    );
+    border-radius: 6px;
+    animation: matrix-border-spin 2.8s linear infinite;
+    z-index: -2;
+}
+
+/* Masks the centre of the conic gradient, leaving only the ring */
+body.matrix-mode .project-picture::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #000;
+    border-radius: 3px;
+    z-index: -1;
+}
+
+/* Greyed-out, slightly dimmed — "surveillance footage" look */
+body.matrix-mode .project-picture img {
+    filter: grayscale(0.6) brightness(0.72);
+    transition: filter 0.6s ease;
+    position: relative;
+    z-index: 0;
+}
+
+/* Project description panel */
+body.matrix-mode .project-description {
+    border-color: #003300;
+    color: #00AA00;
+}
+
+body.matrix-mode .project-description p {
+    color: #009900;
+}
+
+body.matrix-mode .project-description h3 {
+    color: #00CC33;
+}
+
+/* ── Cyberpunk glitch on project h2 headers ─────────── */
+
+/* Glitch burst: ~88–93% of the cycle, rest is clean */
+@keyframes matrix-header-glitch {
+    0%,  87%  { text-shadow: none; transform: none; color: #00FF41; }
+
+    /* Frame 1 — hard left shift, red/cyan split */
+    88%  {
+        text-shadow: -4px 0 #ff003c, 4px 0 #00fff9;
+        transform: skewX(-5deg) translateX(4px);
+        color: #00FF41;
+    }
+    /* Frame 2 — flip direction */
+    89%  {
+        text-shadow: 5px 0 #ff003c, -4px 0 #00fff9;
+        transform: skewX(4deg) translateX(-3px);
+        color: #ccff00;
+    }
+    /* Frame 3 — brief snap back */
+    90%  {
+        text-shadow: -2px 0 #00FF41, 2px 0 #ff003c;
+        transform: none;
+        color: #00FF41;
+    }
+    /* Frame 4 — secondary glitch burst */
+    91%  {
+        text-shadow: 3px 0 cyan, -3px 0 #ff003c;
+        transform: skewX(-3deg) scaleX(1.02);
+        color: #00FF41;
+    }
+    /* Frame 5 — wide split, slight vertical offset */
+    92%  {
+        text-shadow: -5px 2px #ff003c, 5px -2px #00fff9;
+        transform: skewX(6deg);
+        color: #00FF41;
+    }
+    /* Recovery */
+    93%, 100% { text-shadow: none; transform: none; color: #00FF41; }
+}
+
+body.matrix-mode .project-description h2 {
+    color: #00FF41;
+    animation: matrix-header-glitch 4s ease-in-out infinite;
+}
