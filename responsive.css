@@ -140,15 +140,15 @@
         scale: 100%;
     }
 
-    #project-picture1{
+    .project-picture1{
         padding-bottom: 8em;
     }
     
-    #project-picture2{
+    .project-picture2{
         padding-bottom: 9em;
     }
     
-    #project-picture3{
+    .project-picture3{
         padding-bottom: 9em;
     }
     .project-description {
@@ -368,9 +368,9 @@
         scale: 100%;
     }
 
-    #project-picture1,
-    #project-picture2,
-    #project-picture3{
+    .project-picture1,
+    .project-picture2,
+    .project-picture3{
         padding-bottom: 0em;
     }
     
@@ -570,9 +570,9 @@
         scale: 100%;
     }
 
-    #project-picture1,
-    #project-picture2,
-    #project-picture3{
+    .project-picture1,
+    .project-picture2,
+    .project-picture3{
         padding-bottom: 0em;
     }
     
@@ -770,9 +770,9 @@
         scale: 80%;
     }
 
-    #project-picture1,
-    #project-picture2,
-    #project-picture3{
+    .project-picture1,
+    .project-picture2,
+    .project-picture3{
         padding-bottom: 0em;
     }
     .project-description {
@@ -962,9 +962,9 @@
         scale: 75%;
     }
 
-    #project-picture1,
-    #project-picture2,
-    #project-picture3{
+    .project-picture1,
+    .project-picture2,
+    .project-picture3{
         padding-bottom: 0em;
     }
 
@@ -1194,9 +1194,9 @@
         order: 1;
     }
 
-    #project-picture1,
-    #project-picture2,
-    #project-picture3{
+    .project-picture1,
+    .project-picture2,
+    .project-picture3{
         padding-bottom: 1em;
     }
 
@@ -1297,9 +1297,6 @@
 
     .solution-explorer {
         font-size: 0.65em;
-        @media (max-width: 542px){
-            display: none;
-        }
     }
 
     .solution-icon {
@@ -1566,9 +1563,6 @@
 
     .solution-explorer {
         font-size: 0.65em;
-        @media (max-width: 572px){
-            display: none;
-        }
     }
 
     .solution-icon {
@@ -2368,3 +2362,41 @@
 
 }
 
+/* =====================================================
+   About Me — picture LEFT of console window.
+   Only active at large screens (≥ 1361px).
+   Uses min-width so it never touches small-screen rules.
+
+   Strategy: keep console-container at 100% width so its
+   percentage-based children (console-window widths, maximize
+   inline styles) all resolve against the viewport exactly as
+   before. The picture is pulled out of flow with absolute
+   positioning and placed in the empty space to the left of
+   the centred console window.
+   ===================================================== */
+@media (min-width: 1361px) {
+
+    /* Positioning context for the absolutely-placed picture */
+    .console-picture-wrapper {
+        position: relative;
+    }
+
+    /* console-container stays full-width — no changes needed */
+
+    /* Float the picture into the left margin next to the console */
+    .console-picture-wrapper .picture {
+        position: absolute;
+        left: 2em;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 0;
+        justify-content: flex-start;
+    }
+
+    .console-picture-wrapper .picture img {
+        width: 12em;
+        height: 12em;
+        object-fit: cover;
+    }
+
+}
