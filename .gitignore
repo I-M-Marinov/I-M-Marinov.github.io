@@ -1,0 +1,5 @@
+# Visual Studio IDE files
+.vs/
+
+# VS Code workspace settings (optional — remove this line if you want to share them)
+.vscode/

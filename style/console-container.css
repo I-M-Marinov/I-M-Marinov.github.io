@@ -59,6 +59,11 @@
     padding-top: 1.5em;
 }
 
+/* Wrapper used on About Me page */
+.console-picture-wrapper {
+    width: 100%;
+}
+
 .picture{
     display: flex;
     justify-content: center;
