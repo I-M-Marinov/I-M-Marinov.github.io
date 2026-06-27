@@ -69,12 +69,94 @@ body.matrix-mode .collection      { color: #00FF41; }
 body.matrix-mode .comment         { color: #004400; }
 body.matrix-mode .row-number      { color: #003300; }
 
-body.matrix-mode .code-row:hover {
-    background-color: #0d1a0d;
+/* ── Code — sequential row-by-row glitch wave ──────────────
+   JS assigns animation + staggered negative delay to each
+   .code-row li so they glitch one after the next in a loop.
+   Original text and IDE colour scheme stay completely intact. */
+
+/* ── Radar scan band — one element physically sweeping top→bottom ──
+   Uses ::after on the app-container so it's a real object in space,
+   not per-row staggered animations. mix-blend-mode: screen additively
+   brightens the green text underneath as the band passes over it.    */
+
+body.matrix-mode .app-container {
+    position: relative;
+    overflow: hidden;
 }
 
-body.matrix-mode .code-row:hover .row-number {
-    color: #009900;
+@keyframes matrix-radar-sweep {
+    0%   { top: -6em; }
+    100% { top: 100%; }
+}
+
+body.matrix-mode .app-container::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 6em;
+    top: -6em;
+    pointer-events: none;
+    z-index: 3;
+    mix-blend-mode: screen;
+    background: linear-gradient(to bottom,
+        transparent               0%,
+        rgba(0, 255, 65, 0.05)   20%,
+        rgba(0, 255, 65, 0.14)   45%,
+        rgba(0, 255, 65, 0.18)   50%,
+        rgba(0, 255, 65, 0.14)   55%,
+        rgba(0, 255, 65, 0.05)   80%,
+        transparent              100%
+    );
+    animation: matrix-radar-sweep 3.5s linear infinite;
+}
+
+/* Per-row glitch — JS sets delay so peak fires exactly when
+   the radar band centre crosses each row (same 3.5s cycle).   */
+@keyframes matrix-row-glitch {
+    0%, 3% {
+        text-shadow: 0 0 5px rgba(0, 255, 65, 0.15);
+        transform: none;
+    }
+    /* Ramp in */
+    5% {
+        text-shadow: -1px 0 rgba(255, 0, 60, 0.35), 1px 0 rgba(0, 255, 249, 0.35),
+                      0 0 8px rgba(0, 255, 65, 0.3);
+        transform: skewX(-1deg) translateX(0.5px);
+    }
+    /* Peak — chromatic left */
+    9% {
+        text-shadow: -3px 0 rgba(255, 0, 60, 0.7), 3px 0 rgba(0, 255, 249, 0.7),
+                      0 0 12px rgba(0, 255, 65, 0.55);
+        transform: skewX(-3deg) translateX(2.5px);
+    }
+    /* Flip — chromatic right */
+    12% {
+        text-shadow:  3px 0 rgba(255, 0, 60, 0.7), -3px 0 rgba(0, 255, 249, 0.7),
+                      0 0 12px rgba(0, 255, 65, 0.55);
+        transform: skewX(2.5deg) translateX(-2px);
+    }
+    /* Ramp out */
+    16% {
+        text-shadow: -1px 0 rgba(0, 255, 65, 0.5), 1px 0 rgba(255, 0, 60, 0.2),
+                      0 0 8px rgba(0, 255, 65, 0.35);
+        transform: skewX(-0.5deg);
+    }
+    /* Afterglow */
+    20% {
+        text-shadow: 0 0 10px rgba(0, 255, 65, 0.35);
+        transform: none;
+    }
+    /* Back to calm */
+    24%, 100% {
+        text-shadow: 0 0 5px rgba(0, 255, 65, 0.15);
+        transform: none;
+    }
+}
+
+/* Constant soft glow on code text so it looks alive at rest */
+body.matrix-mode .code-row li {
+    text-shadow: 0 0 5px rgba(0, 255, 65, 0.15);
 }
 
 /* ── Solution explorer ──────────────────────────────── */
@@ -90,15 +172,33 @@ body.matrix-mode .row.special { background-color: #0a1a0a; }
 
 body.matrix-mode .row:hover { background-color: #0d1a0d; }
 
+/* Clean scan line — solid bar gliding back and forth, faint glow only */
+
+@keyframes matrix-scan-bar {
+    from { left: 0; }
+    to   { left: calc(100% - 5em); }
+}
+
 body.matrix-mode .solution-explorer::before {
-    background-color: #00FF41;
+    width: 5em;
+    height: 2px;
+    background: #00FF41;
+    box-shadow: 0 0 5px rgba(0, 255, 65, 0.6);
+    animation: matrix-scan-bar 2.4s ease-in-out infinite alternate;
+}
+
+/* Convert VS2022 logo + all C# file icons to Matrix green */
+body.matrix-mode .solution-icon,
+body.matrix-mode .solution-csharp-icon {
+    filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(80deg);
+    opacity: 0.85;
 }
 
 /* ── Console window ─────────────────────────────────── */
 body.matrix-mode .console-window-header {
     background-color: #0a0a0a;
-    border-color: #003300;
-    border-bottom: 1px solid #005500; /* separates header from console body */
+    border-color: #00FF41;
+    border-bottom: 1px solid #004400; /* dim separator between header and console body */
 }
 
 body.matrix-mode .console-window {
@@ -193,6 +293,74 @@ body.matrix-mode #visitors,
 body.matrix-mode #views              { color: #00AA00; }
 
 /* =====================================================
+   CONSOLE BUTTON TOOLTIPS + ONE-TIME NUDGE
+   Both injected by script.js, work in all modes.
+   ===================================================== */
+
+/* Hover tooltip — single element repositioned per button */
+.console-btn-tooltip {
+    position: fixed;
+    background: #252526;
+    color: #cccccc;
+    border: 1px solid #3e3e42;
+    padding: 3px 9px;
+    font-family: 'Consolas', 'Space Mono', monospace;
+    font-size: 11px;
+    border-radius: 3px;
+    pointer-events: none;
+    z-index: 9999;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: opacity 0.12s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+.console-btn-tooltip.visible { opacity: 1; }
+
+body.matrix-mode .console-btn-tooltip {
+    background: #050f05;
+    color: #00FF41;
+    border-color: #003300;
+    box-shadow: 0 2px 8px rgba(0, 255, 65, 0.15);
+}
+
+/* One-time nudge — appears below the close button on first visit */
+.console-nudge {
+    position: fixed;
+    background: #252526;
+    color: #6a9955;          /* VS2022 comment green */
+    border: 1px solid #3e3e42;
+    padding: 4px 10px;
+    font-family: 'Consolas', 'Space Mono', monospace;
+    font-size: 11px;
+    border-radius: 3px;
+    pointer-events: none;
+    z-index: 9999;
+    white-space: nowrap;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+.console-nudge.visible { opacity: 1; }
+.console-nudge.fading  { opacity: 0; }
+
+@keyframes console-nudge-pulse {
+    from { opacity: 0.55; }
+    to   { opacity: 1; }
+}
+.console-nudge.pulsing {
+    animation: console-nudge-pulse 0.75s ease-in-out 4 alternate;
+}
+
+body.matrix-mode .console-nudge {
+    background: #050f05;
+    color: #00FF41;
+    border-color: #003300;
+    text-shadow: 0 0 8px rgba(0, 255, 65, 0.45);
+    box-shadow: 0 2px 8px rgba(0, 255, 65, 0.12);
+}
+
+/* =====================================================
    MATRIX TOGGLE BUTTON
    Fixed floating button — always injected by script.js
    ===================================================== */
@@ -205,9 +373,8 @@ body.matrix-mode #views              { color: #00AA00; }
     width: 2.8em;
     height: 2.8em;
     border-radius: 50%;
-    background-color: #1F1F1F;
+    background-color: #000;        /* fallback behind the canvas */
     border: 2px solid #00FF41;
-    color: #00FF41;
     font-family: "Space Mono", monospace;
     font-size: 0.85em;
     font-weight: bold;
@@ -217,26 +384,41 @@ body.matrix-mode #views              { color: #00AA00; }
     justify-content: center;
     padding: 0;
     line-height: 1;
-    box-shadow: 0 0 8px rgba(0, 255, 65, 0.3);
-    transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+    overflow: hidden;              /* clips the rain canvas to the circle */
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.45);
+    transition: box-shadow 0.25s ease;
+}
+
+/* Rain canvas — fills the button, sits behind the icon */
+#matrix-btn-canvas {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* Icon floats above the canvas */
+#matrix-btn-icon {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    font-size: inherit;
+    font-weight: bold;
+    text-shadow: 0 0 6px rgba(0, 255, 65, 1), 0 0 12px rgba(0, 255, 65, 0.6);
+    line-height: 1;
 }
 
 #matrix-toggle-btn:hover {
-    background-color: #00FF41;
-    color: #000;
-    box-shadow: 0 0 18px rgba(0, 255, 65, 0.7);
+    box-shadow: 0 0 22px rgba(0, 255, 65, 0.8);
 }
 
-/* Active (Matrix mode on) state */
 body.matrix-mode #matrix-toggle-btn {
-    background-color: #00FF41;
-    color: #000;
     box-shadow: 0 0 18px rgba(0, 255, 65, 0.8);
 }
 
 body.matrix-mode #matrix-toggle-btn:hover {
-    background-color: #000;
-    color: #00FF41;
+    box-shadow: 0 0 28px rgba(0, 255, 65, 1);
 }
 
 /* =====================================================
@@ -393,6 +575,115 @@ body.matrix-mode a:hover .diploma-header {
     color: #fff;
     text-shadow: none;
     animation: matrix-card-header-glitch 1.4s ease-in-out infinite;
+}
+
+/* =====================================================
+   DIPLOMA — special Matrix treatment
+   Outranks the generic certificate/diploma rules above.
+   ===================================================== */
+
+/* Strip inner borders — the running border lives on #diploma */
+body.matrix-mode #diploma .diploma-card {
+    border-color: transparent;
+    box-shadow: none;
+    background-color: #050f05;
+}
+/* Diploma card — own glitch overrides all generic hover rules */
+body.matrix-mode #engineering-diploma {
+    border-color: transparent;
+}
+
+/* Running conic border wrapping the whole diploma (card + image) */
+body.matrix-mode #diploma {
+    position: relative;
+    isolation: isolate;
+}
+body.matrix-mode #diploma::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    background: conic-gradient(
+        from var(--matrix-border-angle),
+        transparent    0%,
+        #003300        8%,
+        #00FF41       15%,
+        #00FF41       21%,
+        #003300       28%,
+        transparent   38%
+    );
+    border-radius: 10px;
+    animation: matrix-border-spin 2.2s linear infinite;
+    z-index: -2;
+}
+body.matrix-mode #diploma::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #050f05;
+    border-radius: 7px;
+    z-index: -1;
+}
+
+/* Always-on slow glow pulse */
+@keyframes matrix-diploma-pulse {
+    0%, 100% {
+        text-shadow: 0 0 5px rgba(0, 255, 65, 0.35), 0 0 10px rgba(0, 255, 65, 0.15);
+    }
+    50% {
+        text-shadow: 0 0 8px rgba(0, 255, 65, 0.7), 0 0 18px rgba(0, 255, 65, 0.35),
+                     0 0 30px rgba(0, 255, 65, 0.15);
+    }
+}
+
+/* Radar-synced chromatic glitch — fires as the radar clears the last code row.
+   The radar peak hits the last row at ~90% of the 3.5s cycle (≈3.15s),
+   so the glitch window 82%–94% fires in perfect succession. */
+@keyframes matrix-diploma-sync-glitch {
+    0%, 80%, 100% {
+        text-shadow: 0 0 5px rgba(0, 255, 65, 0.35);
+        transform: none;
+    }
+    82% {
+        text-shadow: -5px 0 rgba(255, 0, 60, 0.65), 5px 0 rgba(0, 255, 249, 0.65),
+                      0 0 10px rgba(0, 255, 65, 0.5);
+        transform: skewX(-2.5deg) translateX(3px);
+    }
+    86% {
+        text-shadow:  5px 0 rgba(255, 0, 60, 0.65), -5px 0 rgba(0, 255, 249, 0.65),
+                      0 0 10px rgba(0, 255, 65, 0.5);
+        transform: skewX(2deg) translateX(-3px);
+    }
+    90% {
+        text-shadow: -3px 0 #00FF41, 3px 0 rgba(255, 0, 60, 0.45);
+        transform: skewX(-1.5deg);
+    }
+    92% {
+        text-shadow:  2px 0 rgba(0, 255, 249, 0.45), -1px 0 rgba(255, 0, 60, 0.3);
+        transform: none;
+    }
+    94%, 100% {
+        text-shadow: 0 0 5px rgba(0, 255, 65, 0.35);
+        transform: none;
+    }
+}
+
+/* Header: pulse breathe + radar-synced glitch, always-on */
+body.matrix-mode .diploma-header {
+    color: #00FF41;
+    animation: matrix-diploma-pulse 2.6s ease-in-out infinite,
+               matrix-diploma-sync-glitch 3.5s linear infinite;
+}
+/* Keep header green on hover (suppresses generic white hover colour) */
+body.matrix-mode #diploma:hover .diploma-header {
+    color: #00FF41;
+}
+
+/* Card glitches in sync — 0.2s behind so header leads slightly */
+body.matrix-mode #diploma .diploma-card,
+body.matrix-mode #diploma:hover .diploma-card {
+    animation: matrix-diploma-sync-glitch 3.5s linear infinite;
+    animation-delay: 0.2s;
+    transform: none; /* suppress generic hover scale */
 }
 
 /* =====================================================
