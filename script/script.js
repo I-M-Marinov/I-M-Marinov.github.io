@@ -372,14 +372,77 @@ if (localStorage.getItem('matrixMode') === 'true') {
     matrixModeActive = true;
 }
 
+// ── Console + code text swaps ─────────────────────────────────
+// When Matrix mode is active, replace the home-page console lines
+// and their matching code-mockup string literals with Matrix quotes.
+// Originals are stashed on the element and restored on deactivate.
+
+const MATRIX_CONSOLE_SWAPS = {
+    'Hello':                            'Wake up, Neo.',
+    'Welcome to my Portfolio Website!': 'Welcome to the Matrix.',
+};
+const MATRIX_CODE_SWAPS = {
+    '"> Hello"':                              '"> Wake up, Neo."',
+    '"> Welcome to my Portfolio Website!"':   '"> Welcome to the Matrix."',
+};
+
+function applyMatrixText() {
+    // Console: CSS renders text via content: attr(data-text) — just update the attribute
+    document.querySelectorAll('.letter-by-letter').forEach(el => {
+        const orig = el.getAttribute('data-text');
+        if (orig && MATRIX_CONSOLE_SWAPS[orig]) {
+            el._matrixOrigText = orig;
+            el.setAttribute('data-text', MATRIX_CONSOLE_SWAPS[orig]);
+        }
+    });
+    // Code mockup: plain text nodes inside .text spans (no child elements)
+    document.querySelectorAll('.text').forEach(el => {
+        if (el.children.length === 0) {
+            const orig = el.textContent;
+            if (MATRIX_CODE_SWAPS[orig]) {
+                el._matrixOrigText = orig;
+                el.textContent = MATRIX_CODE_SWAPS[orig];
+            }
+        }
+    });
+}
+
+function restoreMatrixText() {
+    document.querySelectorAll('.letter-by-letter').forEach(el => {
+        if (el._matrixOrigText !== undefined) {
+            el.setAttribute('data-text', el._matrixOrigText);
+            delete el._matrixOrigText;
+        }
+    });
+    document.querySelectorAll('.text').forEach(el => {
+        if (el._matrixOrigText !== undefined) {
+            el.textContent = el._matrixOrigText;
+            delete el._matrixOrigText;
+        }
+    });
+}
+
 // Inject the floating button and the Matrix exception alert element
 document.addEventListener('DOMContentLoaded', () => {
-    // ── Floating toggle button — icon reflects restored state ──
+    // If Matrix mode was restored from localStorage, apply all effects now that DOM is ready
+    if (matrixModeActive) { applyCodeMasks(); applyMatrixText(); applyMatrixPhoto(); }
+
+    // ── Floating toggle button — rain canvas background + icon span ──
     const btn = document.createElement('button');
-    btn.id = 'matrix-toggle-btn';
+    btn.id    = 'matrix-toggle-btn';
     btn.title = matrixModeActive ? 'Exit the Matrix' : 'Enter the Matrix';
-    btn.textContent = matrixModeActive ? '×' : '⬡';
+
+    const btnCanvas = document.createElement('canvas');
+    btnCanvas.id = 'matrix-btn-canvas';
+
+    const btnIcon = document.createElement('span');
+    btnIcon.id          = 'matrix-btn-icon';
+    btnIcon.textContent = matrixModeActive ? '×' : '⬡';
+
+    btn.appendChild(btnCanvas);
+    btn.appendChild(btnIcon);
     document.body.appendChild(btn);
+    startBtnRain();
 
     btn.addEventListener('click', () => {
         if (matrixRainRunning) return;
@@ -389,6 +452,9 @@ document.addEventListener('DOMContentLoaded', () => {
             deactivateMatrixTheme();
         }
     });
+
+    initConsoleTooltips();
+    initConsoleNudge();
 
     // ── Matrix exception alert (separate from the Vader/Smith alert) ──
     const alertEl = document.createElement('div');
@@ -408,8 +474,11 @@ function activateMatrixTheme() {
     matrixModeActive = true;
     localStorage.setItem('matrixMode', 'true');
     const btn = document.getElementById('matrix-toggle-btn');
-    btn.textContent = '×';
+    document.getElementById('matrix-btn-icon').textContent = '×';
     btn.title = 'Exit the Matrix';
+    applyCodeMasks();
+    applyMatrixText();
+    applyMatrixPhoto();
     showMatrixException();
 }
 
@@ -417,9 +486,306 @@ function deactivateMatrixTheme() {
     document.body.classList.remove('matrix-mode');
     matrixModeActive = false;
     localStorage.removeItem('matrixMode');
+    removeCodeMasks();
+    restoreMatrixText();
+    removeMatrixPhoto();
     const btn = document.getElementById('matrix-toggle-btn');
-    btn.textContent = '⬡';
+    document.getElementById('matrix-btn-icon').textContent = '⬡';
     btn.title = 'Enter the Matrix';
+}
+
+// ── Console button tooltips ───────────────────────────────────────────
+// Single tooltip div repositioned on each button's mouseenter.
+// Matrix-mode CSS override handles the green styling automatically.
+
+function initConsoleTooltips() {
+    const tooltip = document.createElement('div');
+    tooltip.className = 'console-btn-tooltip';
+    document.body.appendChild(tooltip);
+
+    const labels = {
+        minimize: 'Minimize',
+        maximize: 'Maximize / Restore',
+        close:    'Close'
+    };
+
+    document.querySelectorAll('.console-window-header .minimize, .console-window-header .maximize, .console-window-header .close')
+        .forEach(btn => {
+            const cls = Object.keys(labels).find(c => btn.classList.contains(c));
+            if (!cls) return;
+            btn.addEventListener('mouseenter', () => {
+                const r = btn.getBoundingClientRect();
+                tooltip.textContent  = labels[cls];
+                tooltip.style.left   = (r.left + r.width / 2) + 'px';
+                tooltip.style.top    = (r.bottom + 6) + 'px';
+                tooltip.classList.add('visible');
+            });
+            btn.addEventListener('mouseleave', () => tooltip.classList.remove('visible'));
+        });
+}
+
+// ── One-time nudge ────────────────────────────────────────────────────
+// Appears 2 s after first visit, pulses for ~3 s, fades out.
+// localStorage flag prevents it from ever showing again.
+
+function initConsoleNudge() {
+    if (localStorage.getItem('consoleNudgeSeen')) return;
+    const closeBtn = document.querySelector('.console-window-header .close');
+    if (!closeBtn) return;
+
+    const nudge = document.createElement('div');
+    nudge.className  = 'console-nudge';
+    nudge.textContent = '// try the buttons ↑';
+    document.body.appendChild(nudge);
+
+    // Position below the close button, right-edge aligned with it
+    function position() {
+        const r = closeBtn.getBoundingClientRect();
+        nudge.style.top   = (r.bottom + 8) + 'px';
+        nudge.style.right = (window.innerWidth - r.right) + 'px';
+    }
+
+    setTimeout(() => {
+        position();
+        nudge.classList.add('visible');
+
+        // Pulse after fade-in settles
+        setTimeout(() => nudge.classList.add('pulsing'), 450);
+
+        // Fade out after pulse completes (~3 s of pulsing = 4 × 0.75 s)
+        setTimeout(() => {
+            nudge.classList.remove('pulsing');
+            nudge.classList.add('fading');
+            setTimeout(() => {
+                nudge.remove();
+                localStorage.setItem('consoleNudgeSeen', 'true');
+            }, 400);
+        }, 3600);
+    }, 2000);
+}
+
+// ── Button rain — mini Matrix rain that lives inside the toggle button ──
+// Runs permanently (both modes) so the button always feels alive.
+// The canvas is sized to the button's actual pixel dimensions on first call.
+
+let _btnRainId = null;
+
+function startBtnRain() {
+    const canvas = document.getElementById('matrix-btn-canvas');
+    if (!canvas) return;
+    const btn  = document.getElementById('matrix-toggle-btn');
+    const size = btn ? (btn.offsetWidth || 45) : 45;
+    canvas.width  = size;
+    canvas.height = size;
+
+    const ctx      = canvas.getContext('2d');
+    const CSIZ     = 7;
+    const cols     = Math.floor(size / CSIZ);
+    const CHARS    = 'ｦｧｨｩｪｫｬｭｮｯｰｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝ0123456789';
+    // Start drops at random positions so columns don't all begin together
+    const drops = Array.from({ length: cols }, () => Math.random() * -(size / CSIZ));
+
+    let last = 0;
+    const TICK = 1000 / 16; // ~16 fps — enough for the small canvas
+
+    function frame(ts) {
+        _btnRainId = requestAnimationFrame(frame);
+        if (ts - last < TICK) return;
+        last = ts;
+
+        // Fade trail
+        ctx.fillStyle = 'rgba(0,0,0,0.25)';
+        ctx.fillRect(0, 0, size, size);
+
+        ctx.font = `bold ${CSIZ}px monospace`;
+        for (let i = 0; i < cols; i++) {
+            const ch = CHARS[Math.floor(Math.random() * CHARS.length)];
+            const x  = i * CSIZ;
+            const y  = Math.floor(drops[i]) * CSIZ;
+            // Leading character is bright white, trail is green
+            ctx.fillStyle = (Math.floor(drops[i]) === Math.floor(drops[i])) ? '#afffaf' : '#00FF41';
+            ctx.fillStyle = '#00FF41';
+            ctx.fillText(ch, x, y);
+            // Bright head
+            if (drops[i] > 0) {
+                ctx.fillStyle = '#ffffff';
+                ctx.fillText(ch, x, y);
+            }
+            if (y > size && Math.random() > 0.975) drops[i] = 0;
+            drops[i] += 0.6;
+        }
+    }
+    _btnRainId = requestAnimationFrame(frame);
+}
+
+// ── Matrix photo — character mosaic of the profile portrait ───────────
+// Half-width katakana + digits (same charset as the rain).
+// Each grid cell maps one sampled pixel's luminance → green brightness.
+// A shimmer interval flips ~6 % of cells every 80 ms so the portrait
+// feels alive without repainting the entire canvas each tick.
+
+const PHOTO_CHARS = 'ｦｧｨｩｪｫｬｭｮｯｰｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝ0123456789';
+let _matrixPhotoInterval = null;
+
+function _randPhotoChar() {
+    return PHOTO_CHARS[Math.floor(Math.random() * PHOTO_CHARS.length)];
+}
+
+function applyMatrixPhoto() {
+    const img = document.querySelector('.picture img');
+    if (!img) return;
+
+    function render() {
+        const displayW = img.offsetWidth  || img.naturalWidth  || 320;
+        const displayH = img.offsetHeight || img.naturalHeight || 320;
+
+        // Read source pixels from an offscreen canvas
+        const off  = document.createElement('canvas');
+        off.width  = displayW;
+        off.height = displayH;
+        const octx = off.getContext('2d');
+        octx.drawImage(img, 0, 0, displayW, displayH);
+        const px = octx.getImageData(0, 0, displayW, displayH).data;
+
+        const CELL = 9;   // px per character cell
+        const FONT = 8;   // px font size
+        const cols = Math.ceil(displayW / CELL);
+        const rows = Math.ceil(displayH / CELL);
+
+        // S-curve contrast boost: crushes shadows, blows highlights
+        // so facial features (dark glasses/hair vs. bright skin) separate clearly.
+        function contrastLum(raw) {
+            const t = raw / 255;
+            const boosted = Math.max(0, Math.min(1, (t - 0.5) * 3.2 + 0.5));
+            return boosted * 255;
+        }
+
+        // Build cell list with pre-computed colour so shimmer is fast
+        const cells = [];
+        for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < cols; c++) {
+                const cx = Math.min(c * CELL + 4, displayW  - 1);
+                const cy = Math.min(r * CELL + 4, displayH - 1);
+                const i  = (cy * displayW + cx) * 4;
+                const rawLum = 0.299 * px[i] + 0.587 * px[i + 1] + 0.114 * px[i + 2];
+                const lum   = contrastLum(rawLum);
+                const green = Math.round(30 + lum * (225 / 255));
+                const alpha = +(Math.min(1, lum / 255 * 0.85 + 0.15)).toFixed(3);
+                cells.push({ x: c * CELL, y: r * CELL, lum, green, alpha, ch: _randPhotoChar() });
+            }
+        }
+
+        // Create the display canvas
+        const canvas    = document.createElement('canvas');
+        canvas.id       = 'matrix-photo-canvas';
+        canvas.width    = displayW;
+        canvas.height   = displayH;
+        const cs        = getComputedStyle(img);
+        canvas.style.borderRadius = cs.borderRadius;
+        canvas.style.width        = cs.width;
+        canvas.style.height       = cs.height;
+        canvas.style.display      = 'block';
+
+        const ctx = canvas.getContext('2d');
+        ctx.font         = `bold ${FONT}px monospace`;
+        ctx.textBaseline = 'top';
+
+        // Full first draw
+        ctx.fillStyle = '#000';
+        ctx.fillRect(0, 0, displayW, displayH);
+        for (const c of cells) {
+            if (c.lum < 8) continue;  // true black → invisible (keep dark areas dark)
+            ctx.fillStyle = `rgba(0,${c.green},${Math.round(c.green * 0.14)},${c.alpha})`;
+            ctx.fillText(c.ch, c.x, c.y);
+        }
+
+        img.style.display = 'none';
+        img.parentNode.insertBefore(canvas, img);
+
+        // Shimmer — only repaint changed cells (no full canvas clear needed)
+        const shimmerN = Math.max(1, Math.ceil(cells.length * 0.06));
+        _matrixPhotoInterval = setInterval(() => {
+            for (let i = 0; i < shimmerN; i++) {
+                const cell = cells[Math.floor(Math.random() * cells.length)];
+                cell.ch = _randPhotoChar();
+                // Erase old glyph then paint new one
+                ctx.fillStyle = '#000';
+                ctx.fillRect(cell.x, cell.y, CELL, CELL);
+                if (cell.lum >= 8) {
+                    ctx.fillStyle = `rgba(0,${cell.green},${Math.round(cell.green * 0.14)},${cell.alpha})`;
+                    ctx.fillText(cell.ch, cell.x, cell.y);
+                }
+            }
+        }, 80);
+    }
+
+    if (img.complete && img.naturalWidth > 0) {
+        render();
+    } else {
+        img.addEventListener('load', render, { once: true });
+    }
+}
+
+function removeMatrixPhoto() {
+    clearInterval(_matrixPhotoInterval);
+    _matrixPhotoInterval = null;
+    const canvas = document.getElementById('matrix-photo-canvas');
+    if (canvas) canvas.remove();
+    const img = document.querySelector('.picture img');
+    if (img) img.style.display = '';
+}
+
+// ── Code — radar + per-row glitch, perfectly synchronised ─────
+// The radar band (CSS ::after on .app-container) sweeps top→bottom
+// in RADAR_DURATION_S seconds.  For each row we measure its actual
+// pixel position, calculate the exact moment the band centre crosses
+// it, then set animation-delay so the glitch peak fires at that same
+// instant.  Both animations share the same cycle — they are locked.
+
+const RADAR_DURATION_S = 3.5;   // must match CSS animation-duration on ::after
+const GLITCH_PEAK_FRAC = 0.105; // midpoint of 9%–12% keyframe window = peak of glitch
+
+function applyCodeMasks() {
+    const container = document.querySelector('.app-container');
+    if (!container) return;
+
+    const rows = [...document.querySelectorAll('.code-row')];
+    if (!rows.length) return;
+
+    // Force layout so offsetHeight / offsetTop reflect the current CSS
+    const containerHeight = container.offsetHeight;
+    const fontSize        = parseFloat(getComputedStyle(document.documentElement).fontSize);
+    const bandHeightPx    = 6 * fontSize;          // 6em in pixels — matches CSS height
+
+    // Radar centre travels from -bandHeight/2 (above) to containerHeight+bandHeight/2 (below)
+    const radarStart = -bandHeightPx / 2;
+    const radarEnd   =  containerHeight + bandHeightPx / 2;
+    const radarRange =  radarEnd - radarStart;
+
+    rows.forEach(row => {
+        const li = row.querySelector('li');
+        if (!li) return;
+
+        // Row centre relative to .app-container (offsetParent when position:relative)
+        const rowCentre = row.offsetTop + row.offsetHeight / 2;
+
+        // When (in seconds) does the radar centre pass this row?
+        const hitTime = RADAR_DURATION_S * (rowCentre - radarStart) / radarRange;
+
+        // CSS delay that puts the glitch peak exactly at hitTime
+        // Negative delay = animation is already N seconds in at t=0
+        const delay = hitTime - GLITCH_PEAK_FRAC * RADAR_DURATION_S;
+
+        li.style.animation      = `matrix-row-glitch ${RADAR_DURATION_S}s linear infinite backwards`;
+        li.style.animationDelay = `${delay.toFixed(3)}s`;
+    });
+}
+
+function removeCodeMasks() {
+    document.querySelectorAll('.code-row li').forEach(li => {
+        li.style.animation      = '';
+        li.style.animationDelay = '';
+    });
 }
 
 function showMatrixException() {
