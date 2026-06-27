@@ -10,7 +10,9 @@
     .resume-buttons,
     .go-to-top-button-container,
     footer,
-    .softuni-svg{
+    .softuni-svg,
+    #matrix-toggle-btn,
+    #matrix-alert {
         display: none;
     }
 
