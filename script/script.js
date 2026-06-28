@@ -9,8 +9,10 @@ document.addEventListener("DOMContentLoaded", function () {
       elements[index].style.animation = null; // Clear inline style
       elements[index].style.animationDelay = 'calc(0.85s * var(--index))'; // Reset animation delay
       elements[index].addEventListener('animationend', function () {
+        // Freeze the typed text so minimize/maximize can't re-trigger the animation
+        elements[index].classList.add('typing-done');
         animate(index + 1);
-      });
+      }, { once: true });
     }
   }
 
@@ -155,13 +157,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // Flex row in Matrix mode (picture left, text right); block otherwise
     customAlert.style.display = matrixModeActive ? 'flex' : 'block';
     customAlertPicture.style.display = matrixModeActive ? 'block' : 'inline';
-    // Swap alert picture: Agent Smith in Matrix mode, Vader otherwise
+    // Swap alert picture: character portrait in Matrix mode, Vader otherwise
     customAlertPicture.src = matrixModeActive
-        ? './images/alert-picture/agent-smith.jpg'
+        ? (matrixCharacter === 'morpheus'
+            ? './images/alert-picture/morpheus.jpg'
+            : './images/alert-picture/agent-smith.jpg')
         : './images/alert-picture/alert-picture.jpg';
 
-    // Use Smith sounds when Matrix mode is active, Vader sounds otherwise
-    const activeSounds = matrixModeActive ? smithSounds : exitSounds;
+    // Route sounds to active character (Smith or Morpheus) in Matrix mode
+    const activeSounds = matrixModeActive
+        ? (matrixCharacter === 'smith' ? smithSounds : morpheusSounds)
+        : exitSounds;
     const audioFile = activeSounds[message];
     const exitSound = new Audio(audioFile);
 
@@ -183,8 +189,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // Function to handle clicking the closeIcon
   const handleIconClick = () => {
     if (!isAudioPlaying) {
-      // Pick from Smith or Vader depending on active theme
-      const activeMessages = matrixModeActive ? smithMessages : exitMessages;
+      // Alternate Smith ↔ Morpheus each alert click in Matrix mode
+      if (matrixModeActive) matrixCharacter = (matrixCharacter === 'smith') ? 'morpheus' : 'smith';
+      const activeMessages = matrixModeActive
+          ? (matrixCharacter === 'smith' ? smithMessages : morpheusMessages)
+          : exitMessages;
       const randomIndex = Math.floor(Math.random() * activeMessages.length);
       const randomMessage = activeMessages[randomIndex];
       showExitAlert(randomMessage);
@@ -362,9 +371,27 @@ const smithSounds = {
         "./audio/smith-never-send-human.mp3",
 };
 
+// Morpheus quotes — active on Morpheus turns in Matrix mode
+const morpheusMessages = [
+    "The Matrix is everywhere.",
+    "I told you I can only show you the door, you have to walk through it.",
+    "You have to let it all go, Neo.",
+];
+const morpheusSounds = {
+    "The Matrix is everywhere.":
+        "./audio/the-matrix-is-everywhere.mp3",
+    "I told you I can only show you the door, you have to walk through it.":
+        "./audio/i-told-you-i-can-only-show-you-the-door-you-have-to-walk-through-it.mp3",
+    "You have to let it all go, Neo.":
+        "./audio/morpheus-you-have-to-let-it-all-go-neo.mp3",
+};
+
 // Shared state flags
-let matrixModeActive = false;
-let matrixRainRunning = false;
+let matrixModeActive   = false;
+let matrixRainRunning  = false;
+// Tracks which character spoke last — flips on every new activation.
+// Default 'morpheus' so the very first activation uses Smith (original feel).
+let matrixCharacter = localStorage.getItem('matrixCharacter') || 'morpheus';
 
 // Restore Matrix mode from a previous page navigation (no rain on restore)
 if (localStorage.getItem('matrixMode') === 'true') {
@@ -382,8 +409,8 @@ const MATRIX_CONSOLE_SWAPS = {
     'Welcome to my Portfolio Website!': 'Welcome to the Matrix.',
 };
 const MATRIX_CODE_SWAPS = {
-    '"> Hello"':                              '"> Wake up, Neo."',
-    '"> Welcome to my Portfolio Website!"':   '"> Welcome to the Matrix."',
+    '"> Hello"':                             '"> Wake up, Neo."',
+    '"> Welcome to my Portfolio Website!"':  '"> Welcome to the Matrix."',
 };
 
 function applyMatrixText() {
@@ -449,7 +476,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!matrixModeActive) {
             startMatrixRain(() => activateMatrixTheme());
         } else {
-            deactivateMatrixTheme();
+            matrixRainRunning = true; // block re-clicks during wipe
+            matrixExitWipe(() => deactivateMatrixTheme());
         }
     });
 
@@ -492,6 +520,91 @@ function deactivateMatrixTheme() {
     const btn = document.getElementById('matrix-toggle-btn');
     document.getElementById('matrix-btn-icon').textContent = '⬡';
     btn.title = 'Enter the Matrix';
+}
+
+// ── Matrix exit wipe ──────────────────────────────────────────────────────
+// Each rain column is its own wiper. The canvas starts solid black (hiding
+// the instant class removal). As each column's drop falls, it clears its
+// own vertical strip from the top down — the rain IS the cleaning agent.
+// The cleaning front is organic/ragged (each column at its own speed).
+// When every column reaches the bottom the canvas removes itself.
+function matrixExitWipe(onComplete) {
+    if (document.getElementById('matrix-exit-canvas')) return;
+
+    const W = window.innerWidth;
+    const H = window.innerHeight;
+
+    const canvas = document.createElement('canvas');
+    canvas.id = 'matrix-exit-canvas';
+    canvas.width  = W;
+    canvas.height = H;
+    Object.assign(canvas.style, {
+        position: 'fixed', top: '0', left: '0',
+        width: '100vw', height: '100vh',
+        zIndex: '99995', pointerEvents: 'none', opacity: '1'
+    });
+    document.body.appendChild(canvas);
+    const ctx = canvas.getContext('2d');
+
+    // Solid black immediately — hides the instant class removal
+    ctx.fillStyle = '#000';
+    ctx.fillRect(0, 0, W, H);
+
+    // Remove Matrix mode now (hidden under the black canvas)
+    onComplete();
+
+    const CSIZ  = 14;
+    const cols  = Math.ceil(W / CSIZ);
+    const CHARS = 'ｦｧｨｩｪｫｬｭｮｯｰｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝ0123456789';
+
+    // Stagger column starts so the front is ragged, not a flat horizontal line
+    const drops  = Array.from({ length: cols }, () => -(Math.random() * 12 + 2));
+    const speeds = Array.from({ length: cols }, () => 0.9 + Math.random() * 0.9);
+
+    function frame() {
+        // Reset to black each frame — cleared columns will punch through it
+        ctx.fillStyle = '#000';
+        ctx.fillRect(0, 0, W, H);
+
+        ctx.font = `bold ${CSIZ}px monospace`;
+        let finished = 0;
+
+        for (let i = 0; i < cols; i++) {
+            const dropY = drops[i] * CSIZ; // pixel tip of this column's drop
+
+            // Clear from top to drop tip — reveals the clean original site
+            if (dropY > 0) {
+                ctx.clearRect(i * CSIZ, 0, CSIZ, Math.min(dropY, H));
+            }
+
+            // Draw rain chars at and just below the drop tip (on the black zone)
+            for (let j = 0; j < 5; j++) {
+                const charY = dropY + j * CSIZ;
+                if (charY < 0 || charY >= H) continue;
+                const ch = CHARS[Math.floor(Math.random() * CHARS.length)];
+                if (j === 0) {
+                    // Leading character: bright near-white
+                    ctx.fillStyle = 'rgba(220,255,220,0.97)';
+                } else {
+                    ctx.fillStyle = `rgba(0,255,65,${(0.7 - j * 0.14).toFixed(2)})`;
+                }
+                ctx.fillText(ch, i * CSIZ, charY);
+            }
+
+            drops[i] += speeds[i];
+            if (drops[i] * CSIZ >= H) finished++;
+        }
+
+        if (finished < cols) {
+            requestAnimationFrame(frame);
+        } else {
+            // All columns done — canvas is now fully transparent, remove it
+            canvas.remove();
+            matrixRainRunning = false;
+        }
+    }
+
+    requestAnimationFrame(frame);
 }
 
 // ── Console button tooltips ───────────────────────────────────────────
