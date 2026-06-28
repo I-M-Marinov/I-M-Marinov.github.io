@@ -452,7 +452,7 @@ function restoreMatrixText() {
 // Inject the floating button and the Matrix exception alert element
 document.addEventListener('DOMContentLoaded', () => {
     // If Matrix mode was restored from localStorage, apply all effects now that DOM is ready
-    if (matrixModeActive) { applyCodeMasks(); applyMatrixText(); applyMatrixPhoto(); }
+    if (matrixModeActive) { applyCodeMasks(); applyMatrixText(); applyMatrixPhoto(); setMatrixFavicon(); }
 
     // ── Floating toggle button — rain canvas background + icon span ──
     const btn = document.createElement('button');
@@ -507,6 +507,7 @@ function activateMatrixTheme() {
     applyCodeMasks();
     applyMatrixText();
     applyMatrixPhoto();
+    setMatrixFavicon();
     showMatrixException();
 }
 
@@ -517,9 +518,56 @@ function deactivateMatrixTheme() {
     removeCodeMasks();
     restoreMatrixText();
     removeMatrixPhoto();
+    restoreOriginalFavicon();
     const btn = document.getElementById('matrix-toggle-btn');
     document.getElementById('matrix-btn-icon').textContent = '⬡';
     btn.title = 'Enter the Matrix';
+}
+
+// ── Favicon swap ──────────────────────────────────────────────────────────
+// Generates a 32×32 Matrix favicon on a canvas (no extra file needed) and
+// swaps the <link rel="icon"> href. Restores the original on deactivate.
+function setMatrixFavicon() {
+    const canvas = document.createElement('canvas');
+    canvas.width = 32;
+    canvas.height = 32;
+    const ctx = canvas.getContext('2d');
+
+    // Black background
+    ctx.fillStyle = '#000';
+    ctx.fillRect(0, 0, 32, 32);
+
+    // Outer green glow ring
+    ctx.strokeStyle = 'rgba(0,255,65,0.45)';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.arc(16, 16, 14, 0, Math.PI * 2);
+    ctx.stroke();
+
+    // Green katakana character centred
+    ctx.fillStyle = '#00FF41';
+    ctx.font = 'bold 22px monospace';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.shadowColor = '#00FF41';
+    ctx.shadowBlur = 6;
+    ctx.fillText('ﾊ', 16, 17);
+
+    const link = document.querySelector("link[rel='icon']");
+    if (link) {
+        link._originalHref = link.href;
+        link.type = 'image/png';
+        link.href = canvas.toDataURL('image/png');
+    }
+}
+
+function restoreOriginalFavicon() {
+    const link = document.querySelector("link[rel='icon']");
+    if (link && link._originalHref) {
+        link.type = 'image/x-icon';
+        link.href = link._originalHref;
+        delete link._originalHref;
+    }
 }
 
 // ── Matrix exit wipe ──────────────────────────────────────────────────────
