@@ -246,6 +246,18 @@ document.addEventListener('DOMContentLoaded', () => {
     SNOWING EFFECT CSS
 *********************************************/
 
+let _snowRafId  = null; // cancelable handle for snow loop
+let _bgRainRafId = null; // cancelable handle for background Matrix rain
+
+function stopSnowAnimation() {
+    if (_snowRafId !== null) {
+        cancelAnimationFrame(_snowRafId);
+        _snowRafId = null;
+    }
+    const canvas = document.getElementById('snow-canvas');
+    if (canvas) canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
+}
+
 function startSnowAnimation() {
   const today = new Date();
   const currentYear = today.getFullYear();
@@ -262,7 +274,7 @@ function startSnowAnimation() {
 
   if (today < startDate || today > endDate) {
 
-      return; // Stop execution 
+      return; // Stop execution
   }
 
   console.log("Starting snow animation...");
@@ -315,13 +327,91 @@ function startSnowAnimation() {
           ctx.fill();
       });
 
-      requestAnimationFrame(animateSnowflakes);
+      _snowRafId = requestAnimationFrame(animateSnowflakes);
   }
 
   animateSnowflakes();
 }
 
 startSnowAnimation();
+
+// ── Background Matrix rain (replaces snow when Matrix mode is active) ──────
+// Runs on the same #snow-canvas. Uses clearRect each frame — canvas stays
+// fully transparent so page content is always visible. Trail opacity is
+// computed explicitly per character instead of relying on black fill buildup.
+function startBgMatrixRain() {
+    // Same seasonal window as the snow effect: December 1 – January 31
+    const today = new Date();
+    const m = today.getMonth();
+    if (m !== 11 && m !== 0) return;
+
+    const canvas = document.getElementById('snow-canvas');
+    if (!canvas) return;
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
+    const ctx = canvas.getContext('2d');
+
+    const CSIZ      = 16;
+    const TRAIL_LEN = 14;
+    const CHARS     = 'ｦｧｨｩｪｫｬｭｮｯｰｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝ0123456789';
+    const cols      = Math.ceil(canvas.width / CSIZ);
+
+    // Each column: head position + trail of characters
+    const columns = Array.from({ length: cols }, () => ({
+        y:     -(Math.random() * (canvas.height / CSIZ) * 1.5),
+        speed: 0.3 + Math.random() * 0.35,
+        chars: Array.from({ length: TRAIL_LEN }, () =>
+            CHARS[Math.floor(Math.random() * CHARS.length)]),
+    }));
+
+    function frame() {
+        _bgRainRafId = requestAnimationFrame(frame);
+
+        // Clear every frame — canvas stays transparent, page content visible
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.font = `${CSIZ}px monospace`;
+
+        for (let i = 0; i < cols; i++) {
+            const col = columns[i];
+
+            for (let j = 0; j < TRAIL_LEN; j++) {
+                const charY = (col.y - j) * CSIZ;
+                if (charY < -CSIZ || charY > canvas.height) continue;
+
+                // Randomise trail chars occasionally
+                if (Math.random() > 0.96) {
+                    col.chars[j] = CHARS[Math.floor(Math.random() * CHARS.length)];
+                }
+
+                // Head: near-white; trail fades linearly to transparent green
+                const alpha = j === 0
+                    ? 0.85
+                    : Math.max(0, (1 - j / TRAIL_LEN) * 0.38);
+                ctx.fillStyle = j === 0
+                    ? `rgba(200,255,200,${alpha})`
+                    : `rgba(0,255,65,${alpha.toFixed(2)})`;
+                ctx.fillText(col.chars[j], i * CSIZ, charY);
+            }
+
+            col.y += col.speed;
+
+            if (col.y * CSIZ > canvas.height + TRAIL_LEN * CSIZ && Math.random() > 0.97) {
+                col.y = -(Math.random() * 12 + TRAIL_LEN);
+            }
+        }
+    }
+
+    _bgRainRafId = requestAnimationFrame(frame);
+}
+
+function stopBgMatrixRain() {
+    if (_bgRainRafId !== null) {
+        cancelAnimationFrame(_bgRainRafId);
+        _bgRainRafId = null;
+    }
+    const canvas = document.getElementById('snow-canvas');
+    if (canvas) canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
+}
 
 document.addEventListener("DOMContentLoaded", () => {
     const img = document.querySelector(".profile-picture");
@@ -452,7 +542,7 @@ function restoreMatrixText() {
 // Inject the floating button and the Matrix exception alert element
 document.addEventListener('DOMContentLoaded', () => {
     // If Matrix mode was restored from localStorage, apply all effects now that DOM is ready
-    if (matrixModeActive) { applyCodeMasks(); applyMatrixText(); applyMatrixPhoto(); setMatrixFavicon(); }
+    if (matrixModeActive) { applyCodeMasks(); applyMatrixText(); applyMatrixPhoto(); setMatrixFavicon(); stopSnowAnimation(); startBgMatrixRain(); }
 
     // ── Floating toggle button — rain canvas background + icon span ──
     const btn = document.createElement('button');
@@ -508,6 +598,8 @@ function activateMatrixTheme() {
     applyMatrixText();
     applyMatrixPhoto();
     setMatrixFavicon();
+    stopSnowAnimation();
+    startBgMatrixRain();
     showMatrixException();
 }
 
@@ -519,6 +611,8 @@ function deactivateMatrixTheme() {
     restoreMatrixText();
     removeMatrixPhoto();
     restoreOriginalFavicon();
+    stopBgMatrixRain();
+    startSnowAnimation(); // resumes only if December/January
     const btn = document.getElementById('matrix-toggle-btn');
     document.getElementById('matrix-btn-icon').textContent = '⬡';
     btn.title = 'Enter the Matrix';
