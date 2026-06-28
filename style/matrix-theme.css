@@ -231,7 +231,7 @@ body.matrix-mode .close:hover {
     filter: brightness(0) invert(1) sepia(1) saturate(4) hue-rotate(95deg);
 }
 
-/* ── Vader/Smith alert ──────────────────────────────── */
+/* ── Vader/Smith/Morpheus alert ─────────────────────── */
 body.matrix-mode .alert {
     background-color: #0a0a0a;
     border-color: #00FF41;
@@ -247,7 +247,7 @@ body.matrix-mode .alert {
 }
 
 body.matrix-mode #customAlertPicture {
-    width: 120px;
+    width: clamp(120px, 12vw, 190px);
     height: auto;
     flex-shrink: 0;
     scale: 1;
