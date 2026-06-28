@@ -505,6 +505,39 @@ body.matrix-mode #matrix-toggle-btn:hover {
 }
 
 /* =====================================================
+   TOUCH DEVICE OVERRIDES
+   ===================================================== */
+@media (hover: none) and (pointer: coarse) {
+
+    /* Glitch animation variant: base state stays green (not white)
+       so headers don't look permanently wrong between bursts. */
+    @keyframes matrix-card-header-glitch-mobile {
+        0%, 84%, 100% { text-shadow: none; transform: none; color: #00FF41; }
+        85%            { text-shadow: -3px 0 #ff003c, 3px 0 #00fff9; transform: skewX(-4deg); color: #fff; }
+        87%            { text-shadow:  3px 0 #ff003c, -3px 0 #00fff9; transform: skewX( 3deg); color: #ccff00; }
+        89%            { text-shadow: none; transform: none; color: #00FF41; }
+    }
+
+    /* Apply glitch to all certificate headers with staggered delays
+       so cards don't all flash in the same frame. */
+    body.matrix-mode .certificates-container a .certificate-header {
+        animation: matrix-card-header-glitch-mobile 3.2s ease-in-out infinite;
+    }
+    body.matrix-mode .certificates-container a:nth-child(2)  .certificate-header { animation-delay: 0.4s; }
+    body.matrix-mode .certificates-container a:nth-child(3)  .certificate-header { animation-delay: 0.8s; }
+    body.matrix-mode .certificates-container a:nth-child(4)  .certificate-header { animation-delay: 1.2s; }
+    body.matrix-mode .certificates-container a:nth-child(5)  .certificate-header { animation-delay: 1.6s; }
+    body.matrix-mode .certificates-container a:nth-child(6)  .certificate-header { animation-delay: 2.0s; }
+    body.matrix-mode .certificates-container a:nth-child(7)  .certificate-header { animation-delay: 2.4s; }
+    body.matrix-mode .certificates-container a:nth-child(8)  .certificate-header { animation-delay: 2.8s; }
+    body.matrix-mode .certificates-container a:nth-child(9)  .certificate-header { animation-delay: 0.2s; }
+    body.matrix-mode .certificates-container a:nth-child(10) .certificate-header { animation-delay: 0.6s; }
+    body.matrix-mode .certificates-container a:nth-child(11) .certificate-header { animation-delay: 1.0s; }
+    body.matrix-mode .certificates-container a:nth-child(12) .certificate-header { animation-delay: 1.4s; }
+
+}
+
+/* =====================================================
    CERTIFICATES PAGE — Matrix mode overrides
    ===================================================== */
 
