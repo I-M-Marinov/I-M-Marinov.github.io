@@ -647,8 +647,9 @@ function applyMatrixPhoto() {
         octx.drawImage(img, 0, 0, displayW, displayH);
         const px = octx.getImageData(0, 0, displayW, displayH).data;
 
-        const CELL = 9;   // px per character cell
-        const FONT = 8;   // px font size
+        // Responsive cell size: ~40 columns at any screen width, min 5 px
+        const CELL = Math.max(5, Math.floor(displayW / 40));
+        const FONT = CELL - 1;
         const cols = Math.ceil(displayW / CELL);
         const rows = Math.ceil(displayH / CELL);
 
