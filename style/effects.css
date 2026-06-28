@@ -133,6 +133,12 @@
     animation-delay: calc(1s * var(--index)); /* Delay each animation */
   }
 
+  /* Once typing completes, freeze — prevents minimize/maximize re-triggering the animation */
+  .letter-by-letter.typing-done::after {
+    animation: none;
+    width: 100%;
+  }
+
   /* Specific rule for elements with letter-by-letter class and without need of ">" sign */
   .no-prefix::before {
     content: none; /* No content before the text */
