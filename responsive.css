@@ -2363,6 +2363,31 @@
 }
 
 /* =====================================================
+   Projects page — mobile containment fixes
+   ===================================================== */
+@media (max-width: 1024px) {
+
+    .my-projects-container {
+        overflow: hidden;
+    }
+
+    .project-picture img {
+        max-width: 100%;
+    }
+
+    .project-description {
+        margin-top: 0;
+    }
+
+    
+    .main-container.projects {
+        height: auto;
+        min-height: 100svh;
+        overflow: visible;
+    }
+}
+
+/* =====================================================
    About Me — picture LEFT of console window.
    Only active at large screens (≥ 1361px).
    Uses min-width so it never touches small-screen rules.
