@@ -186,13 +186,25 @@
         border-radius: 50%;
     }
 
-    /* Strip Matrix radar effect and glow from profile picture on print */
+    /* Fully reset the Matrix wrapper — restore original picture layout */
+    .profile-picture-wrapper {
+        width: auto !important;
+        height: auto !important;
+        margin-top: 0 !important;
+        overflow: visible !important;
+        clip-path: none !important;
+        border-radius: 0 !important;
+    }
     .profile-picture-wrapper::after {
-        display: none;
+        display: none !important;
     }
     .profile-picture-wrapper .profile-picture {
-        border: none;
-        box-shadow: none;
+        margin-top: 2em;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        border: none !important;
+        box-shadow: none !important;
     }
 
     #snow-canvas{
