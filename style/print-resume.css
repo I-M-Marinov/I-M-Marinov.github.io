@@ -186,6 +186,15 @@
         border-radius: 50%;
     }
 
+    /* Strip Matrix radar effect and glow from profile picture on print */
+    .profile-picture-wrapper::after {
+        display: none;
+    }
+    .profile-picture-wrapper .profile-picture {
+        border: none;
+        box-shadow: none;
+    }
+
     #snow-canvas{
         display: none;
     }
