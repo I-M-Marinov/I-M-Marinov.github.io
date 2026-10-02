@@ -98,7 +98,7 @@ image {
     width: 25px;
     height: auto;
     overflow: hidden;
-    margin-left: 8em;
+    margin-left: 6em;
 }
 
 .email a{
@@ -115,7 +115,8 @@ image {
 .inner-columns h2 {
     border-bottom: 2px solid #5c5757;
 }
-
+.upper-column-employer0-1,
+.upper-column-employer0-2,
 .upper-column-employer1,
 .upper-column-employer2,
 .upper-column-employer3{
@@ -124,6 +125,10 @@ image {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
     font-size: 0.95em;
+}
+
+.upper-column-employer0-2 .upper-column-2{
+    margin-left: 10.5em;
 }
 
 .company {
@@ -360,8 +365,8 @@ image {
 }
 
 .knowledgable-svg {
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 65px;
     overflow: hidden;
     margin: 0;
 }
@@ -406,6 +411,14 @@ image {
     margin-bottom: -1.5em;
     margin-left: -3.5em;
     animation: bounce 1.5s ease-in-out infinite;
+}
+
+.mfxr-ico{
+    width: 60px;
+    height:25px;
+    margin-bottom: -0.5em;
+    margin-left: -3.5em;
+    border-radius: 0.45em;
 }
 
 @keyframes bounce {
