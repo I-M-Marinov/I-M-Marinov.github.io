@@ -173,7 +173,7 @@
     }
 
     #id-projects{
-        margin-top: 13.5em;
+        margin-top: 6em;
     }
 
     .certificate-details{
@@ -211,7 +211,8 @@
         display: none;
     }
 
-    .cup-svg{
+    .cup-svg,
+    .mfxr-ico{
         display: none;
     }
 
@@ -300,4 +301,47 @@
         border-left: 2px black solid;
     } */
     
+}
+
+/* ------------------------------------------------------------------
+   Last page (Certificates + Find me online) as a centered card.
+   Vertical centering on the A4 page is done by script/resume-pdf.js.
+   ------------------------------------------------------------------ */
+@media print {
+
+    .bigger-container {
+        width: 600px;
+        height: auto;
+        margin: 1em auto 0 auto;
+        padding: 2em 2.5em 2.5em 2.5em;
+        box-sizing: border-box;
+        border-top: 18px solid #22405C;
+        border-bottom: 18px solid #22405C;
+        border-radius: 18px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+    }
+
+    .bigger-container .links-container1 {
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .bigger-container .links-left-column,
+    .bigger-container .links-right-column {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .bigger-container .links-right-column {
+        margin-top: 2.5em;
+    }
+
+    .bigger-container .linkedin-container,
+    .bigger-container .github-container,
+    .bigger-container .facebook-container,
+    .bigger-container .portfolio-container {
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
